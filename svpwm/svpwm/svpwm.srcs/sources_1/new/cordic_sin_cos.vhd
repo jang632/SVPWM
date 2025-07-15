@@ -15,7 +15,6 @@ end cordic_sin_cos;
 
 architecture Behavioral of cordic_sin_cos is
 
-    SIGNAL index : INTEGER RANGE 0 TO ITERATIONS;
 
     type pipelined_IO is record 
         pip_theta    : signed(31 DOWNTO 0);

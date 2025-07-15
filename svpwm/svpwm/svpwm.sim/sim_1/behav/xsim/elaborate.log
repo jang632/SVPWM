@@ -1,7 +1,7 @@
 Vivado Simulator v2024.1
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_vector_processor_behav xil_defaultlib.tb_vector_processor -log elaborate.log 
+Running: C:/Xilinx/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_switching_time_processor_behav xil_defaultlib.tb_switching_time_processor -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -12,6 +12,9 @@ Compiling package std.standard
 Compiling package std.textio
 Compiling package ieee.std_logic_1164
 Compiling package ieee.numeric_std
-Compiling architecture behavioral of entity xil_defaultlib.vector_processor [vector_processor_default]
-Compiling architecture behavioral of entity xil_defaultlib.tb_vector_processor
-Built simulation snapshot tb_vector_processor_behav
+Compiling architecture behavioral of entity xil_defaultlib.cordic_sin_cos [cordic_sin_cos_default]
+Compiling architecture behavioral of entity xil_defaultlib.shift_register [\shift_register(data_len=32,dela...]
+Compiling architecture behavioral of entity xil_defaultlib.shift_register [\shift_register(data_len=3,delay...]
+Compiling architecture behavioral of entity xil_defaultlib.switching_time_processor [switching_time_processor_default]
+Compiling architecture behavior of entity xil_defaultlib.tb_switching_time_processor
+Built simulation snapshot tb_switching_time_processor_behav
