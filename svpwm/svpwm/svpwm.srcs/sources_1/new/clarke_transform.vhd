@@ -16,17 +16,19 @@ end clarke_transform;
 
 architecture Behavioral of clarke_transform is
     CONSTANT TWO_THIRDS        : signed(15 DOWNTO 0) := x"2AAD";    
-    CONSTANT SQ_THREE_THIRDS  : signed(15 DOWNTO 0) := x"24F5";
-    CONSTANT ONE_THIRD        : signed(15 DOWNTO 0) := x"1555";
+    CONSTANT SQ_THREE_THIRDS   : signed(15 DOWNTO 0) := x"24F5";
+    CONSTANT ONE_THIRD         : signed(15 DOWNTO 0) := x"1555";
 begin
     PROCESS(clk)
-    BEGIN 
-        IF(reset = '1') THEN 
-            v_alpha <= (others => '0');  
-            v_beta  <= (others => '0');             
-        ELSIF rising_edge(clk) THEN 
-            v_alpha <= STD_LOGIC_VECTOR(resize(resize(TWO_THIRDS * signed(v_a), 32) - resize(ONE_THIRD * signed(v_b), 32) - resize(ONE_THIRD * signed(v_c), 32), 32));
-            v_beta  <= STD_LOGIC_VECTOR(resize(resize(SQ_THREE_THIRDS * signed(v_b), 32) - resize(SQ_THREE_THIRDS * signed(v_c), 32), 32));
+    BEGIN           
+        IF rising_edge(clk) THEN 
+            IF(reset = '1') THEN 
+                v_alpha <= (others => '0');  
+                v_beta  <= (others => '0');   
+            ELSE
+                v_alpha <= STD_LOGIC_VECTOR(resize(resize(TWO_THIRDS * signed(v_a), 32) - resize(ONE_THIRD * signed(v_b), 32) - resize(ONE_THIRD * signed(v_c), 32), 32));
+                v_beta  <= STD_LOGIC_VECTOR(resize(resize(SQ_THREE_THIRDS * signed(v_b), 32) - resize(SQ_THREE_THIRDS * signed(v_c), 32), 32));
+            END IF;
         END IF;
     END PROCESS;
 end Behavioral;

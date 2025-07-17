@@ -78,7 +78,7 @@ begin
             pipeline(0).pip_cos <= x"09B74A7D"; 
             pipeline(0).pip_sin <= (others => '0');
 
-            FOR i IN 0 TO iterations - 2 LOOP 
+            FOR i IN 0 TO 14 LOOP 
                 IF pipeline(i).pip_theta < 0 THEN                               
                     pipeline(i+1).pip_cos      <= pipeline(i).pip_cos + shift_right(pipeline(i).pip_sin, i);
                     pipeline(i+1).pip_sin      <= pipeline(i).pip_sin - shift_right(pipeline(i).pip_cos, i);

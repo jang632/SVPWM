@@ -1,0 +1,91 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
+| Date         : Thu Jul 17 17:04:46 2025
+| Host         : DESKTOP-1FUVVL9 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file svpwm_control_sets_placed.rpt
+| Design       : svpwm
+| Device       : xc7z020
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    13 |
+|    Minimum number of control sets                        |    13 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    46 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    13 |
+| >= 0 to < 4        |     3 |
+| >= 4 to < 6        |     0 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    10 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              56 |           20 |
+| No           | No                    | Yes                    |            3853 |          988 |
+| No           | Yes                   | No                     |              97 |           35 |
+| Yes          | No                    | No                     |              83 |           39 |
+| Yes          | No                    | Yes                    |             150 |           38 |
+| Yes          | Yes                   | No                     |               3 |            3 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+------------------------------------------+----------------------------------+------------------+----------------+--------------+
+|  Clock Signal  |               Enable Signal              |         Set/Reset Signal         | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+------------------------------------------+----------------------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG | vector_processor_inst/E[0]               | driver_inst/HB1/pwm_n0           |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | vector_processor_inst/E[0]               | driver_inst/HB2/pwm_n0           |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | vector_processor_inst/E[0]               | driver_inst/HB3/pwm_n0           |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | driver_inst/HB1/duty_cycle_latch0        |                                  |               11 |             16 |         1.45 |
+|  clk_IBUF_BUFG | driver_inst/HB2/duty_cycle_latch0        |                                  |                7 |             16 |         2.29 |
+|  clk_IBUF_BUFG | driver_inst/HB3/duty_cycle_latch0        |                                  |                9 |             16 |         1.78 |
+|  clk_IBUF_BUFG | vector_processor_inst/sector_reg[0]_0[0] | reset_IBUF                       |                6 |             32 |         5.33 |
+|  clk_IBUF_BUFG | vector_processor_inst/E[0]               |                                  |               12 |             35 |         2.92 |
+|  clk_IBUF_BUFG | time_processor_inst/STATE                | reset_IBUF                       |               16 |             59 |         3.69 |
+|  clk_IBUF_BUFG | time_processor_inst/STATE_reg_0          | reset_IBUF                       |               16 |             59 |         3.69 |
+|  clk_IBUF_BUFG |                                          | vector_processor_inst/angle_int0 |               35 |             97 |         2.77 |
+|  clk_IBUF_BUFG |                                          |                                  |               20 |            110 |         5.50 |
+|  clk_IBUF_BUFG |                                          | reset_IBUF                       |              988 |           3853 |         3.90 |
++----------------+------------------------------------------+----------------------------------+------------------+----------------+--------------+
+
+

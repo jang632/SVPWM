@@ -81,7 +81,7 @@ begin
                 pipeline(0).pip_quadrant <= "11";
             END IF;
             
-            FOR i IN 0 TO iterations - 2 LOOP 
+            FOR i IN 0 TO 14 LOOP 
                 IF pipeline(i).pip_Y < 0 THEN                                   
                     pipeline(i+1).pip_Y       <= pipeline(i).pip_Y + shift_right(pipeline(i).pip_X, i);
                     pipeline(i+1).pip_X       <= pipeline(i).pip_X - shift_right(pipeline(i).pip_Y, i);

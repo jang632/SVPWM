@@ -60,7 +60,7 @@ architecture Behavioral of switching_time_processor is
     CONSTANT PI5_3 : signed(31 DOWNTO 0) := x"53c69b19";
     CONSTANT PI2 : signed(31 DOWNTO 0)   := x"6487ed51";
     
-    CONSTANT M : signed(31 DOWNTO 0)   := x"0000204a";
+    CONSTANT M : signed(31 DOWNTO 0)   := x"0000f229";
     CONSTANT Tz : signed(63 DOWNTO 0)   := x"00022f3d8fed7049";
     
     CONSTANT iterations : INTEGER RANGE 1 TO 16 := 16;

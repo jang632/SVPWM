@@ -1,9 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../svpwm.srcs/sources_1/new/cordic_sin_cos.vhd" \
-"../../../../svpwm.srcs/sources_1/new/shift_register.vhd" \
-"../../../../svpwm.srcs/sources_1/new/switching_time_processor.vhd" \
-"../../../../svpwm.srcs/sim_1/new/tb_switching_time_processor.vhd" \
-
-# Do not sort compile order
-nosort

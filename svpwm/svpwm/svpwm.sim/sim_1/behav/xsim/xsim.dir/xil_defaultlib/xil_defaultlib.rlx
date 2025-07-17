@@ -3,10 +3,15 @@
 May 22 2024
 19:03:11
 C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sim_1/new/tb_center_pwm.vhd,1752601516,vhdl,,,,tb_center_pwm,,,,,,,,
+C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sim_1/new/tb_svpwm.vhd,1752682001,vhdl,,,,tb_svpwm,,,,,,,,
 C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sim_1/new/tb_switching_time_processor.vhd,1752603541,vhdl,,,,tb_switching_time_processor,,,,,,,,
+C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sim_1/new/tb_transistor_drive.vhd,1752679473,vhdl,,,,tb_transistor_driver,,,,,,,,
 C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sim_1/new/tb_vector_processor.vhd,1752434335,vhdl,,,,tb_vector_processor,,,,,,,,
 C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/center_pwm.vhd,1752601572,vhdl,,,,center_pwm,,,,,,,,
+C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/clarke_transform.vhd,1752403556,vhdl,,,,clarke_transform,,,,,,,,
 C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/cordic_sin_cos.vhd,1752519054,vhdl,,,,cordic_sin_cos,,,,,,,,
 C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/shift_register.vhd,1752603484,vhdl,,,,shift_register,,,,,,,,
-C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/switching_time_processor.vhd,1752603605,vhdl,,,,switching_time_processor,,,,,,,,
+C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/svpwm.vhd,1752683735,vhdl,C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sim_1/new/tb_svpwm.vhd,,,svpwm,,,,,,,,
+C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/switching_time_processor.vhd,1752692462,vhdl,,,,switching_time_processor,,,,,,,,
+C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/transistor_driver.vhd,1752684501,vhdl,,,,transistor_driver,,,,,,,,
 C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd,1752433995,vhdl,C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sim_1/new/tb_vector_processor.vhd,,,vector_processor,,,,,,,,
