@@ -27,21 +27,23 @@ ARCHITECTURE Behavioral OF svpwm IS
             v_a      : IN  STD_LOGIC_VECTOR(15 DOWNTO 0);
             v_b      : IN  STD_LOGIC_VECTOR(15 DOWNTO 0);
             v_c      : IN  STD_LOGIC_VECTOR(15 DOWNTO 0);
-            v_alpha  : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-            v_beta   : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+            v_alpha  : OUT SIGNED(31 DOWNTO 0);
+            v_beta   : OUT SIGNED(31 DOWNTO 0)
         );
     END COMPONENT;
 
     COMPONENT vector_processor IS
+        GENERIC( 
+            iterations : INTEGER := 8
+        );
         PORT(
             clk        : IN  STD_LOGIC;
             reset      : IN  STD_LOGIC;
-            x          : IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
-            y          : IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
-            angle      : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-            magnitude  : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-            sector     : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
-            iterations : IN  INTEGER RANGE 1 TO 16
+            x          : IN  SIGNED(31 DOWNTO 0);
+            y          : IN  SIGNED(31 DOWNTO 0);
+            angle      : OUT SIGNED(31 DOWNTO 0);
+            magnitude  : OUT SIGNED(31 DOWNTO 0);
+            sector     : OUT STD_LOGIC_VECTOR(2 DOWNTO 0)
         );     
     END COMPONENT;
 
@@ -75,13 +77,17 @@ ARCHITECTURE Behavioral OF svpwm IS
             HB3_bot  : OUT STD_LOGIC
         );
     END COMPONENT;
-
-    SIGNAL v_alpha        : STD_LOGIC_VECTOR(31 DOWNTO 0);
-    SIGNAL v_beta         : STD_LOGIC_VECTOR(31 DOWNTO 0);
+    
+    SIGNAL angle_vec        : STD_LOGIC_VECTOR(31 DOWNTO 0);
+    SIGNAL mag_vec        : STD_LOGIC_VECTOR(31 DOWNTO 0);
+    
+    SIGNAL v_alpha        : SIGNED(31 DOWNTO 0);
+    SIGNAL v_beta         : SIGNED(31 DOWNTO 0);
+    
     SIGNAL x              : STD_LOGIC_VECTOR(31 DOWNTO 0);
     SIGNAL y              : STD_LOGIC_VECTOR(31 DOWNTO 0);
-    SIGNAL angle          : STD_LOGIC_VECTOR(31 DOWNTO 0);
-    SIGNAL magnitude      : STD_LOGIC_VECTOR(31 DOWNTO 0);
+    SIGNAL angle          : SIGNED(31 DOWNTO 0);
+    SIGNAL magnitude      : SIGNED(31 DOWNTO 0);
     SIGNAL sector         : STD_LOGIC_VECTOR(2 DOWNTO 0);
     CONSTANT iterations   : INTEGER RANGE 1 TO 16 := 16;
     SIGNAL vref           : STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -91,7 +97,9 @@ ARCHITECTURE Behavioral OF svpwm IS
     SIGNAL sector_delayed : STD_LOGIC_VECTOR(2 DOWNTO 0);
 
 BEGIN
-
+    angle_vec <= STD_LOGIC_VECTOR(angle);
+    mag_vec <= STD_LOGIC_VECTOR(magnitude);
+    
     clarke_inst : clarke_transform
         PORT MAP (
             clk      => clk,
@@ -103,24 +111,27 @@ BEGIN
             v_beta   => v_beta
         );
         
-    vector_processor_inst : vector_processor
-        PORT MAP (
-            clk        => clk,
-            reset      => reset,
-            x          => v_alpha,
-            y          => v_beta,
-            angle      => angle,
-            magnitude  => magnitude,
-            sector     => sector,
-            iterations => iterations
-        );
+    u_vector_proc: vector_processor
+    GENERIC MAP (
+        iterations => 16
+    )
+    PORT MAP (
+        clk => clk,
+        reset => reset,
+        x => v_alpha,
+        y => v_beta,
+        angle => angle,
+        magnitude => magnitude,
+        sector => sector
+    );
+
 
     time_processor_inst : switching_time_processor
         PORT MAP (
             clk            => clk,
             reset          => reset,
-            angle          => angle,
-            Vref           => magnitude,
+            angle          => angle_vec,
+            Vref           => mag_vec,
             sector         => sector,
             T0             => T0,
             T1             => T1,

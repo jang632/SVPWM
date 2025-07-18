@@ -51,6 +51,16 @@ architecture Behavioral of switching_time_processor is
     SIGNAL T2_int : signed(63 DOWNTO 0);
     SIGNAL T1_delay : signed(63 DOWNTO 0);
     
+    SIGNAL T1_mult_reg : signed(63 DOWNTO 0);
+    SIGNAL T1_mult_reg2 : signed(63 DOWNTO 0);
+    SIGNAL T1_slice_reg : signed(31 DOWNTO 0);
+    SIGNAL T1_shift_reg : signed(63 DOWNTO 0);
+    
+    SIGNAL T2_mult_reg : signed(63 DOWNTO 0);
+    SIGNAL T2_mult_reg2 : signed(63 DOWNTO 0);
+    SIGNAL T2_slice_reg : signed(31 DOWNTO 0);
+    SIGNAL T2_shift_reg : signed(63 DOWNTO 0);
+    
     SIGNAL Vref_delay : STD_LOGIC_VECTOR(31 DOWNTO 0);
     
     CONSTANT PI_3 : signed(31 DOWNTO 0)  := x"10c15238";
@@ -94,7 +104,7 @@ shift_reg_vref : shift_register
 shift_reg_sector : shift_register
         generic map (
             data_len => 3,
-            delay_len => 18
+            delay_len => 24
         )
         port map (
             clk        => clk,
@@ -106,14 +116,15 @@ shift_reg_sector : shift_register
 
 PROCESS(clk)
 variable M_Vref : signed(127 DOWNTO 0);
-BEGIN 
-    IF(reset = '1') THEN 
+BEGIN  
+    IF(rising_edge(clk)) THEN 
+     IF(reset = '1') THEN 
         theta <= (others => '0');
         T1_int <= (others => '0');
         T2_int <= (others => '0');
         T1_delay <= (others => '0');
-        STATE <= CALCULATE_T1;         
-    ELSIF(rising_edge(clk)) THEN 
+        STATE <= CALCULATE_T1;
+     ELSE        
         CASE STATE IS
             WHEN CALCULATE_T1 =>
                     IF sector = "001" THEN 
@@ -128,8 +139,13 @@ BEGIN
                         theta <= STD_LOGIC_VECTOR(signed(PI5_3) - signed(angle));
                     ELSIF sector = "110" THEN 
                         theta <= STD_LOGIC_VECTOR(signed(PI2) - signed(angle));
-                    END IF;         
-                    T2_int <= resize(shift_right(signed(Vref_delay) * signed(sin_val) *  M, 22) ,64); --63 bin point
+                    END IF;             
+                    --T2_int <= resize(shift_right(signed(Vref_delay) * signed(sin_val) *  M, 22) ,64); --63 bin point
+                    
+                    T1_mult_reg <= signed(Vref_delay) * signed(sin_val);
+                    T1_slice_reg <= T1_mult_reg(63 DOWNTO 32);
+                    T1_mult_reg2 <= M * T1_slice_reg;
+                    T2_int <= shift_left(T1_mult_reg2,10);
                     STATE <= CALCULATE_T2;
         
             WHEN CALCULATE_T2 =>
@@ -146,15 +162,21 @@ BEGIN
                     ELSIF sector = "110" THEN 
                         theta <= STD_LOGIC_VECTOR(signed(angle) - signed(PI5_3));
                     END IF;
-                    T1_delay <= resize(shift_right(signed(Vref_delay) * signed(sin_val) *  M, 22) ,64); --63 bin point                    
+                    --T1_delay <= resize(shift_right(signed(Vref_delay) * signed(sin_val) *  M, 22) ,64); --63 bin point      
+                    T2_mult_reg <= signed(Vref_delay) * signed(sin_val);
+                    T2_slice_reg <= T2_mult_reg(63 DOWNTO 32);
+                    T2_mult_reg2 <= M * T2_slice_reg;
+                    T2_shift_reg <= shift_left(T2_mult_reg2,10);              
                     STATE <= CALCULATE_T1;
            END CASE;
-        T1_int <= T1_delay;
+        T1_int <= T2_shift_reg;
+           END IF;
     END IF;
 END PROCESS;
-    
-T0 <= Tz - T1_int(63 DOWNTO 0) - T2_int(63 DOWNTO 0);
-T1 <= T1_int(63 DOWNTO 0);
-T2 <= T2_int(63 DOWNTO 0);
+
+  
+T0 <= Tz - T1_int - T2_int;
+T1 <= T1_int;
+T2 <= T2_int;
 
 end Behavioral;
