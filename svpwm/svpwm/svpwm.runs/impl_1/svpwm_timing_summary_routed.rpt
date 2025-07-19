@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date         : Thu Jul 17 17:05:28 2025
+| Date         : Sat Jul 19 01:26:17 2025
 | Host         : DESKTOP-1FUVVL9 running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -report_unconstrained -file svpwm_timing_summary_routed.rpt -pb svpwm_timing_summary_routed.pb -rpx svpwm_timing_summary_routed.rpx -warn_on_violation
 | Design       : svpwm
@@ -44,8 +44,8 @@ Timing Summary Report
 Rule       Severity          Description                  Violations  
 ---------  ----------------  ---------------------------  ----------  
 TIMING-17  Critical Warning  Non-clocked sequential cell  1000        
-DPIR-1     Warning           Asynchronous driver check    185         
-SYNTH-10   Warning           Wide multiplier              43          
+DPIR-1     Warning           Asynchronous driver check    65          
+SYNTH-10   Warning           Wide multiplier              40          
 
 Note: This report is based on the most recent report_methodology run and may not be up-to-date. Run report_methodology on the current design for the latest report.
 
@@ -55,10 +55,10 @@ check_timing report
 
 Table of Contents
 -----------------
-1. checking no_clock (4298)
+1. checking no_clock (3817)
 2. checking constant_clock (0)
 3. checking pulse_width_clock (0)
-4. checking unconstrained_internal_endpoints (8867)
+4. checking unconstrained_internal_endpoints (8242)
 5. checking no_input_delay (49)
 6. checking no_output_delay (6)
 7. checking multiple_clock (0)
@@ -68,9 +68,9 @@ Table of Contents
 11. checking partial_output_delay (0)
 12. checking latch_loops (0)
 
-1. checking no_clock (4298)
+1. checking no_clock (3817)
 ---------------------------
- There are 4298 register/latch pins with no clock driven by root clock pin: clk (HIGH)
+ There are 3817 register/latch pins with no clock driven by root clock pin: clk (HIGH)
 
 
 2. checking constant_clock (0)
@@ -83,9 +83,9 @@ Table of Contents
  There are 0 register/latch pins which need pulse_width check
 
 
-4. checking unconstrained_internal_endpoints (8867)
+4. checking unconstrained_internal_endpoints (8242)
 ---------------------------------------------------
- There are 8867 pins that are not constrained for maximum delay. (HIGH)
+ There are 8242 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
@@ -144,7 +144,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-        inf        0.000                      0                 8855          inf        0.000                      0                 8855           NA           NA                      NA                    NA  
+        inf        0.000                      0                 8248          inf        0.000                      0                 8248           NA           NA                      NA                    NA  
 
 
 There are no user specified timing constraints.
@@ -213,419 +213,842 @@ Path Group:  (none)
 From Clock:  
   To Clock:  
 
-Max Delay          8855 Endpoints
-Min Delay          8855 Endpoints
+Max Delay          8248 Endpoints
+Min Delay          8248 Endpoints
 --------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
 Slack:                    inf
-  Source:                 reset
-                            (input port)
-  Destination:            time_processor_inst/cordic_inst/pipeline_reg[10][pip_theta][15]/CLR
-  Path Group:             (none)
-  Path Type:              Max at Slow Process Corner
-  Data Path Delay:        26.304ns  (logic 0.930ns (3.537%)  route 25.373ns (96.463%))
-  Logic Levels:           1  (IBUF=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    R7                                                0.000     0.000 f  reset (IN)
-                         net (fo=0)                   0.000     0.000    reset
-    R7                   IBUF (Prop_ibuf_I_O)         0.930     0.930 f  reset_IBUF_inst/O
-                         net (fo=4010, routed)       25.373    26.304    time_processor_inst/cordic_inst/reset_IBUF
-    SLICE_X36Y39         FDCE                                         f  time_processor_inst/cordic_inst/pipeline_reg[10][pip_theta][15]/CLR
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 reset
-                            (input port)
-  Destination:            time_processor_inst/cordic_inst/pipeline_reg[10][pip_theta][16]/CLR
-  Path Group:             (none)
-  Path Type:              Max at Slow Process Corner
-  Data Path Delay:        26.304ns  (logic 0.930ns (3.537%)  route 25.373ns (96.463%))
-  Logic Levels:           1  (IBUF=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    R7                                                0.000     0.000 f  reset (IN)
-                         net (fo=0)                   0.000     0.000    reset
-    R7                   IBUF (Prop_ibuf_I_O)         0.930     0.930 f  reset_IBUF_inst/O
-                         net (fo=4010, routed)       25.373    26.304    time_processor_inst/cordic_inst/reset_IBUF
-    SLICE_X36Y39         FDCE                                         f  time_processor_inst/cordic_inst/pipeline_reg[10][pip_theta][16]/CLR
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 time_processor_inst/T2_int_reg[1]/C
-                            (rising edge-triggered cell FDCE)
-  Destination:            driver_inst/HB1/duty_cycle_latch_reg[12]/D
-  Path Group:             (none)
-  Path Type:              Max at Slow Process Corner
-  Data Path Delay:        26.249ns  (logic 13.294ns (50.645%)  route 12.955ns (49.355%))
-  Logic Levels:           28  (CARRY4=17 DSP48E1=3 FDCE=1 LUT3=2 LUT4=3 LUT5=2)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X29Y23         FDCE                         0.000     0.000 r  time_processor_inst/T2_int_reg[1]/C
-    SLICE_X29Y23         FDCE (Prop_fdce_C_Q)         0.456     0.456 r  time_processor_inst/T2_int_reg[1]/Q
-                         net (fo=7, routed)           1.043     1.499    time_processor_inst/T2_int_reg[61]_0[1]
-    SLICE_X25Y23         LUT4 (Prop_lut4_I2_O)        0.124     1.623 r  time_processor_inst/ARG__20_i_35/O
-                         net (fo=1, routed)           0.000     1.623    time_processor_inst/ARG__20_i_35_n_0
-    SLICE_X25Y23         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550     2.173 r  time_processor_inst/ARG__20_i_4/CO[3]
-                         net (fo=1, routed)           0.000     2.173    time_processor_inst/ARG__20_i_4_n_0
-    SLICE_X25Y24         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     2.287 r  time_processor_inst/ARG__20_i_3/CO[3]
-                         net (fo=1, routed)           0.009     2.296    time_processor_inst/ARG__20_i_3_n_0
-    SLICE_X25Y25         CARRY4 (Prop_carry4_CI_O[1])
-                                                      0.334     2.630 r  time_processor_inst/ARG__20_i_2/O[1]
-                         net (fo=6, routed)           1.446     4.077    time_processor_inst/T0[8]
-    SLICE_X24Y23         LUT3 (Prop_lut3_I1_O)        0.331     4.408 r  time_processor_inst/ARG0__1_carry__1_i_3/O
-                         net (fo=2, routed)           0.863     5.270    time_processor_inst/T2_int_reg[10]_0[1]
-    SLICE_X24Y23         LUT4 (Prop_lut4_I3_O)        0.326     5.596 r  time_processor_inst/ARG0__1_carry__1_i_7/O
-                         net (fo=1, routed)           0.000     5.596    driver_inst/ARG__4_3[1]
-    SLICE_X24Y23         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550     6.146 r  driver_inst/ARG0__1_carry__1/CO[3]
-                         net (fo=1, routed)           0.000     6.146    driver_inst/ARG0__1_carry__1_n_0
-    SLICE_X24Y24         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     6.260 r  driver_inst/ARG0__1_carry__2/CO[3]
-                         net (fo=1, routed)           0.009     6.269    driver_inst/ARG0__1_carry__2_n_0
-    SLICE_X24Y25         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     6.383 r  driver_inst/ARG0__1_carry__3/CO[3]
-                         net (fo=1, routed)           0.000     6.383    driver_inst/ARG0__1_carry__3_n_0
-    SLICE_X24Y26         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     6.497 r  driver_inst/ARG0__1_carry__4/CO[3]
-                         net (fo=1, routed)           0.000     6.497    driver_inst/ARG0__1_carry__4_n_0
-    SLICE_X24Y27         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     6.611 r  driver_inst/ARG0__1_carry__5/CO[3]
-                         net (fo=1, routed)           0.000     6.611    driver_inst/ARG0__1_carry__5_n_0
-    SLICE_X24Y28         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     6.725 r  driver_inst/ARG0__1_carry__6/CO[3]
-                         net (fo=1, routed)           0.000     6.725    driver_inst/ARG0__1_carry__6_n_0
-    SLICE_X24Y29         CARRY4 (Prop_carry4_CI_O[0])
-                                                      0.223     6.948 r  driver_inst/ARG0__1_carry__7/O[0]
-                         net (fo=2, routed)           2.802     9.751    driver_inst/ARG0[32]
-    DSP48_X3Y8           DSP48E1 (Prop_dsp48e1_A[15]_PCOUT[47])
-                                                      4.211    13.962 r  driver_inst/ARG__1/PCOUT[47]
-                         net (fo=1, routed)           0.002    13.964    driver_inst/ARG__1_n_106
-    DSP48_X3Y9           DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
-                                                      1.713    15.677 r  driver_inst/ARG__2/PCOUT[47]
-                         net (fo=1, routed)           0.056    15.732    driver_inst/ARG__2_n_106
-    DSP48_X3Y10          DSP48E1 (Prop_dsp48e1_PCIN[47]_P[1])
-                                                      1.518    17.250 r  driver_inst/ARG__3/P[1]
-                         net (fo=3, routed)           1.446    18.697    driver_inst/ARG__3_n_104
-    SLICE_X92Y20         LUT3 (Prop_lut3_I1_O)        0.157    18.854 r  driver_inst/ARG__1_carry__4_i_4/O
-                         net (fo=2, routed)           0.816    19.669    driver_inst/ARG__1_carry__4_i_4_n_0
-    SLICE_X92Y21         LUT4 (Prop_lut4_I3_O)        0.355    20.024 r  driver_inst/ARG__1_carry__4_i_8/O
-                         net (fo=1, routed)           0.000    20.024    driver_inst/ARG__1_carry__4_i_8_n_0
-    SLICE_X92Y21         CARRY4 (Prop_carry4_S[0]_CO[3])
-                                                      0.513    20.537 r  driver_inst/ARG__1_carry__4/CO[3]
-                         net (fo=1, routed)           0.000    20.537    driver_inst/ARG__1_carry__4_n_0
-    SLICE_X92Y22         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117    20.654 r  driver_inst/ARG__1_carry__5/CO[3]
-                         net (fo=1, routed)           0.000    20.654    driver_inst/ARG__1_carry__5_n_0
-    SLICE_X92Y23         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117    20.771 r  driver_inst/ARG__1_carry__6/CO[3]
-                         net (fo=1, routed)           0.000    20.771    driver_inst/ARG__1_carry__6_n_0
-    SLICE_X92Y24         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117    20.888 r  driver_inst/ARG__1_carry__7/CO[3]
-                         net (fo=1, routed)           0.009    20.897    driver_inst/ARG__1_carry__7_n_0
-    SLICE_X92Y25         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117    21.014 r  driver_inst/ARG__1_carry__8/CO[3]
-                         net (fo=1, routed)           0.000    21.014    driver_inst/ARG__1_carry__8_n_0
-    SLICE_X92Y26         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117    21.131 r  driver_inst/ARG__1_carry__9/CO[3]
-                         net (fo=1, routed)           0.000    21.131    driver_inst/ARG__1_carry__9_n_0
-    SLICE_X92Y27         CARRY4 (Prop_carry4_CI_O[2])
-                                                      0.239    21.370 r  driver_inst/ARG__1_carry__10/O[2]
-                         net (fo=3, routed)           3.646    25.016    driver_inst/HB1/data2[12]
-    SLICE_X25Y43         LUT5 (Prop_lut5_I0_O)        0.301    25.317 r  driver_inst/HB1/duty_cycle_latch[12]_i_2/O
-                         net (fo=2, routed)           0.808    26.125    driver_inst/HB1/sig_delay_reg[1]_2
-    SLICE_X26Y43         LUT5 (Prop_lut5_I0_O)        0.124    26.249 r  driver_inst/HB1/duty_cycle_latch[12]_i_1__1/O
-                         net (fo=1, routed)           0.000    26.249    driver_inst/HB1/duty_cycle_HB1[12]
-    SLICE_X26Y43         FDRE                                         r  driver_inst/HB1/duty_cycle_latch_reg[12]/D
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 time_processor_inst/T2_int_reg[1]/C
-                            (rising edge-triggered cell FDCE)
+  Source:                 time_processor_inst/T2_int_reg[10]/C
+                            (rising edge-triggered cell FDRE)
   Destination:            driver_inst/HB2/duty_cycle_latch_reg[15]/D
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        26.186ns  (logic 13.851ns (52.895%)  route 12.335ns (47.105%))
-  Logic Levels:           32  (CARRY4=21 DSP48E1=3 FDCE=1 LUT3=2 LUT4=3 LUT5=1 LUT6=1)
+  Data Path Delay:        22.157ns  (logic 13.344ns (60.224%)  route 8.813ns (39.776%))
+  Logic Levels:           29  (CARRY4=18 DSP48E1=3 FDRE=1 LUT3=2 LUT4=3 LUT5=1 LUT6=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X29Y23         FDCE                         0.000     0.000 r  time_processor_inst/T2_int_reg[1]/C
-    SLICE_X29Y23         FDCE (Prop_fdce_C_Q)         0.456     0.456 r  time_processor_inst/T2_int_reg[1]/Q
-                         net (fo=7, routed)           1.043     1.499    time_processor_inst/T2_int_reg[61]_0[1]
-    SLICE_X25Y23         LUT4 (Prop_lut4_I2_O)        0.124     1.623 r  time_processor_inst/ARG__20_i_35/O
-                         net (fo=1, routed)           0.000     1.623    time_processor_inst/ARG__20_i_35_n_0
-    SLICE_X25Y23         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550     2.173 r  time_processor_inst/ARG__20_i_4/CO[3]
-                         net (fo=1, routed)           0.000     2.173    time_processor_inst/ARG__20_i_4_n_0
-    SLICE_X25Y24         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     2.287 r  time_processor_inst/ARG__20_i_3/CO[3]
-                         net (fo=1, routed)           0.009     2.296    time_processor_inst/ARG__20_i_3_n_0
-    SLICE_X25Y25         CARRY4 (Prop_carry4_CI_O[1])
-                                                      0.334     2.630 r  time_processor_inst/ARG__20_i_2/O[1]
-                         net (fo=6, routed)           1.446     4.077    time_processor_inst/T0[8]
-    SLICE_X24Y23         LUT3 (Prop_lut3_I1_O)        0.331     4.408 r  time_processor_inst/ARG0__1_carry__1_i_3/O
-                         net (fo=2, routed)           0.863     5.270    time_processor_inst/T2_int_reg[10]_0[1]
-    SLICE_X24Y23         LUT4 (Prop_lut4_I3_O)        0.326     5.596 r  time_processor_inst/ARG0__1_carry__1_i_7/O
-                         net (fo=1, routed)           0.000     5.596    driver_inst/ARG__4_3[1]
-    SLICE_X24Y23         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550     6.146 r  driver_inst/ARG0__1_carry__1/CO[3]
-                         net (fo=1, routed)           0.000     6.146    driver_inst/ARG0__1_carry__1_n_0
-    SLICE_X24Y24         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     6.260 r  driver_inst/ARG0__1_carry__2/CO[3]
-                         net (fo=1, routed)           0.009     6.269    driver_inst/ARG0__1_carry__2_n_0
-    SLICE_X24Y25         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     6.383 r  driver_inst/ARG0__1_carry__3/CO[3]
-                         net (fo=1, routed)           0.000     6.383    driver_inst/ARG0__1_carry__3_n_0
-    SLICE_X24Y26         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     6.497 r  driver_inst/ARG0__1_carry__4/CO[3]
-                         net (fo=1, routed)           0.000     6.497    driver_inst/ARG0__1_carry__4_n_0
-    SLICE_X24Y27         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     6.611 r  driver_inst/ARG0__1_carry__5/CO[3]
-                         net (fo=1, routed)           0.000     6.611    driver_inst/ARG0__1_carry__5_n_0
-    SLICE_X24Y28         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     6.725 r  driver_inst/ARG0__1_carry__6/CO[3]
-                         net (fo=1, routed)           0.000     6.725    driver_inst/ARG0__1_carry__6_n_0
-    SLICE_X24Y29         CARRY4 (Prop_carry4_CI_O[0])
-                                                      0.223     6.948 r  driver_inst/ARG0__1_carry__7/O[0]
-                         net (fo=2, routed)           2.802     9.751    driver_inst/ARG0[32]
-    DSP48_X3Y8           DSP48E1 (Prop_dsp48e1_A[15]_PCOUT[47])
-                                                      4.211    13.962 r  driver_inst/ARG__1/PCOUT[47]
-                         net (fo=1, routed)           0.002    13.964    driver_inst/ARG__1_n_106
-    DSP48_X3Y9           DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
-                                                      1.713    15.677 r  driver_inst/ARG__2/PCOUT[47]
-                         net (fo=1, routed)           0.056    15.732    driver_inst/ARG__2_n_106
-    DSP48_X3Y10          DSP48E1 (Prop_dsp48e1_PCIN[47]_P[1])
-                                                      1.518    17.250 r  driver_inst/ARG__3/P[1]
-                         net (fo=3, routed)           1.446    18.697    driver_inst/ARG__3_n_104
-    SLICE_X92Y20         LUT3 (Prop_lut3_I1_O)        0.157    18.854 r  driver_inst/ARG__1_carry__4_i_4/O
-                         net (fo=2, routed)           0.816    19.669    driver_inst/ARG__1_carry__4_i_4_n_0
-    SLICE_X92Y21         LUT4 (Prop_lut4_I3_O)        0.355    20.024 r  driver_inst/ARG__1_carry__4_i_8/O
-                         net (fo=1, routed)           0.000    20.024    driver_inst/ARG__1_carry__4_i_8_n_0
-    SLICE_X92Y21         CARRY4 (Prop_carry4_S[0]_CO[3])
-                                                      0.513    20.537 r  driver_inst/ARG__1_carry__4/CO[3]
-                         net (fo=1, routed)           0.000    20.537    driver_inst/ARG__1_carry__4_n_0
-    SLICE_X92Y22         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117    20.654 r  driver_inst/ARG__1_carry__5/CO[3]
-                         net (fo=1, routed)           0.000    20.654    driver_inst/ARG__1_carry__5_n_0
-    SLICE_X92Y23         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117    20.771 r  driver_inst/ARG__1_carry__6/CO[3]
-                         net (fo=1, routed)           0.000    20.771    driver_inst/ARG__1_carry__6_n_0
-    SLICE_X92Y24         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117    20.888 r  driver_inst/ARG__1_carry__7/CO[3]
-                         net (fo=1, routed)           0.009    20.897    driver_inst/ARG__1_carry__7_n_0
-    SLICE_X92Y25         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117    21.014 r  driver_inst/ARG__1_carry__8/CO[3]
-                         net (fo=1, routed)           0.000    21.014    driver_inst/ARG__1_carry__8_n_0
-    SLICE_X92Y26         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117    21.131 r  driver_inst/ARG__1_carry__9/CO[3]
-                         net (fo=1, routed)           0.000    21.131    driver_inst/ARG__1_carry__9_n_0
-    SLICE_X92Y27         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117    21.248 r  driver_inst/ARG__1_carry__10/CO[3]
-                         net (fo=1, routed)           0.000    21.248    driver_inst/ARG__1_carry__10_n_0
-    SLICE_X92Y28         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117    21.365 r  driver_inst/ARG__1_carry__11/CO[3]
-                         net (fo=1, routed)           0.000    21.365    driver_inst/ARG__1_carry__11_n_0
-    SLICE_X92Y29         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117    21.482 r  driver_inst/ARG__1_carry__12/CO[3]
-                         net (fo=1, routed)           0.000    21.482    driver_inst/ARG__1_carry__12_n_0
-    SLICE_X92Y30         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117    21.599 r  driver_inst/ARG__1_carry__13/CO[3]
-                         net (fo=1, routed)           0.000    21.599    driver_inst/ARG__1_carry__13_n_0
-    SLICE_X92Y31         CARRY4 (Prop_carry4_CI_O[1])
-                                                      0.323    21.922 r  driver_inst/ARG__1_carry__14/O[1]
-                         net (fo=3, routed)           2.894    24.816    driver_inst/HB1/data2[15]
-    SLICE_X26Y43         LUT5 (Prop_lut5_I0_O)        0.306    25.122 r  driver_inst/HB1/duty_cycle_latch[15]_i_5__0/O
-                         net (fo=2, routed)           0.940    26.062    time_processor_inst/shift_reg_sector/duty_cycle_latch_reg[15]
-    SLICE_X25Y44         LUT6 (Prop_lut6_I5_O)        0.124    26.186 r  time_processor_inst/shift_reg_sector/duty_cycle_latch[15]_i_2/O
-                         net (fo=1, routed)           0.000    26.186    driver_inst/HB2/D[15]
-    SLICE_X25Y44         FDRE                                         r  driver_inst/HB2/duty_cycle_latch_reg[15]/D
+    SLICE_X24Y25         FDRE                         0.000     0.000 r  time_processor_inst/T2_int_reg[10]/C
+    SLICE_X24Y25         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  time_processor_inst/T2_int_reg[10]/Q
+                         net (fo=7, routed)           1.879     2.335    time_processor_inst/T2_int_reg[63]_0[0]
+    SLICE_X16Y26         LUT4 (Prop_lut4_I1_O)        0.124     2.459 r  time_processor_inst/ARG__20_i_9/O
+                         net (fo=1, routed)           0.000     2.459    time_processor_inst/ARG__20_i_9_n_0
+    SLICE_X16Y26         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     2.972 r  time_processor_inst/ARG__20_i_1/CO[3]
+                         net (fo=1, routed)           0.000     2.972    time_processor_inst/ARG__20_i_1_n_0
+    SLICE_X16Y27         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     3.089 r  time_processor_inst/ARG__17_i_5/CO[3]
+                         net (fo=1, routed)           0.000     3.089    time_processor_inst/ARG__17_i_5_n_0
+    SLICE_X16Y28         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     3.206 r  time_processor_inst/ARG__17_i_4/CO[3]
+                         net (fo=1, routed)           0.000     3.206    time_processor_inst/ARG__17_i_4_n_0
+    SLICE_X16Y29         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.323     3.529 r  time_processor_inst/ARG__17_i_3/O[1]
+                         net (fo=6, routed)           1.443     4.971    time_processor_inst/T0[13]
+    SLICE_X15Y25         LUT3 (Prop_lut3_I1_O)        0.334     5.305 r  time_processor_inst/ARG0__0_carry__2_i_3/O
+                         net (fo=2, routed)           0.723     6.029    time_processor_inst/T2_int_reg[25]_1[1]
+    SLICE_X15Y25         LUT4 (Prop_lut4_I3_O)        0.326     6.355 r  time_processor_inst/ARG0__0_carry__2_i_7/O
+                         net (fo=1, routed)           0.000     6.355    driver_inst/ARG__6_5[1]
+    SLICE_X15Y25         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     6.905 r  driver_inst/ARG0__0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     6.905    driver_inst/ARG0__0_carry__2_n_0
+    SLICE_X15Y26         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.019 r  driver_inst/ARG0__0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     7.019    driver_inst/ARG0__0_carry__3_n_0
+    SLICE_X15Y27         CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.239     7.258 r  driver_inst/ARG0__0_carry__4/O[2]
+                         net (fo=2, routed)           0.963     8.221    driver_inst/ARG0[33]
+    DSP48_X1Y9           DSP48E1 (Prop_dsp48e1_A[16]_PCOUT[47])
+                                                      4.214    12.435 r  driver_inst/ARG__1/PCOUT[47]
+                         net (fo=1, routed)           0.056    12.490    driver_inst/ARG__1_n_106
+    DSP48_X1Y10          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.713    14.203 r  driver_inst/ARG__2/PCOUT[47]
+                         net (fo=1, routed)           0.002    14.205    driver_inst/ARG__2_n_106
+    DSP48_X1Y11          DSP48E1 (Prop_dsp48e1_PCIN[47]_P[3])
+                                                      1.518    15.723 r  driver_inst/ARG__3/P[3]
+                         net (fo=2, routed)           1.193    16.916    driver_inst/ARG__3_n_102
+    SLICE_X20Y30         LUT3 (Prop_lut3_I1_O)        0.152    17.068 r  driver_inst/ARG__1_carry__4_i_2/O
+                         net (fo=2, routed)           0.859    17.928    driver_inst/ARG__1_carry__4_i_2_n_0
+    SLICE_X20Y30         LUT4 (Prop_lut4_I3_O)        0.348    18.276 r  driver_inst/ARG__1_carry__4_i_6/O
+                         net (fo=1, routed)           0.000    18.276    driver_inst/ARG__1_carry__4_i_6_n_0
+    SLICE_X20Y30         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.380    18.656 r  driver_inst/ARG__1_carry__4/CO[3]
+                         net (fo=1, routed)           0.000    18.656    driver_inst/ARG__1_carry__4_n_0
+    SLICE_X20Y31         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    18.773 r  driver_inst/ARG__1_carry__5/CO[3]
+                         net (fo=1, routed)           0.000    18.773    driver_inst/ARG__1_carry__5_n_0
+    SLICE_X20Y32         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    18.890 r  driver_inst/ARG__1_carry__6/CO[3]
+                         net (fo=1, routed)           0.000    18.890    driver_inst/ARG__1_carry__6_n_0
+    SLICE_X20Y33         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    19.007 r  driver_inst/ARG__1_carry__7/CO[3]
+                         net (fo=1, routed)           0.000    19.007    driver_inst/ARG__1_carry__7_n_0
+    SLICE_X20Y34         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    19.124 r  driver_inst/ARG__1_carry__8/CO[3]
+                         net (fo=1, routed)           0.000    19.124    driver_inst/ARG__1_carry__8_n_0
+    SLICE_X20Y35         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    19.241 r  driver_inst/ARG__1_carry__9/CO[3]
+                         net (fo=1, routed)           0.000    19.241    driver_inst/ARG__1_carry__9_n_0
+    SLICE_X20Y36         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    19.358 r  driver_inst/ARG__1_carry__10/CO[3]
+                         net (fo=1, routed)           0.000    19.358    driver_inst/ARG__1_carry__10_n_0
+    SLICE_X20Y37         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    19.475 r  driver_inst/ARG__1_carry__11/CO[3]
+                         net (fo=1, routed)           0.000    19.475    driver_inst/ARG__1_carry__11_n_0
+    SLICE_X20Y38         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    19.592 r  driver_inst/ARG__1_carry__12/CO[3]
+                         net (fo=1, routed)           0.000    19.592    driver_inst/ARG__1_carry__12_n_0
+    SLICE_X20Y39         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    19.709 r  driver_inst/ARG__1_carry__13/CO[3]
+                         net (fo=1, routed)           0.000    19.709    driver_inst/ARG__1_carry__13_n_0
+    SLICE_X20Y40         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.323    20.032 r  driver_inst/ARG__1_carry__14/O[1]
+                         net (fo=3, routed)           0.666    20.697    driver_inst/HB1/data2[15]
+    SLICE_X21Y42         LUT5 (Prop_lut5_I0_O)        0.306    21.003 r  driver_inst/HB1/duty_cycle_latch[15]_i_5__0/O
+                         net (fo=2, routed)           1.030    22.033    time_processor_inst/shift_reg_sector/duty_cycle_latch_reg[15]
+    SLICE_X21Y41         LUT6 (Prop_lut6_I5_O)        0.124    22.157 r  time_processor_inst/shift_reg_sector/duty_cycle_latch[15]_i_2/O
+                         net (fo=1, routed)           0.000    22.157    driver_inst/HB2/D[15]
+    SLICE_X21Y41         FDRE                                         r  driver_inst/HB2/duty_cycle_latch_reg[15]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 reset
-                            (input port)
-  Destination:            time_processor_inst/cordic_inst/pipeline_reg[10][pip_theta][17]/CLR
+  Source:                 time_processor_inst/T2_int_reg[10]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            driver_inst/HB1/duty_cycle_latch_reg[6]/D
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        26.163ns  (logic 0.930ns (3.556%)  route 25.233ns (96.444%))
-  Logic Levels:           1  (IBUF=1)
+  Data Path Delay:        22.111ns  (logic 12.644ns (57.184%)  route 9.467ns (42.816%))
+  Logic Levels:           24  (CARRY4=13 DSP48E1=3 FDRE=1 LUT3=2 LUT4=3 LUT5=2)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    R7                                                0.000     0.000 f  reset (IN)
-                         net (fo=0)                   0.000     0.000    reset
-    R7                   IBUF (Prop_ibuf_I_O)         0.930     0.930 f  reset_IBUF_inst/O
-                         net (fo=4010, routed)       25.233    26.163    time_processor_inst/cordic_inst/reset_IBUF
-    SLICE_X36Y40         FDCE                                         f  time_processor_inst/cordic_inst/pipeline_reg[10][pip_theta][17]/CLR
+    SLICE_X24Y25         FDRE                         0.000     0.000 r  time_processor_inst/T2_int_reg[10]/C
+    SLICE_X24Y25         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  time_processor_inst/T2_int_reg[10]/Q
+                         net (fo=7, routed)           1.879     2.335    time_processor_inst/T2_int_reg[63]_0[0]
+    SLICE_X16Y26         LUT4 (Prop_lut4_I1_O)        0.124     2.459 r  time_processor_inst/ARG__20_i_9/O
+                         net (fo=1, routed)           0.000     2.459    time_processor_inst/ARG__20_i_9_n_0
+    SLICE_X16Y26         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     2.972 r  time_processor_inst/ARG__20_i_1/CO[3]
+                         net (fo=1, routed)           0.000     2.972    time_processor_inst/ARG__20_i_1_n_0
+    SLICE_X16Y27         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     3.089 r  time_processor_inst/ARG__17_i_5/CO[3]
+                         net (fo=1, routed)           0.000     3.089    time_processor_inst/ARG__17_i_5_n_0
+    SLICE_X16Y28         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     3.206 r  time_processor_inst/ARG__17_i_4/CO[3]
+                         net (fo=1, routed)           0.000     3.206    time_processor_inst/ARG__17_i_4_n_0
+    SLICE_X16Y29         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.323     3.529 r  time_processor_inst/ARG__17_i_3/O[1]
+                         net (fo=6, routed)           1.443     4.971    time_processor_inst/T0[13]
+    SLICE_X15Y25         LUT3 (Prop_lut3_I1_O)        0.334     5.305 r  time_processor_inst/ARG0__0_carry__2_i_3/O
+                         net (fo=2, routed)           0.723     6.029    time_processor_inst/T2_int_reg[25]_1[1]
+    SLICE_X15Y25         LUT4 (Prop_lut4_I3_O)        0.326     6.355 r  time_processor_inst/ARG0__0_carry__2_i_7/O
+                         net (fo=1, routed)           0.000     6.355    driver_inst/ARG__6_5[1]
+    SLICE_X15Y25         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     6.905 r  driver_inst/ARG0__0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     6.905    driver_inst/ARG0__0_carry__2_n_0
+    SLICE_X15Y26         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.019 r  driver_inst/ARG0__0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     7.019    driver_inst/ARG0__0_carry__3_n_0
+    SLICE_X15Y27         CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.239     7.258 r  driver_inst/ARG0__0_carry__4/O[2]
+                         net (fo=2, routed)           0.963     8.221    driver_inst/ARG0[33]
+    DSP48_X1Y9           DSP48E1 (Prop_dsp48e1_A[16]_PCOUT[47])
+                                                      4.214    12.435 r  driver_inst/ARG__1/PCOUT[47]
+                         net (fo=1, routed)           0.056    12.490    driver_inst/ARG__1_n_106
+    DSP48_X1Y10          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.713    14.203 r  driver_inst/ARG__2/PCOUT[47]
+                         net (fo=1, routed)           0.002    14.205    driver_inst/ARG__2_n_106
+    DSP48_X1Y11          DSP48E1 (Prop_dsp48e1_PCIN[47]_P[3])
+                                                      1.518    15.723 r  driver_inst/ARG__3/P[3]
+                         net (fo=2, routed)           1.193    16.916    driver_inst/ARG__3_n_102
+    SLICE_X20Y30         LUT3 (Prop_lut3_I1_O)        0.152    17.068 r  driver_inst/ARG__1_carry__4_i_2/O
+                         net (fo=2, routed)           0.859    17.928    driver_inst/ARG__1_carry__4_i_2_n_0
+    SLICE_X20Y30         LUT4 (Prop_lut4_I3_O)        0.348    18.276 r  driver_inst/ARG__1_carry__4_i_6/O
+                         net (fo=1, routed)           0.000    18.276    driver_inst/ARG__1_carry__4_i_6_n_0
+    SLICE_X20Y30         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.380    18.656 r  driver_inst/ARG__1_carry__4/CO[3]
+                         net (fo=1, routed)           0.000    18.656    driver_inst/ARG__1_carry__4_n_0
+    SLICE_X20Y31         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    18.773 r  driver_inst/ARG__1_carry__5/CO[3]
+                         net (fo=1, routed)           0.000    18.773    driver_inst/ARG__1_carry__5_n_0
+    SLICE_X20Y32         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    18.890 r  driver_inst/ARG__1_carry__6/CO[3]
+                         net (fo=1, routed)           0.000    18.890    driver_inst/ARG__1_carry__6_n_0
+    SLICE_X20Y33         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    19.007 r  driver_inst/ARG__1_carry__7/CO[3]
+                         net (fo=1, routed)           0.000    19.007    driver_inst/ARG__1_carry__7_n_0
+    SLICE_X20Y34         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    19.124 r  driver_inst/ARG__1_carry__8/CO[3]
+                         net (fo=1, routed)           0.000    19.124    driver_inst/ARG__1_carry__8_n_0
+    SLICE_X20Y35         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.219    19.343 r  driver_inst/ARG__1_carry__9/O[0]
+                         net (fo=3, routed)           1.398    20.741    driver_inst/HB1/data2[6]
+    SLICE_X25Y41         LUT5 (Prop_lut5_I0_O)        0.295    21.036 r  driver_inst/HB1/duty_cycle_latch[6]_i_2/O
+                         net (fo=2, routed)           0.951    21.987    driver_inst/HB1/sig_delay_reg[1]_8
+    SLICE_X26Y39         LUT5 (Prop_lut5_I0_O)        0.124    22.111 r  driver_inst/HB1/duty_cycle_latch[6]_i_1__1/O
+                         net (fo=1, routed)           0.000    22.111    driver_inst/HB1/duty_cycle_HB1[6]
+    SLICE_X26Y39         FDRE                                         r  driver_inst/HB1/duty_cycle_latch_reg[6]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 reset
-                            (input port)
-  Destination:            time_processor_inst/cordic_inst/pipeline_reg[10][pip_theta][18]/CLR
+  Source:                 time_processor_inst/T2_int_reg[10]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            driver_inst/HB1/duty_cycle_latch_reg[14]/D
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        26.163ns  (logic 0.930ns (3.556%)  route 25.233ns (96.444%))
-  Logic Levels:           1  (IBUF=1)
+  Data Path Delay:        21.892ns  (logic 12.878ns (58.824%)  route 9.014ns (41.176%))
+  Logic Levels:           26  (CARRY4=15 DSP48E1=3 FDRE=1 LUT3=2 LUT4=3 LUT5=2)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    R7                                                0.000     0.000 f  reset (IN)
-                         net (fo=0)                   0.000     0.000    reset
-    R7                   IBUF (Prop_ibuf_I_O)         0.930     0.930 f  reset_IBUF_inst/O
-                         net (fo=4010, routed)       25.233    26.163    time_processor_inst/cordic_inst/reset_IBUF
-    SLICE_X36Y40         FDCE                                         f  time_processor_inst/cordic_inst/pipeline_reg[10][pip_theta][18]/CLR
+    SLICE_X24Y25         FDRE                         0.000     0.000 r  time_processor_inst/T2_int_reg[10]/C
+    SLICE_X24Y25         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  time_processor_inst/T2_int_reg[10]/Q
+                         net (fo=7, routed)           1.879     2.335    time_processor_inst/T2_int_reg[63]_0[0]
+    SLICE_X16Y26         LUT4 (Prop_lut4_I1_O)        0.124     2.459 r  time_processor_inst/ARG__20_i_9/O
+                         net (fo=1, routed)           0.000     2.459    time_processor_inst/ARG__20_i_9_n_0
+    SLICE_X16Y26         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     2.972 r  time_processor_inst/ARG__20_i_1/CO[3]
+                         net (fo=1, routed)           0.000     2.972    time_processor_inst/ARG__20_i_1_n_0
+    SLICE_X16Y27         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     3.089 r  time_processor_inst/ARG__17_i_5/CO[3]
+                         net (fo=1, routed)           0.000     3.089    time_processor_inst/ARG__17_i_5_n_0
+    SLICE_X16Y28         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     3.206 r  time_processor_inst/ARG__17_i_4/CO[3]
+                         net (fo=1, routed)           0.000     3.206    time_processor_inst/ARG__17_i_4_n_0
+    SLICE_X16Y29         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.323     3.529 r  time_processor_inst/ARG__17_i_3/O[1]
+                         net (fo=6, routed)           1.443     4.971    time_processor_inst/T0[13]
+    SLICE_X15Y25         LUT3 (Prop_lut3_I1_O)        0.334     5.305 r  time_processor_inst/ARG0__0_carry__2_i_3/O
+                         net (fo=2, routed)           0.723     6.029    time_processor_inst/T2_int_reg[25]_1[1]
+    SLICE_X15Y25         LUT4 (Prop_lut4_I3_O)        0.326     6.355 r  time_processor_inst/ARG0__0_carry__2_i_7/O
+                         net (fo=1, routed)           0.000     6.355    driver_inst/ARG__6_5[1]
+    SLICE_X15Y25         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     6.905 r  driver_inst/ARG0__0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     6.905    driver_inst/ARG0__0_carry__2_n_0
+    SLICE_X15Y26         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.019 r  driver_inst/ARG0__0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     7.019    driver_inst/ARG0__0_carry__3_n_0
+    SLICE_X15Y27         CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.239     7.258 r  driver_inst/ARG0__0_carry__4/O[2]
+                         net (fo=2, routed)           0.963     8.221    driver_inst/ARG0[33]
+    DSP48_X1Y9           DSP48E1 (Prop_dsp48e1_A[16]_PCOUT[47])
+                                                      4.214    12.435 r  driver_inst/ARG__1/PCOUT[47]
+                         net (fo=1, routed)           0.056    12.490    driver_inst/ARG__1_n_106
+    DSP48_X1Y10          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.713    14.203 r  driver_inst/ARG__2/PCOUT[47]
+                         net (fo=1, routed)           0.002    14.205    driver_inst/ARG__2_n_106
+    DSP48_X1Y11          DSP48E1 (Prop_dsp48e1_PCIN[47]_P[3])
+                                                      1.518    15.723 r  driver_inst/ARG__3/P[3]
+                         net (fo=2, routed)           1.193    16.916    driver_inst/ARG__3_n_102
+    SLICE_X20Y30         LUT3 (Prop_lut3_I1_O)        0.152    17.068 r  driver_inst/ARG__1_carry__4_i_2/O
+                         net (fo=2, routed)           0.859    17.928    driver_inst/ARG__1_carry__4_i_2_n_0
+    SLICE_X20Y30         LUT4 (Prop_lut4_I3_O)        0.348    18.276 r  driver_inst/ARG__1_carry__4_i_6/O
+                         net (fo=1, routed)           0.000    18.276    driver_inst/ARG__1_carry__4_i_6_n_0
+    SLICE_X20Y30         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.380    18.656 r  driver_inst/ARG__1_carry__4/CO[3]
+                         net (fo=1, routed)           0.000    18.656    driver_inst/ARG__1_carry__4_n_0
+    SLICE_X20Y31         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    18.773 r  driver_inst/ARG__1_carry__5/CO[3]
+                         net (fo=1, routed)           0.000    18.773    driver_inst/ARG__1_carry__5_n_0
+    SLICE_X20Y32         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    18.890 r  driver_inst/ARG__1_carry__6/CO[3]
+                         net (fo=1, routed)           0.000    18.890    driver_inst/ARG__1_carry__6_n_0
+    SLICE_X20Y33         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    19.007 r  driver_inst/ARG__1_carry__7/CO[3]
+                         net (fo=1, routed)           0.000    19.007    driver_inst/ARG__1_carry__7_n_0
+    SLICE_X20Y34         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    19.124 r  driver_inst/ARG__1_carry__8/CO[3]
+                         net (fo=1, routed)           0.000    19.124    driver_inst/ARG__1_carry__8_n_0
+    SLICE_X20Y35         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    19.241 r  driver_inst/ARG__1_carry__9/CO[3]
+                         net (fo=1, routed)           0.000    19.241    driver_inst/ARG__1_carry__9_n_0
+    SLICE_X20Y36         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    19.358 r  driver_inst/ARG__1_carry__10/CO[3]
+                         net (fo=1, routed)           0.000    19.358    driver_inst/ARG__1_carry__10_n_0
+    SLICE_X20Y37         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.219    19.577 r  driver_inst/ARG__1_carry__11/O[0]
+                         net (fo=3, routed)           1.043    20.619    driver_inst/HB1/data2[14]
+    SLICE_X20Y42         LUT5 (Prop_lut5_I0_O)        0.295    20.914 r  driver_inst/HB1/duty_cycle_latch[14]_i_2/O
+                         net (fo=2, routed)           0.854    21.768    driver_inst/HB1/sig_delay_reg[1]_0
+    SLICE_X22Y41         LUT5 (Prop_lut5_I0_O)        0.124    21.892 r  driver_inst/HB1/duty_cycle_latch[14]_i_1__1/O
+                         net (fo=1, routed)           0.000    21.892    driver_inst/HB1/duty_cycle_HB1[14]
+    SLICE_X22Y41         FDRE                                         r  driver_inst/HB1/duty_cycle_latch_reg[14]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 reset
-                            (input port)
-  Destination:            time_processor_inst/cordic_inst/pipeline_reg[10][pip_theta][19]/CLR
+  Source:                 time_processor_inst/T2_int_reg[10]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            driver_inst/HB2/duty_cycle_latch_reg[14]/D
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        26.163ns  (logic 0.930ns (3.556%)  route 25.233ns (96.444%))
-  Logic Levels:           1  (IBUF=1)
+  Data Path Delay:        21.858ns  (logic 12.878ns (58.915%)  route 8.980ns (41.085%))
+  Logic Levels:           26  (CARRY4=15 DSP48E1=3 FDRE=1 LUT3=2 LUT4=3 LUT5=1 LUT6=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    R7                                                0.000     0.000 f  reset (IN)
-                         net (fo=0)                   0.000     0.000    reset
-    R7                   IBUF (Prop_ibuf_I_O)         0.930     0.930 f  reset_IBUF_inst/O
-                         net (fo=4010, routed)       25.233    26.163    time_processor_inst/cordic_inst/reset_IBUF
-    SLICE_X36Y40         FDCE                                         f  time_processor_inst/cordic_inst/pipeline_reg[10][pip_theta][19]/CLR
+    SLICE_X24Y25         FDRE                         0.000     0.000 r  time_processor_inst/T2_int_reg[10]/C
+    SLICE_X24Y25         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  time_processor_inst/T2_int_reg[10]/Q
+                         net (fo=7, routed)           1.879     2.335    time_processor_inst/T2_int_reg[63]_0[0]
+    SLICE_X16Y26         LUT4 (Prop_lut4_I1_O)        0.124     2.459 r  time_processor_inst/ARG__20_i_9/O
+                         net (fo=1, routed)           0.000     2.459    time_processor_inst/ARG__20_i_9_n_0
+    SLICE_X16Y26         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     2.972 r  time_processor_inst/ARG__20_i_1/CO[3]
+                         net (fo=1, routed)           0.000     2.972    time_processor_inst/ARG__20_i_1_n_0
+    SLICE_X16Y27         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     3.089 r  time_processor_inst/ARG__17_i_5/CO[3]
+                         net (fo=1, routed)           0.000     3.089    time_processor_inst/ARG__17_i_5_n_0
+    SLICE_X16Y28         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     3.206 r  time_processor_inst/ARG__17_i_4/CO[3]
+                         net (fo=1, routed)           0.000     3.206    time_processor_inst/ARG__17_i_4_n_0
+    SLICE_X16Y29         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.323     3.529 r  time_processor_inst/ARG__17_i_3/O[1]
+                         net (fo=6, routed)           1.443     4.971    time_processor_inst/T0[13]
+    SLICE_X15Y25         LUT3 (Prop_lut3_I1_O)        0.334     5.305 r  time_processor_inst/ARG0__0_carry__2_i_3/O
+                         net (fo=2, routed)           0.723     6.029    time_processor_inst/T2_int_reg[25]_1[1]
+    SLICE_X15Y25         LUT4 (Prop_lut4_I3_O)        0.326     6.355 r  time_processor_inst/ARG0__0_carry__2_i_7/O
+                         net (fo=1, routed)           0.000     6.355    driver_inst/ARG__6_5[1]
+    SLICE_X15Y25         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     6.905 r  driver_inst/ARG0__0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     6.905    driver_inst/ARG0__0_carry__2_n_0
+    SLICE_X15Y26         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.019 r  driver_inst/ARG0__0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     7.019    driver_inst/ARG0__0_carry__3_n_0
+    SLICE_X15Y27         CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.239     7.258 r  driver_inst/ARG0__0_carry__4/O[2]
+                         net (fo=2, routed)           0.963     8.221    driver_inst/ARG0[33]
+    DSP48_X1Y9           DSP48E1 (Prop_dsp48e1_A[16]_PCOUT[47])
+                                                      4.214    12.435 r  driver_inst/ARG__1/PCOUT[47]
+                         net (fo=1, routed)           0.056    12.490    driver_inst/ARG__1_n_106
+    DSP48_X1Y10          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.713    14.203 r  driver_inst/ARG__2/PCOUT[47]
+                         net (fo=1, routed)           0.002    14.205    driver_inst/ARG__2_n_106
+    DSP48_X1Y11          DSP48E1 (Prop_dsp48e1_PCIN[47]_P[3])
+                                                      1.518    15.723 r  driver_inst/ARG__3/P[3]
+                         net (fo=2, routed)           1.193    16.916    driver_inst/ARG__3_n_102
+    SLICE_X20Y30         LUT3 (Prop_lut3_I1_O)        0.152    17.068 r  driver_inst/ARG__1_carry__4_i_2/O
+                         net (fo=2, routed)           0.859    17.928    driver_inst/ARG__1_carry__4_i_2_n_0
+    SLICE_X20Y30         LUT4 (Prop_lut4_I3_O)        0.348    18.276 r  driver_inst/ARG__1_carry__4_i_6/O
+                         net (fo=1, routed)           0.000    18.276    driver_inst/ARG__1_carry__4_i_6_n_0
+    SLICE_X20Y30         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.380    18.656 r  driver_inst/ARG__1_carry__4/CO[3]
+                         net (fo=1, routed)           0.000    18.656    driver_inst/ARG__1_carry__4_n_0
+    SLICE_X20Y31         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    18.773 r  driver_inst/ARG__1_carry__5/CO[3]
+                         net (fo=1, routed)           0.000    18.773    driver_inst/ARG__1_carry__5_n_0
+    SLICE_X20Y32         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    18.890 r  driver_inst/ARG__1_carry__6/CO[3]
+                         net (fo=1, routed)           0.000    18.890    driver_inst/ARG__1_carry__6_n_0
+    SLICE_X20Y33         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    19.007 r  driver_inst/ARG__1_carry__7/CO[3]
+                         net (fo=1, routed)           0.000    19.007    driver_inst/ARG__1_carry__7_n_0
+    SLICE_X20Y34         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    19.124 r  driver_inst/ARG__1_carry__8/CO[3]
+                         net (fo=1, routed)           0.000    19.124    driver_inst/ARG__1_carry__8_n_0
+    SLICE_X20Y35         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    19.241 r  driver_inst/ARG__1_carry__9/CO[3]
+                         net (fo=1, routed)           0.000    19.241    driver_inst/ARG__1_carry__9_n_0
+    SLICE_X20Y36         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    19.358 r  driver_inst/ARG__1_carry__10/CO[3]
+                         net (fo=1, routed)           0.000    19.358    driver_inst/ARG__1_carry__10_n_0
+    SLICE_X20Y37         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.219    19.577 r  driver_inst/ARG__1_carry__11/O[0]
+                         net (fo=3, routed)           1.043    20.619    driver_inst/HB1/data2[14]
+    SLICE_X20Y42         LUT5 (Prop_lut5_I0_O)        0.295    20.914 r  driver_inst/HB1/duty_cycle_latch[14]_i_2/O
+                         net (fo=2, routed)           0.820    21.734    time_processor_inst/shift_reg_sector/duty_cycle_latch_reg[14]
+    SLICE_X21Y41         LUT6 (Prop_lut6_I5_O)        0.124    21.858 r  time_processor_inst/shift_reg_sector/duty_cycle_latch[14]_i_1/O
+                         net (fo=1, routed)           0.000    21.858    driver_inst/HB2/D[14]
+    SLICE_X21Y41         FDRE                                         r  driver_inst/HB2/duty_cycle_latch_reg[14]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 reset
-                            (input port)
-  Destination:            time_processor_inst/cordic_inst/pipeline_reg[10][pip_theta][20]/CLR
+  Source:                 time_processor_inst/T2_int_reg[10]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            driver_inst/HB1/duty_cycle_latch_reg[9]/D
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        26.163ns  (logic 0.930ns (3.556%)  route 25.233ns (96.444%))
-  Logic Levels:           1  (IBUF=1)
+  Data Path Delay:        21.857ns  (logic 12.752ns (58.342%)  route 9.105ns (41.658%))
+  Logic Levels:           24  (CARRY4=13 DSP48E1=3 FDRE=1 LUT3=2 LUT4=3 LUT5=2)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    R7                                                0.000     0.000 f  reset (IN)
-                         net (fo=0)                   0.000     0.000    reset
-    R7                   IBUF (Prop_ibuf_I_O)         0.930     0.930 f  reset_IBUF_inst/O
-                         net (fo=4010, routed)       25.233    26.163    time_processor_inst/cordic_inst/reset_IBUF
-    SLICE_X36Y40         FDCE                                         f  time_processor_inst/cordic_inst/pipeline_reg[10][pip_theta][20]/CLR
+    SLICE_X24Y25         FDRE                         0.000     0.000 r  time_processor_inst/T2_int_reg[10]/C
+    SLICE_X24Y25         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  time_processor_inst/T2_int_reg[10]/Q
+                         net (fo=7, routed)           1.879     2.335    time_processor_inst/T2_int_reg[63]_0[0]
+    SLICE_X16Y26         LUT4 (Prop_lut4_I1_O)        0.124     2.459 r  time_processor_inst/ARG__20_i_9/O
+                         net (fo=1, routed)           0.000     2.459    time_processor_inst/ARG__20_i_9_n_0
+    SLICE_X16Y26         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     2.972 r  time_processor_inst/ARG__20_i_1/CO[3]
+                         net (fo=1, routed)           0.000     2.972    time_processor_inst/ARG__20_i_1_n_0
+    SLICE_X16Y27         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     3.089 r  time_processor_inst/ARG__17_i_5/CO[3]
+                         net (fo=1, routed)           0.000     3.089    time_processor_inst/ARG__17_i_5_n_0
+    SLICE_X16Y28         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     3.206 r  time_processor_inst/ARG__17_i_4/CO[3]
+                         net (fo=1, routed)           0.000     3.206    time_processor_inst/ARG__17_i_4_n_0
+    SLICE_X16Y29         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.323     3.529 r  time_processor_inst/ARG__17_i_3/O[1]
+                         net (fo=6, routed)           1.443     4.971    time_processor_inst/T0[13]
+    SLICE_X15Y25         LUT3 (Prop_lut3_I1_O)        0.334     5.305 r  time_processor_inst/ARG0__0_carry__2_i_3/O
+                         net (fo=2, routed)           0.723     6.029    time_processor_inst/T2_int_reg[25]_1[1]
+    SLICE_X15Y25         LUT4 (Prop_lut4_I3_O)        0.326     6.355 r  time_processor_inst/ARG0__0_carry__2_i_7/O
+                         net (fo=1, routed)           0.000     6.355    driver_inst/ARG__6_5[1]
+    SLICE_X15Y25         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     6.905 r  driver_inst/ARG0__0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     6.905    driver_inst/ARG0__0_carry__2_n_0
+    SLICE_X15Y26         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.019 r  driver_inst/ARG0__0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     7.019    driver_inst/ARG0__0_carry__3_n_0
+    SLICE_X15Y27         CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.239     7.258 r  driver_inst/ARG0__0_carry__4/O[2]
+                         net (fo=2, routed)           0.963     8.221    driver_inst/ARG0[33]
+    DSP48_X1Y9           DSP48E1 (Prop_dsp48e1_A[16]_PCOUT[47])
+                                                      4.214    12.435 r  driver_inst/ARG__1/PCOUT[47]
+                         net (fo=1, routed)           0.056    12.490    driver_inst/ARG__1_n_106
+    DSP48_X1Y10          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.713    14.203 r  driver_inst/ARG__2/PCOUT[47]
+                         net (fo=1, routed)           0.002    14.205    driver_inst/ARG__2_n_106
+    DSP48_X1Y11          DSP48E1 (Prop_dsp48e1_PCIN[47]_P[3])
+                                                      1.518    15.723 r  driver_inst/ARG__3/P[3]
+                         net (fo=2, routed)           1.193    16.916    driver_inst/ARG__3_n_102
+    SLICE_X20Y30         LUT3 (Prop_lut3_I1_O)        0.152    17.068 r  driver_inst/ARG__1_carry__4_i_2/O
+                         net (fo=2, routed)           0.859    17.928    driver_inst/ARG__1_carry__4_i_2_n_0
+    SLICE_X20Y30         LUT4 (Prop_lut4_I3_O)        0.348    18.276 r  driver_inst/ARG__1_carry__4_i_6/O
+                         net (fo=1, routed)           0.000    18.276    driver_inst/ARG__1_carry__4_i_6_n_0
+    SLICE_X20Y30         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.380    18.656 r  driver_inst/ARG__1_carry__4/CO[3]
+                         net (fo=1, routed)           0.000    18.656    driver_inst/ARG__1_carry__4_n_0
+    SLICE_X20Y31         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    18.773 r  driver_inst/ARG__1_carry__5/CO[3]
+                         net (fo=1, routed)           0.000    18.773    driver_inst/ARG__1_carry__5_n_0
+    SLICE_X20Y32         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    18.890 r  driver_inst/ARG__1_carry__6/CO[3]
+                         net (fo=1, routed)           0.000    18.890    driver_inst/ARG__1_carry__6_n_0
+    SLICE_X20Y33         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    19.007 r  driver_inst/ARG__1_carry__7/CO[3]
+                         net (fo=1, routed)           0.000    19.007    driver_inst/ARG__1_carry__7_n_0
+    SLICE_X20Y34         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    19.124 r  driver_inst/ARG__1_carry__8/CO[3]
+                         net (fo=1, routed)           0.000    19.124    driver_inst/ARG__1_carry__8_n_0
+    SLICE_X20Y35         CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.315    19.439 r  driver_inst/ARG__1_carry__9/O[3]
+                         net (fo=3, routed)           1.319    20.757    driver_inst/HB1/data2[9]
+    SLICE_X22Y41         LUT5 (Prop_lut5_I0_O)        0.307    21.064 r  driver_inst/HB1/duty_cycle_latch[9]_i_2/O
+                         net (fo=2, routed)           0.669    21.733    driver_inst/HB1/sig_delay_reg[1]_5
+    SLICE_X22Y40         LUT5 (Prop_lut5_I0_O)        0.124    21.857 r  driver_inst/HB1/duty_cycle_latch[9]_i_1__1/O
+                         net (fo=1, routed)           0.000    21.857    driver_inst/HB1/duty_cycle_HB1[9]
+    SLICE_X22Y40         FDRE                                         r  driver_inst/HB1/duty_cycle_latch_reg[9]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 time_processor_inst/T2_int_reg[1]/C
-                            (rising edge-triggered cell FDCE)
-  Destination:            driver_inst/HB2/duty_cycle_latch_reg[9]/D
+  Source:                 time_processor_inst/T2_int_reg[10]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            driver_inst/HB1/duty_cycle_latch_reg[13]/D
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        26.056ns  (logic 13.259ns (50.887%)  route 12.797ns (49.113%))
-  Logic Levels:           27  (CARRY4=16 DSP48E1=3 FDCE=1 LUT3=2 LUT4=3 LUT5=1 LUT6=1)
+  Data Path Delay:        21.813ns  (logic 12.869ns (58.997%)  route 8.944ns (41.003%))
+  Logic Levels:           25  (CARRY4=14 DSP48E1=3 FDRE=1 LUT3=2 LUT4=3 LUT5=2)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X29Y23         FDCE                         0.000     0.000 r  time_processor_inst/T2_int_reg[1]/C
-    SLICE_X29Y23         FDCE (Prop_fdce_C_Q)         0.456     0.456 r  time_processor_inst/T2_int_reg[1]/Q
-                         net (fo=7, routed)           1.043     1.499    time_processor_inst/T2_int_reg[61]_0[1]
-    SLICE_X25Y23         LUT4 (Prop_lut4_I2_O)        0.124     1.623 r  time_processor_inst/ARG__20_i_35/O
-                         net (fo=1, routed)           0.000     1.623    time_processor_inst/ARG__20_i_35_n_0
-    SLICE_X25Y23         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550     2.173 r  time_processor_inst/ARG__20_i_4/CO[3]
-                         net (fo=1, routed)           0.000     2.173    time_processor_inst/ARG__20_i_4_n_0
-    SLICE_X25Y24         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     2.287 r  time_processor_inst/ARG__20_i_3/CO[3]
-                         net (fo=1, routed)           0.009     2.296    time_processor_inst/ARG__20_i_3_n_0
-    SLICE_X25Y25         CARRY4 (Prop_carry4_CI_O[1])
-                                                      0.334     2.630 r  time_processor_inst/ARG__20_i_2/O[1]
-                         net (fo=6, routed)           1.446     4.077    time_processor_inst/T0[8]
-    SLICE_X24Y23         LUT3 (Prop_lut3_I1_O)        0.331     4.408 r  time_processor_inst/ARG0__1_carry__1_i_3/O
-                         net (fo=2, routed)           0.863     5.270    time_processor_inst/T2_int_reg[10]_0[1]
-    SLICE_X24Y23         LUT4 (Prop_lut4_I3_O)        0.326     5.596 r  time_processor_inst/ARG0__1_carry__1_i_7/O
-                         net (fo=1, routed)           0.000     5.596    driver_inst/ARG__4_3[1]
-    SLICE_X24Y23         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550     6.146 r  driver_inst/ARG0__1_carry__1/CO[3]
-                         net (fo=1, routed)           0.000     6.146    driver_inst/ARG0__1_carry__1_n_0
-    SLICE_X24Y24         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     6.260 r  driver_inst/ARG0__1_carry__2/CO[3]
-                         net (fo=1, routed)           0.009     6.269    driver_inst/ARG0__1_carry__2_n_0
-    SLICE_X24Y25         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     6.383 r  driver_inst/ARG0__1_carry__3/CO[3]
-                         net (fo=1, routed)           0.000     6.383    driver_inst/ARG0__1_carry__3_n_0
-    SLICE_X24Y26         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     6.497 r  driver_inst/ARG0__1_carry__4/CO[3]
-                         net (fo=1, routed)           0.000     6.497    driver_inst/ARG0__1_carry__4_n_0
-    SLICE_X24Y27         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     6.611 r  driver_inst/ARG0__1_carry__5/CO[3]
-                         net (fo=1, routed)           0.000     6.611    driver_inst/ARG0__1_carry__5_n_0
-    SLICE_X24Y28         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     6.725 r  driver_inst/ARG0__1_carry__6/CO[3]
-                         net (fo=1, routed)           0.000     6.725    driver_inst/ARG0__1_carry__6_n_0
-    SLICE_X24Y29         CARRY4 (Prop_carry4_CI_O[0])
-                                                      0.223     6.948 r  driver_inst/ARG0__1_carry__7/O[0]
-                         net (fo=2, routed)           2.802     9.751    driver_inst/ARG0[32]
-    DSP48_X3Y8           DSP48E1 (Prop_dsp48e1_A[15]_PCOUT[47])
-                                                      4.211    13.962 r  driver_inst/ARG__1/PCOUT[47]
-                         net (fo=1, routed)           0.002    13.964    driver_inst/ARG__1_n_106
-    DSP48_X3Y9           DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
-                                                      1.713    15.677 r  driver_inst/ARG__2/PCOUT[47]
-                         net (fo=1, routed)           0.056    15.732    driver_inst/ARG__2_n_106
-    DSP48_X3Y10          DSP48E1 (Prop_dsp48e1_PCIN[47]_P[1])
-                                                      1.518    17.250 r  driver_inst/ARG__3/P[1]
-                         net (fo=3, routed)           1.446    18.697    driver_inst/ARG__3_n_104
-    SLICE_X92Y20         LUT3 (Prop_lut3_I1_O)        0.157    18.854 r  driver_inst/ARG__1_carry__4_i_4/O
-                         net (fo=2, routed)           0.816    19.669    driver_inst/ARG__1_carry__4_i_4_n_0
-    SLICE_X92Y21         LUT4 (Prop_lut4_I3_O)        0.355    20.024 r  driver_inst/ARG__1_carry__4_i_8/O
-                         net (fo=1, routed)           0.000    20.024    driver_inst/ARG__1_carry__4_i_8_n_0
-    SLICE_X92Y21         CARRY4 (Prop_carry4_S[0]_CO[3])
-                                                      0.513    20.537 r  driver_inst/ARG__1_carry__4/CO[3]
-                         net (fo=1, routed)           0.000    20.537    driver_inst/ARG__1_carry__4_n_0
-    SLICE_X92Y22         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117    20.654 r  driver_inst/ARG__1_carry__5/CO[3]
-                         net (fo=1, routed)           0.000    20.654    driver_inst/ARG__1_carry__5_n_0
-    SLICE_X92Y23         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117    20.771 r  driver_inst/ARG__1_carry__6/CO[3]
-                         net (fo=1, routed)           0.000    20.771    driver_inst/ARG__1_carry__6_n_0
-    SLICE_X92Y24         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117    20.888 r  driver_inst/ARG__1_carry__7/CO[3]
-                         net (fo=1, routed)           0.009    20.897    driver_inst/ARG__1_carry__7_n_0
-    SLICE_X92Y25         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.117    21.014 r  driver_inst/ARG__1_carry__8/CO[3]
-                         net (fo=1, routed)           0.000    21.014    driver_inst/ARG__1_carry__8_n_0
-    SLICE_X92Y26         CARRY4 (Prop_carry4_CI_O[3])
-                                                      0.315    21.329 r  driver_inst/ARG__1_carry__9/O[3]
-                         net (fo=3, routed)           3.343    24.672    driver_inst/HB1/data2[9]
-    SLICE_X24Y43         LUT5 (Prop_lut5_I0_O)        0.307    24.979 r  driver_inst/HB1/duty_cycle_latch[9]_i_2/O
-                         net (fo=2, routed)           0.953    25.932    time_processor_inst/shift_reg_sector/duty_cycle_latch_reg[9]
-    SLICE_X25Y42         LUT6 (Prop_lut6_I5_O)        0.124    26.056 r  time_processor_inst/shift_reg_sector/duty_cycle_latch[9]_i_1/O
-                         net (fo=1, routed)           0.000    26.056    driver_inst/HB2/D[9]
-    SLICE_X25Y42         FDRE                                         r  driver_inst/HB2/duty_cycle_latch_reg[9]/D
+    SLICE_X24Y25         FDRE                         0.000     0.000 r  time_processor_inst/T2_int_reg[10]/C
+    SLICE_X24Y25         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  time_processor_inst/T2_int_reg[10]/Q
+                         net (fo=7, routed)           1.879     2.335    time_processor_inst/T2_int_reg[63]_0[0]
+    SLICE_X16Y26         LUT4 (Prop_lut4_I1_O)        0.124     2.459 r  time_processor_inst/ARG__20_i_9/O
+                         net (fo=1, routed)           0.000     2.459    time_processor_inst/ARG__20_i_9_n_0
+    SLICE_X16Y26         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     2.972 r  time_processor_inst/ARG__20_i_1/CO[3]
+                         net (fo=1, routed)           0.000     2.972    time_processor_inst/ARG__20_i_1_n_0
+    SLICE_X16Y27         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     3.089 r  time_processor_inst/ARG__17_i_5/CO[3]
+                         net (fo=1, routed)           0.000     3.089    time_processor_inst/ARG__17_i_5_n_0
+    SLICE_X16Y28         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     3.206 r  time_processor_inst/ARG__17_i_4/CO[3]
+                         net (fo=1, routed)           0.000     3.206    time_processor_inst/ARG__17_i_4_n_0
+    SLICE_X16Y29         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.323     3.529 r  time_processor_inst/ARG__17_i_3/O[1]
+                         net (fo=6, routed)           1.443     4.971    time_processor_inst/T0[13]
+    SLICE_X15Y25         LUT3 (Prop_lut3_I1_O)        0.334     5.305 r  time_processor_inst/ARG0__0_carry__2_i_3/O
+                         net (fo=2, routed)           0.723     6.029    time_processor_inst/T2_int_reg[25]_1[1]
+    SLICE_X15Y25         LUT4 (Prop_lut4_I3_O)        0.326     6.355 r  time_processor_inst/ARG0__0_carry__2_i_7/O
+                         net (fo=1, routed)           0.000     6.355    driver_inst/ARG__6_5[1]
+    SLICE_X15Y25         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     6.905 r  driver_inst/ARG0__0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     6.905    driver_inst/ARG0__0_carry__2_n_0
+    SLICE_X15Y26         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.019 r  driver_inst/ARG0__0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     7.019    driver_inst/ARG0__0_carry__3_n_0
+    SLICE_X15Y27         CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.239     7.258 r  driver_inst/ARG0__0_carry__4/O[2]
+                         net (fo=2, routed)           0.963     8.221    driver_inst/ARG0[33]
+    DSP48_X1Y9           DSP48E1 (Prop_dsp48e1_A[16]_PCOUT[47])
+                                                      4.214    12.435 r  driver_inst/ARG__1/PCOUT[47]
+                         net (fo=1, routed)           0.056    12.490    driver_inst/ARG__1_n_106
+    DSP48_X1Y10          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.713    14.203 r  driver_inst/ARG__2/PCOUT[47]
+                         net (fo=1, routed)           0.002    14.205    driver_inst/ARG__2_n_106
+    DSP48_X1Y11          DSP48E1 (Prop_dsp48e1_PCIN[47]_P[3])
+                                                      1.518    15.723 r  driver_inst/ARG__3/P[3]
+                         net (fo=2, routed)           1.193    16.916    driver_inst/ARG__3_n_102
+    SLICE_X20Y30         LUT3 (Prop_lut3_I1_O)        0.152    17.068 r  driver_inst/ARG__1_carry__4_i_2/O
+                         net (fo=2, routed)           0.859    17.928    driver_inst/ARG__1_carry__4_i_2_n_0
+    SLICE_X20Y30         LUT4 (Prop_lut4_I3_O)        0.348    18.276 r  driver_inst/ARG__1_carry__4_i_6/O
+                         net (fo=1, routed)           0.000    18.276    driver_inst/ARG__1_carry__4_i_6_n_0
+    SLICE_X20Y30         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.380    18.656 r  driver_inst/ARG__1_carry__4/CO[3]
+                         net (fo=1, routed)           0.000    18.656    driver_inst/ARG__1_carry__4_n_0
+    SLICE_X20Y31         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    18.773 r  driver_inst/ARG__1_carry__5/CO[3]
+                         net (fo=1, routed)           0.000    18.773    driver_inst/ARG__1_carry__5_n_0
+    SLICE_X20Y32         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    18.890 r  driver_inst/ARG__1_carry__6/CO[3]
+                         net (fo=1, routed)           0.000    18.890    driver_inst/ARG__1_carry__6_n_0
+    SLICE_X20Y33         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    19.007 r  driver_inst/ARG__1_carry__7/CO[3]
+                         net (fo=1, routed)           0.000    19.007    driver_inst/ARG__1_carry__7_n_0
+    SLICE_X20Y34         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    19.124 r  driver_inst/ARG__1_carry__8/CO[3]
+                         net (fo=1, routed)           0.000    19.124    driver_inst/ARG__1_carry__8_n_0
+    SLICE_X20Y35         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    19.241 r  driver_inst/ARG__1_carry__9/CO[3]
+                         net (fo=1, routed)           0.000    19.241    driver_inst/ARG__1_carry__9_n_0
+    SLICE_X20Y36         CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.315    19.556 r  driver_inst/ARG__1_carry__10/O[3]
+                         net (fo=3, routed)           0.943    20.499    driver_inst/HB1/data2[13]
+    SLICE_X22Y41         LUT5 (Prop_lut5_I0_O)        0.307    20.806 r  driver_inst/HB1/duty_cycle_latch[13]_i_2/O
+                         net (fo=2, routed)           0.883    21.689    driver_inst/HB1/sig_delay_reg[1]_1
+    SLICE_X22Y40         LUT5 (Prop_lut5_I0_O)        0.124    21.813 r  driver_inst/HB1/duty_cycle_latch[13]_i_1__1/O
+                         net (fo=1, routed)           0.000    21.813    driver_inst/HB1/duty_cycle_HB1[13]
+    SLICE_X22Y40         FDRE                                         r  driver_inst/HB1/duty_cycle_latch_reg[13]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 reset
-                            (input port)
-  Destination:            time_processor_inst/cordic_inst/pipeline_reg[10][pip_theta][21]/CLR
+  Source:                 time_processor_inst/T2_int_reg[10]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            driver_inst/HB3/duty_cycle_latch_reg[15]/D
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        26.012ns  (logic 0.930ns (3.577%)  route 25.082ns (96.423%))
-  Logic Levels:           1  (IBUF=1)
+  Data Path Delay:        21.776ns  (logic 12.922ns (59.342%)  route 8.854ns (40.658%))
+  Logic Levels:           28  (CARRY4=18 DSP48E1=3 FDRE=1 LUT2=1 LUT3=2 LUT4=2 LUT6=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    R7                                                0.000     0.000 f  reset (IN)
-                         net (fo=0)                   0.000     0.000    reset
-    R7                   IBUF (Prop_ibuf_I_O)         0.930     0.930 f  reset_IBUF_inst/O
-                         net (fo=4010, routed)       25.082    26.012    time_processor_inst/cordic_inst/reset_IBUF
-    SLICE_X36Y41         FDCE                                         f  time_processor_inst/cordic_inst/pipeline_reg[10][pip_theta][21]/CLR
+    SLICE_X24Y25         FDRE                         0.000     0.000 r  time_processor_inst/T2_int_reg[10]/C
+    SLICE_X24Y25         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  time_processor_inst/T2_int_reg[10]/Q
+                         net (fo=7, routed)           1.879     2.335    time_processor_inst/T2_int_reg[63]_0[0]
+    SLICE_X16Y26         LUT4 (Prop_lut4_I1_O)        0.124     2.459 r  time_processor_inst/ARG__20_i_9/O
+                         net (fo=1, routed)           0.000     2.459    time_processor_inst/ARG__20_i_9_n_0
+    SLICE_X16Y26         CARRY4 (Prop_carry4_S[0]_O[0])
+                                                      0.252     2.711 r  time_processor_inst/ARG__20_i_1/O[0]
+                         net (fo=6, routed)           1.784     4.495    time_processor_inst/T0[0]
+    SLICE_X13Y31         LUT2 (Prop_lut2_I1_O)        0.295     4.790 r  time_processor_inst/i__carry_i_4/O
+                         net (fo=1, routed)           0.000     4.790    driver_inst/ARG__13_0[0]
+    SLICE_X13Y31         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     5.322 r  driver_inst/ARG0_inferred__0/i__carry/CO[3]
+                         net (fo=1, routed)           0.000     5.322    driver_inst/ARG0_inferred__0/i__carry_n_0
+    SLICE_X13Y32         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.436 r  driver_inst/ARG0_inferred__0/i__carry__0/CO[3]
+                         net (fo=1, routed)           0.000     5.436    driver_inst/ARG0_inferred__0/i__carry__0_n_0
+    SLICE_X13Y33         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.550 r  driver_inst/ARG0_inferred__0/i__carry__1/CO[3]
+                         net (fo=1, routed)           0.000     5.550    driver_inst/ARG0_inferred__0/i__carry__1_n_0
+    SLICE_X13Y34         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.664 r  driver_inst/ARG0_inferred__0/i__carry__2/CO[3]
+                         net (fo=1, routed)           0.000     5.664    driver_inst/ARG0_inferred__0/i__carry__2_n_0
+    SLICE_X13Y35         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     5.778 r  driver_inst/ARG0_inferred__0/i__carry__3/CO[3]
+                         net (fo=1, routed)           0.000     5.778    driver_inst/ARG0_inferred__0/i__carry__3_n_0
+    SLICE_X13Y36         CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.313     6.091 r  driver_inst/ARG0_inferred__0/i__carry__4/O[3]
+                         net (fo=2, routed)           1.247     7.337    driver_inst/ARG0_inferred__0/i__carry__4_n_4
+    DSP48_X1Y17          DSP48E1 (Prop_dsp48e1_A[16]_PCOUT[47])
+                                                      4.218    11.555 r  driver_inst/ARG__9/PCOUT[47]
+                         net (fo=1, routed)           0.002    11.557    driver_inst/ARG__9_n_106
+    DSP48_X1Y18          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.713    13.270 r  driver_inst/ARG__10/PCOUT[47]
+                         net (fo=1, routed)           0.002    13.272    driver_inst/ARG__10_n_106
+    DSP48_X1Y19          DSP48E1 (Prop_dsp48e1_PCIN[47]_P[2])
+                                                      1.518    14.790 r  driver_inst/ARG__11/P[2]
+                         net (fo=2, routed)           1.217    16.007    driver_inst/ARG__11_n_103
+    SLICE_X17Y39         LUT3 (Prop_lut3_I1_O)        0.152    16.159 r  driver_inst/i___1_carry__4_i_3/O
+                         net (fo=2, routed)           0.859    17.018    driver_inst/i___1_carry__4_i_3_n_0
+    SLICE_X17Y39         LUT4 (Prop_lut4_I3_O)        0.326    17.344 r  driver_inst/i___1_carry__4_i_7/O
+                         net (fo=1, routed)           0.000    17.344    driver_inst/i___1_carry__4_i_7_n_0
+    SLICE_X17Y39         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    17.894 r  driver_inst/ARG_inferred__0/i___1_carry__4/CO[3]
+                         net (fo=1, routed)           0.000    17.894    driver_inst/ARG_inferred__0/i___1_carry__4_n_0
+    SLICE_X17Y40         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    18.008 r  driver_inst/ARG_inferred__0/i___1_carry__5/CO[3]
+                         net (fo=1, routed)           0.000    18.008    driver_inst/ARG_inferred__0/i___1_carry__5_n_0
+    SLICE_X17Y41         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    18.122 r  driver_inst/ARG_inferred__0/i___1_carry__6/CO[3]
+                         net (fo=1, routed)           0.000    18.122    driver_inst/ARG_inferred__0/i___1_carry__6_n_0
+    SLICE_X17Y42         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    18.236 r  driver_inst/ARG_inferred__0/i___1_carry__7/CO[3]
+                         net (fo=1, routed)           0.000    18.236    driver_inst/ARG_inferred__0/i___1_carry__7_n_0
+    SLICE_X17Y43         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    18.350 r  driver_inst/ARG_inferred__0/i___1_carry__8/CO[3]
+                         net (fo=1, routed)           0.000    18.350    driver_inst/ARG_inferred__0/i___1_carry__8_n_0
+    SLICE_X17Y44         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    18.464 r  driver_inst/ARG_inferred__0/i___1_carry__9/CO[3]
+                         net (fo=1, routed)           0.000    18.464    driver_inst/ARG_inferred__0/i___1_carry__9_n_0
+    SLICE_X17Y45         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    18.578 r  driver_inst/ARG_inferred__0/i___1_carry__10/CO[3]
+                         net (fo=1, routed)           0.000    18.578    driver_inst/ARG_inferred__0/i___1_carry__10_n_0
+    SLICE_X17Y46         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    18.692 r  driver_inst/ARG_inferred__0/i___1_carry__11/CO[3]
+                         net (fo=1, routed)           0.000    18.692    driver_inst/ARG_inferred__0/i___1_carry__11_n_0
+    SLICE_X17Y47         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    18.806 r  driver_inst/ARG_inferred__0/i___1_carry__12/CO[3]
+                         net (fo=1, routed)           0.000    18.806    driver_inst/ARG_inferred__0/i___1_carry__12_n_0
+    SLICE_X17Y48         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    18.920 r  driver_inst/ARG_inferred__0/i___1_carry__13/CO[3]
+                         net (fo=1, routed)           0.000    18.920    driver_inst/ARG_inferred__0/i___1_carry__13_n_0
+    SLICE_X17Y49         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334    19.254 r  driver_inst/ARG_inferred__0/i___1_carry__14/O[1]
+                         net (fo=3, routed)           1.192    20.446    driver_inst/HB1/data3[15]
+    SLICE_X21Y42         LUT3 (Prop_lut3_I2_O)        0.331    20.777 r  driver_inst/HB1/duty_cycle_latch[15]_i_6__0/O
+                         net (fo=2, routed)           0.673    21.450    driver_inst/HB3/duty_cycle_latch_reg[15]_0
+    SLICE_X20Y42         LUT6 (Prop_lut6_I5_O)        0.326    21.776 r  driver_inst/HB3/duty_cycle_latch[15]_i_2__0/O
+                         net (fo=1, routed)           0.000    21.776    driver_inst/HB3/duty_cycle_HB3[15]
+    SLICE_X20Y42         FDRE                                         r  driver_inst/HB3/duty_cycle_latch_reg[15]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 time_processor_inst/T2_int_reg[10]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            driver_inst/HB3/duty_cycle_latch_reg[3]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        21.765ns  (logic 12.656ns (58.150%)  route 9.109ns (41.850%))
+  Logic Levels:           22  (CARRY4=12 DSP48E1=3 FDRE=1 LUT2=1 LUT3=2 LUT4=2 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X24Y25         FDRE                         0.000     0.000 r  time_processor_inst/T2_int_reg[10]/C
+    SLICE_X24Y25         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  time_processor_inst/T2_int_reg[10]/Q
+                         net (fo=7, routed)           1.879     2.335    time_processor_inst/T2_int_reg[63]_0[0]
+    SLICE_X16Y26         LUT4 (Prop_lut4_I1_O)        0.124     2.459 r  time_processor_inst/ARG__20_i_9/O
+                         net (fo=1, routed)           0.000     2.459    time_processor_inst/ARG__20_i_9_n_0
+    SLICE_X16Y26         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     2.972 r  time_processor_inst/ARG__20_i_1/CO[3]
+                         net (fo=1, routed)           0.000     2.972    time_processor_inst/ARG__20_i_1_n_0
+    SLICE_X16Y27         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     3.089 r  time_processor_inst/ARG__17_i_5/CO[3]
+                         net (fo=1, routed)           0.000     3.089    time_processor_inst/ARG__17_i_5_n_0
+    SLICE_X16Y28         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.323     3.412 r  time_processor_inst/ARG__17_i_4/O[1]
+                         net (fo=6, routed)           1.169     4.580    time_processor_inst/T0[9]
+    SLICE_X14Y28         LUT2 (Prop_lut2_I1_O)        0.306     4.886 r  time_processor_inst/i__carry__1_i_3__0/O
+                         net (fo=1, routed)           0.000     4.886    driver_inst/ARG__30_1[1]
+    SLICE_X14Y28         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     5.419 r  driver_inst/ARG0_inferred__1/i__carry__1/CO[3]
+                         net (fo=1, routed)           0.000     5.419    driver_inst/ARG0_inferred__1/i__carry__1_n_0
+    SLICE_X14Y29         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.536 r  driver_inst/ARG0_inferred__1/i__carry__2/CO[3]
+                         net (fo=1, routed)           0.000     5.536    driver_inst/ARG0_inferred__1/i__carry__2_n_0
+    SLICE_X14Y30         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     5.653 r  driver_inst/ARG0_inferred__1/i__carry__3/CO[3]
+                         net (fo=1, routed)           0.000     5.653    driver_inst/ARG0_inferred__1/i__carry__3_n_0
+    SLICE_X14Y31         CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.239     5.892 r  driver_inst/ARG0_inferred__1/i__carry__4/O[2]
+                         net (fo=2, routed)           1.369     7.261    driver_inst/ARG0_inferred__1/i__carry__4_n_5
+    DSP48_X1Y14          DSP48E1 (Prop_dsp48e1_A[15]_PCOUT[47])
+                                                      4.213    11.474 r  driver_inst/ARG__25/PCOUT[47]
+                         net (fo=1, routed)           0.002    11.476    driver_inst/ARG__25_n_106
+    DSP48_X1Y15          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.713    13.189 r  driver_inst/ARG__26/PCOUT[47]
+                         net (fo=1, routed)           0.002    13.191    driver_inst/ARG__26_n_106
+    DSP48_X1Y16          DSP48E1 (Prop_dsp48e1_PCIN[47]_P[2])
+                                                      1.518    14.709 r  driver_inst/ARG__27/P[2]
+                         net (fo=2, routed)           1.391    16.099    driver_inst/ARG__27_n_103
+    SLICE_X11Y36         LUT3 (Prop_lut3_I1_O)        0.152    16.251 r  driver_inst/i___1_carry__4_i_3__1/O
+                         net (fo=2, routed)           0.859    17.110    driver_inst/i___1_carry__4_i_3__1_n_0
+    SLICE_X11Y36         LUT4 (Prop_lut4_I3_O)        0.326    17.436 r  driver_inst/i___1_carry__4_i_7__1/O
+                         net (fo=1, routed)           0.000    17.436    driver_inst/i___1_carry__4_i_7__1_n_0
+    SLICE_X11Y36         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    17.986 r  driver_inst/ARG_inferred__2/i___1_carry__4/CO[3]
+                         net (fo=1, routed)           0.000    17.986    driver_inst/ARG_inferred__2/i___1_carry__4_n_0
+    SLICE_X11Y37         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    18.100 r  driver_inst/ARG_inferred__2/i___1_carry__5/CO[3]
+                         net (fo=1, routed)           0.000    18.100    driver_inst/ARG_inferred__2/i___1_carry__5_n_0
+    SLICE_X11Y38         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    18.214 r  driver_inst/ARG_inferred__2/i___1_carry__6/CO[3]
+                         net (fo=1, routed)           0.000    18.214    driver_inst/ARG_inferred__2/i___1_carry__6_n_0
+    SLICE_X11Y39         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    18.328 r  driver_inst/ARG_inferred__2/i___1_carry__7/CO[3]
+                         net (fo=1, routed)           0.000    18.328    driver_inst/ARG_inferred__2/i___1_carry__7_n_0
+    SLICE_X11Y40         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334    18.662 r  driver_inst/ARG_inferred__2/i___1_carry__8/O[1]
+                         net (fo=2, routed)           1.747    20.409    driver_inst/HB3/data1[3]
+    SLICE_X26Y38         LUT3 (Prop_lut3_I0_O)        0.332    20.741 r  driver_inst/HB3/duty_cycle_latch[3]_i_2__0/O
+                         net (fo=1, routed)           0.692    21.434    driver_inst/HB3/duty_cycle_latch[3]_i_2__0_n_0
+    SLICE_X26Y38         LUT6 (Prop_lut6_I3_O)        0.331    21.765 r  driver_inst/HB3/duty_cycle_latch[3]_i_1__0/O
+                         net (fo=1, routed)           0.000    21.765    driver_inst/HB3/duty_cycle_HB3[3]
+    SLICE_X26Y38         FDRE                                         r  driver_inst/HB3/duty_cycle_latch_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 time_processor_inst/T2_int_reg[10]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            driver_inst/HB2/duty_cycle_latch_reg[11]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        21.751ns  (logic 12.876ns (59.196%)  route 8.875ns (40.804%))
+  Logic Levels:           25  (CARRY4=14 DSP48E1=3 FDRE=1 LUT3=2 LUT4=3 LUT5=1 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X24Y25         FDRE                         0.000     0.000 r  time_processor_inst/T2_int_reg[10]/C
+    SLICE_X24Y25         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  time_processor_inst/T2_int_reg[10]/Q
+                         net (fo=7, routed)           1.879     2.335    time_processor_inst/T2_int_reg[63]_0[0]
+    SLICE_X16Y26         LUT4 (Prop_lut4_I1_O)        0.124     2.459 r  time_processor_inst/ARG__20_i_9/O
+                         net (fo=1, routed)           0.000     2.459    time_processor_inst/ARG__20_i_9_n_0
+    SLICE_X16Y26         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     2.972 r  time_processor_inst/ARG__20_i_1/CO[3]
+                         net (fo=1, routed)           0.000     2.972    time_processor_inst/ARG__20_i_1_n_0
+    SLICE_X16Y27         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     3.089 r  time_processor_inst/ARG__17_i_5/CO[3]
+                         net (fo=1, routed)           0.000     3.089    time_processor_inst/ARG__17_i_5_n_0
+    SLICE_X16Y28         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     3.206 r  time_processor_inst/ARG__17_i_4/CO[3]
+                         net (fo=1, routed)           0.000     3.206    time_processor_inst/ARG__17_i_4_n_0
+    SLICE_X16Y29         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.323     3.529 r  time_processor_inst/ARG__17_i_3/O[1]
+                         net (fo=6, routed)           1.443     4.971    time_processor_inst/T0[13]
+    SLICE_X15Y25         LUT3 (Prop_lut3_I1_O)        0.334     5.305 r  time_processor_inst/ARG0__0_carry__2_i_3/O
+                         net (fo=2, routed)           0.723     6.029    time_processor_inst/T2_int_reg[25]_1[1]
+    SLICE_X15Y25         LUT4 (Prop_lut4_I3_O)        0.326     6.355 r  time_processor_inst/ARG0__0_carry__2_i_7/O
+                         net (fo=1, routed)           0.000     6.355    driver_inst/ARG__6_5[1]
+    SLICE_X15Y25         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     6.905 r  driver_inst/ARG0__0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     6.905    driver_inst/ARG0__0_carry__2_n_0
+    SLICE_X15Y26         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.019 r  driver_inst/ARG0__0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     7.019    driver_inst/ARG0__0_carry__3_n_0
+    SLICE_X15Y27         CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.239     7.258 r  driver_inst/ARG0__0_carry__4/O[2]
+                         net (fo=2, routed)           0.963     8.221    driver_inst/ARG0[33]
+    DSP48_X1Y9           DSP48E1 (Prop_dsp48e1_A[16]_PCOUT[47])
+                                                      4.214    12.435 r  driver_inst/ARG__1/PCOUT[47]
+                         net (fo=1, routed)           0.056    12.490    driver_inst/ARG__1_n_106
+    DSP48_X1Y10          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.713    14.203 r  driver_inst/ARG__2/PCOUT[47]
+                         net (fo=1, routed)           0.002    14.205    driver_inst/ARG__2_n_106
+    DSP48_X1Y11          DSP48E1 (Prop_dsp48e1_PCIN[47]_P[3])
+                                                      1.518    15.723 r  driver_inst/ARG__3/P[3]
+                         net (fo=2, routed)           1.193    16.916    driver_inst/ARG__3_n_102
+    SLICE_X20Y30         LUT3 (Prop_lut3_I1_O)        0.152    17.068 r  driver_inst/ARG__1_carry__4_i_2/O
+                         net (fo=2, routed)           0.859    17.928    driver_inst/ARG__1_carry__4_i_2_n_0
+    SLICE_X20Y30         LUT4 (Prop_lut4_I3_O)        0.348    18.276 r  driver_inst/ARG__1_carry__4_i_6/O
+                         net (fo=1, routed)           0.000    18.276    driver_inst/ARG__1_carry__4_i_6_n_0
+    SLICE_X20Y30         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.380    18.656 r  driver_inst/ARG__1_carry__4/CO[3]
+                         net (fo=1, routed)           0.000    18.656    driver_inst/ARG__1_carry__4_n_0
+    SLICE_X20Y31         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    18.773 r  driver_inst/ARG__1_carry__5/CO[3]
+                         net (fo=1, routed)           0.000    18.773    driver_inst/ARG__1_carry__5_n_0
+    SLICE_X20Y32         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    18.890 r  driver_inst/ARG__1_carry__6/CO[3]
+                         net (fo=1, routed)           0.000    18.890    driver_inst/ARG__1_carry__6_n_0
+    SLICE_X20Y33         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    19.007 r  driver_inst/ARG__1_carry__7/CO[3]
+                         net (fo=1, routed)           0.000    19.007    driver_inst/ARG__1_carry__7_n_0
+    SLICE_X20Y34         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    19.124 r  driver_inst/ARG__1_carry__8/CO[3]
+                         net (fo=1, routed)           0.000    19.124    driver_inst/ARG__1_carry__8_n_0
+    SLICE_X20Y35         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    19.241 r  driver_inst/ARG__1_carry__9/CO[3]
+                         net (fo=1, routed)           0.000    19.241    driver_inst/ARG__1_carry__9_n_0
+    SLICE_X20Y36         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.323    19.564 r  driver_inst/ARG__1_carry__10/O[1]
+                         net (fo=3, routed)           1.165    20.728    driver_inst/HB1/data2[11]
+    SLICE_X24Y42         LUT5 (Prop_lut5_I0_O)        0.306    21.034 r  driver_inst/HB1/duty_cycle_latch[11]_i_2/O
+                         net (fo=2, routed)           0.593    21.627    time_processor_inst/shift_reg_sector/duty_cycle_latch_reg[11]
+    SLICE_X26Y42         LUT6 (Prop_lut6_I5_O)        0.124    21.751 r  time_processor_inst/shift_reg_sector/duty_cycle_latch[11]_i_1/O
+                         net (fo=1, routed)           0.000    21.751    driver_inst/HB2/D[11]
+    SLICE_X26Y42         FDRE                                         r  driver_inst/HB2/duty_cycle_latch_reg[11]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 time_processor_inst/T2_int_reg[10]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            driver_inst/HB2/duty_cycle_latch_reg[6]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        21.749ns  (logic 12.644ns (58.135%)  route 9.105ns (41.865%))
+  Logic Levels:           24  (CARRY4=13 DSP48E1=3 FDRE=1 LUT3=2 LUT4=3 LUT5=1 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X24Y25         FDRE                         0.000     0.000 r  time_processor_inst/T2_int_reg[10]/C
+    SLICE_X24Y25         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  time_processor_inst/T2_int_reg[10]/Q
+                         net (fo=7, routed)           1.879     2.335    time_processor_inst/T2_int_reg[63]_0[0]
+    SLICE_X16Y26         LUT4 (Prop_lut4_I1_O)        0.124     2.459 r  time_processor_inst/ARG__20_i_9/O
+                         net (fo=1, routed)           0.000     2.459    time_processor_inst/ARG__20_i_9_n_0
+    SLICE_X16Y26         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     2.972 r  time_processor_inst/ARG__20_i_1/CO[3]
+                         net (fo=1, routed)           0.000     2.972    time_processor_inst/ARG__20_i_1_n_0
+    SLICE_X16Y27         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     3.089 r  time_processor_inst/ARG__17_i_5/CO[3]
+                         net (fo=1, routed)           0.000     3.089    time_processor_inst/ARG__17_i_5_n_0
+    SLICE_X16Y28         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     3.206 r  time_processor_inst/ARG__17_i_4/CO[3]
+                         net (fo=1, routed)           0.000     3.206    time_processor_inst/ARG__17_i_4_n_0
+    SLICE_X16Y29         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.323     3.529 r  time_processor_inst/ARG__17_i_3/O[1]
+                         net (fo=6, routed)           1.443     4.971    time_processor_inst/T0[13]
+    SLICE_X15Y25         LUT3 (Prop_lut3_I1_O)        0.334     5.305 r  time_processor_inst/ARG0__0_carry__2_i_3/O
+                         net (fo=2, routed)           0.723     6.029    time_processor_inst/T2_int_reg[25]_1[1]
+    SLICE_X15Y25         LUT4 (Prop_lut4_I3_O)        0.326     6.355 r  time_processor_inst/ARG0__0_carry__2_i_7/O
+                         net (fo=1, routed)           0.000     6.355    driver_inst/ARG__6_5[1]
+    SLICE_X15Y25         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     6.905 r  driver_inst/ARG0__0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     6.905    driver_inst/ARG0__0_carry__2_n_0
+    SLICE_X15Y26         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     7.019 r  driver_inst/ARG0__0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     7.019    driver_inst/ARG0__0_carry__3_n_0
+    SLICE_X15Y27         CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.239     7.258 r  driver_inst/ARG0__0_carry__4/O[2]
+                         net (fo=2, routed)           0.963     8.221    driver_inst/ARG0[33]
+    DSP48_X1Y9           DSP48E1 (Prop_dsp48e1_A[16]_PCOUT[47])
+                                                      4.214    12.435 r  driver_inst/ARG__1/PCOUT[47]
+                         net (fo=1, routed)           0.056    12.490    driver_inst/ARG__1_n_106
+    DSP48_X1Y10          DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[47])
+                                                      1.713    14.203 r  driver_inst/ARG__2/PCOUT[47]
+                         net (fo=1, routed)           0.002    14.205    driver_inst/ARG__2_n_106
+    DSP48_X1Y11          DSP48E1 (Prop_dsp48e1_PCIN[47]_P[3])
+                                                      1.518    15.723 r  driver_inst/ARG__3/P[3]
+                         net (fo=2, routed)           1.193    16.916    driver_inst/ARG__3_n_102
+    SLICE_X20Y30         LUT3 (Prop_lut3_I1_O)        0.152    17.068 r  driver_inst/ARG__1_carry__4_i_2/O
+                         net (fo=2, routed)           0.859    17.928    driver_inst/ARG__1_carry__4_i_2_n_0
+    SLICE_X20Y30         LUT4 (Prop_lut4_I3_O)        0.348    18.276 r  driver_inst/ARG__1_carry__4_i_6/O
+                         net (fo=1, routed)           0.000    18.276    driver_inst/ARG__1_carry__4_i_6_n_0
+    SLICE_X20Y30         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.380    18.656 r  driver_inst/ARG__1_carry__4/CO[3]
+                         net (fo=1, routed)           0.000    18.656    driver_inst/ARG__1_carry__4_n_0
+    SLICE_X20Y31         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    18.773 r  driver_inst/ARG__1_carry__5/CO[3]
+                         net (fo=1, routed)           0.000    18.773    driver_inst/ARG__1_carry__5_n_0
+    SLICE_X20Y32         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    18.890 r  driver_inst/ARG__1_carry__6/CO[3]
+                         net (fo=1, routed)           0.000    18.890    driver_inst/ARG__1_carry__6_n_0
+    SLICE_X20Y33         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    19.007 r  driver_inst/ARG__1_carry__7/CO[3]
+                         net (fo=1, routed)           0.000    19.007    driver_inst/ARG__1_carry__7_n_0
+    SLICE_X20Y34         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    19.124 r  driver_inst/ARG__1_carry__8/CO[3]
+                         net (fo=1, routed)           0.000    19.124    driver_inst/ARG__1_carry__8_n_0
+    SLICE_X20Y35         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.219    19.343 r  driver_inst/ARG__1_carry__9/O[0]
+                         net (fo=3, routed)           1.398    20.741    driver_inst/HB1/data2[6]
+    SLICE_X25Y41         LUT5 (Prop_lut5_I0_O)        0.295    21.036 r  driver_inst/HB1/duty_cycle_latch[6]_i_2/O
+                         net (fo=2, routed)           0.589    21.625    time_processor_inst/shift_reg_sector/duty_cycle_latch_reg[6]
+    SLICE_X27Y40         LUT6 (Prop_lut6_I5_O)        0.124    21.749 r  time_processor_inst/shift_reg_sector/duty_cycle_latch[6]_i_1/O
+                         net (fo=1, routed)           0.000    21.749    driver_inst/HB2/D[6]
+    SLICE_X27Y40         FDRE                                         r  driver_inst/HB2/duty_cycle_latch_reg[6]/D
   -------------------------------------------------------------------    -------------------
 
 
@@ -635,173 +1058,163 @@ Slack:                    inf
 Min Delay Paths
 --------------------------------------------------------------------------------------
 Slack:                    inf
-  Source:                 time_processor_inst/T1_delay_reg[52]/C
-                            (rising edge-triggered cell FDCE)
-  Destination:            time_processor_inst/T1_int_reg[52]/D
+  Source:                 clarke_inst/mult_reg_4_reg/BCOUT[0]
+                            (internal pin)
+  Destination:            clarke_inst/v_beta_reg/BCIN[0]
   Path Group:             (none)
-  Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.227ns  (logic 0.141ns (62.202%)  route 0.086ns (37.798%))
-  Logic Levels:           1  (FDCE=1)
+  Path Type:              Min at Slow Process Corner
+  Data Path Delay:        0.002ns  (logic 0.000ns (0.000%)  route 0.002ns (100.000%))
+  Logic Levels:           0  
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X28Y33         FDCE                         0.000     0.000 r  time_processor_inst/T1_delay_reg[52]/C
-    SLICE_X28Y33         FDCE (Prop_fdce_C_Q)         0.141     0.141 r  time_processor_inst/T1_delay_reg[52]/Q
-                         net (fo=1, routed)           0.086     0.227    time_processor_inst/T1_delay[52]
-    SLICE_X29Y33         FDCE                                         r  time_processor_inst/T1_int_reg[52]/D
+    DSP48_X0Y5           DSP48E1                      0.000     0.000 r  clarke_inst/mult_reg_4_reg/BCOUT[0]
+                         net (fo=1, routed)           0.002     0.002    clarke_inst/mult_reg_4_reg_n_23
+    DSP48_X0Y6           DSP48E1                                      r  clarke_inst/v_beta_reg/BCIN[0]
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 vector_processor_inst/magnitude_int_reg[12]/C
-                            (rising edge-triggered cell FDRE)
-  Destination:            vector_processor_inst/magnitude_reg[10]/D
+  Source:                 clarke_inst/mult_reg_4_reg/BCOUT[10]
+                            (internal pin)
+  Destination:            clarke_inst/v_beta_reg/BCIN[10]
   Path Group:             (none)
-  Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.228ns  (logic 0.141ns (61.814%)  route 0.087ns (38.186%))
-  Logic Levels:           1  (FDRE=1)
+  Path Type:              Min at Slow Process Corner
+  Data Path Delay:        0.002ns  (logic 0.000ns (0.000%)  route 0.002ns (100.000%))
+  Logic Levels:           0  
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X13Y21         FDRE                         0.000     0.000 r  vector_processor_inst/magnitude_int_reg[12]/C
-    SLICE_X13Y21         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  vector_processor_inst/magnitude_int_reg[12]/Q
-                         net (fo=1, routed)           0.087     0.228    vector_processor_inst/magnitude_int[12]
-    SLICE_X12Y21         FDRE                                         r  vector_processor_inst/magnitude_reg[10]/D
+    DSP48_X0Y5           DSP48E1                      0.000     0.000 r  clarke_inst/mult_reg_4_reg/BCOUT[10]
+                         net (fo=1, routed)           0.002     0.002    clarke_inst/mult_reg_4_reg_n_13
+    DSP48_X0Y6           DSP48E1                                      r  clarke_inst/v_beta_reg/BCIN[10]
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 vector_processor_inst/magnitude_int_reg[4]/C
-                            (rising edge-triggered cell FDRE)
-  Destination:            vector_processor_inst/magnitude_reg[2]/D
+  Source:                 clarke_inst/mult_reg_4_reg/BCOUT[11]
+                            (internal pin)
+  Destination:            clarke_inst/v_beta_reg/BCIN[11]
   Path Group:             (none)
-  Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.228ns  (logic 0.141ns (61.814%)  route 0.087ns (38.186%))
-  Logic Levels:           1  (FDRE=1)
+  Path Type:              Min at Slow Process Corner
+  Data Path Delay:        0.002ns  (logic 0.000ns (0.000%)  route 0.002ns (100.000%))
+  Logic Levels:           0  
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X13Y19         FDRE                         0.000     0.000 r  vector_processor_inst/magnitude_int_reg[4]/C
-    SLICE_X13Y19         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  vector_processor_inst/magnitude_int_reg[4]/Q
-                         net (fo=1, routed)           0.087     0.228    vector_processor_inst/magnitude_int[4]
-    SLICE_X12Y19         FDRE                                         r  vector_processor_inst/magnitude_reg[2]/D
+    DSP48_X0Y5           DSP48E1                      0.000     0.000 r  clarke_inst/mult_reg_4_reg/BCOUT[11]
+                         net (fo=1, routed)           0.002     0.002    clarke_inst/mult_reg_4_reg_n_12
+    DSP48_X0Y6           DSP48E1                                      r  clarke_inst/v_beta_reg/BCIN[11]
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 vector_processor_inst/magnitude_int_reg[8]/C
-                            (rising edge-triggered cell FDRE)
-  Destination:            vector_processor_inst/magnitude_reg[6]/D
+  Source:                 clarke_inst/mult_reg_4_reg/BCOUT[12]
+                            (internal pin)
+  Destination:            clarke_inst/v_beta_reg/BCIN[12]
   Path Group:             (none)
-  Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.228ns  (logic 0.141ns (61.814%)  route 0.087ns (38.186%))
-  Logic Levels:           1  (FDRE=1)
+  Path Type:              Min at Slow Process Corner
+  Data Path Delay:        0.002ns  (logic 0.000ns (0.000%)  route 0.002ns (100.000%))
+  Logic Levels:           0  
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X13Y20         FDRE                         0.000     0.000 r  vector_processor_inst/magnitude_int_reg[8]/C
-    SLICE_X13Y20         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  vector_processor_inst/magnitude_int_reg[8]/Q
-                         net (fo=1, routed)           0.087     0.228    vector_processor_inst/magnitude_int[8]
-    SLICE_X12Y20         FDRE                                         r  vector_processor_inst/magnitude_reg[6]/D
+    DSP48_X0Y5           DSP48E1                      0.000     0.000 r  clarke_inst/mult_reg_4_reg/BCOUT[12]
+                         net (fo=1, routed)           0.002     0.002    clarke_inst/mult_reg_4_reg_n_11
+    DSP48_X0Y6           DSP48E1                                      r  clarke_inst/v_beta_reg/BCIN[12]
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 time_processor_inst/shift_reg_sector/sig_delay_line_reg_c/C
-                            (rising edge-triggered cell FDCE)
-  Destination:            time_processor_inst/shift_reg_sector/sig_delay_line_reg_c_0/D
+  Source:                 clarke_inst/mult_reg_4_reg/BCOUT[13]
+                            (internal pin)
+  Destination:            clarke_inst/v_beta_reg/BCIN[13]
   Path Group:             (none)
-  Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.247ns  (logic 0.128ns (51.736%)  route 0.119ns (48.264%))
-  Logic Levels:           1  (FDCE=1)
+  Path Type:              Min at Slow Process Corner
+  Data Path Delay:        0.002ns  (logic 0.000ns (0.000%)  route 0.002ns (100.000%))
+  Logic Levels:           0  
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X5Y30          FDCE                         0.000     0.000 r  time_processor_inst/shift_reg_sector/sig_delay_line_reg_c/C
-    SLICE_X5Y30          FDCE (Prop_fdce_C_Q)         0.128     0.128 r  time_processor_inst/shift_reg_sector/sig_delay_line_reg_c/Q
-                         net (fo=1, routed)           0.119     0.247    time_processor_inst/shift_reg_sector/sig_delay_line_reg_c_n_0
-    SLICE_X5Y30          FDCE                                         r  time_processor_inst/shift_reg_sector/sig_delay_line_reg_c_0/D
+    DSP48_X0Y5           DSP48E1                      0.000     0.000 r  clarke_inst/mult_reg_4_reg/BCOUT[13]
+                         net (fo=1, routed)           0.002     0.002    clarke_inst/mult_reg_4_reg_n_10
+    DSP48_X0Y6           DSP48E1                                      r  clarke_inst/v_beta_reg/BCIN[13]
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 time_processor_inst/T1_delay_reg[54]/C
-                            (rising edge-triggered cell FDCE)
-  Destination:            time_processor_inst/T1_int_reg[54]/D
+  Source:                 clarke_inst/mult_reg_4_reg/BCOUT[14]
+                            (internal pin)
+  Destination:            clarke_inst/v_beta_reg/BCIN[14]
   Path Group:             (none)
-  Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.253ns  (logic 0.141ns (55.730%)  route 0.112ns (44.270%))
-  Logic Levels:           1  (FDCE=1)
+  Path Type:              Min at Slow Process Corner
+  Data Path Delay:        0.002ns  (logic 0.000ns (0.000%)  route 0.002ns (100.000%))
+  Logic Levels:           0  
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X23Y35         FDCE                         0.000     0.000 r  time_processor_inst/T1_delay_reg[54]/C
-    SLICE_X23Y35         FDCE (Prop_fdce_C_Q)         0.141     0.141 r  time_processor_inst/T1_delay_reg[54]/Q
-                         net (fo=1, routed)           0.112     0.253    time_processor_inst/T1_delay[54]
-    SLICE_X23Y36         FDCE                                         r  time_processor_inst/T1_int_reg[54]/D
+    DSP48_X0Y5           DSP48E1                      0.000     0.000 r  clarke_inst/mult_reg_4_reg/BCOUT[14]
+                         net (fo=1, routed)           0.002     0.002    clarke_inst/mult_reg_4_reg_n_9
+    DSP48_X0Y6           DSP48E1                                      r  clarke_inst/v_beta_reg/BCIN[14]
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 vector_processor_inst/magnitude_reg[9]/C
-                            (rising edge-triggered cell FDRE)
-  Destination:            time_processor_inst/shift_reg_vref/sig_delay_line_reg[14][9]_srl15_time_processor_inst_shift_reg_sector_sig_delay_line_reg_c_13/D
+  Source:                 clarke_inst/mult_reg_4_reg/BCOUT[15]
+                            (internal pin)
+  Destination:            clarke_inst/v_beta_reg/BCIN[15]
   Path Group:             (none)
-  Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.257ns  (logic 0.141ns (54.965%)  route 0.116ns (45.035%))
-  Logic Levels:           1  (FDRE=1)
+  Path Type:              Min at Slow Process Corner
+  Data Path Delay:        0.002ns  (logic 0.000ns (0.000%)  route 0.002ns (100.000%))
+  Logic Levels:           0  
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X11Y6          FDRE                         0.000     0.000 r  vector_processor_inst/magnitude_reg[9]/C
-    SLICE_X11Y6          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  vector_processor_inst/magnitude_reg[9]/Q
-                         net (fo=1, routed)           0.116     0.257    time_processor_inst/shift_reg_vref/Q[9]
-    SLICE_X8Y6           SRL16E                                       r  time_processor_inst/shift_reg_vref/sig_delay_line_reg[14][9]_srl15_time_processor_inst_shift_reg_sector_sig_delay_line_reg_c_13/D
+    DSP48_X0Y5           DSP48E1                      0.000     0.000 r  clarke_inst/mult_reg_4_reg/BCOUT[15]
+                         net (fo=1, routed)           0.002     0.002    clarke_inst/mult_reg_4_reg_n_8
+    DSP48_X0Y6           DSP48E1                                      r  clarke_inst/v_beta_reg/BCIN[15]
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 vector_processor_inst/magnitude_reg[31]/C
-                            (rising edge-triggered cell FDRE)
-  Destination:            time_processor_inst/shift_reg_vref/sig_delay_line_reg[14][31]_srl15_time_processor_inst_shift_reg_sector_sig_delay_line_reg_c_13/D
+  Source:                 clarke_inst/mult_reg_4_reg/BCOUT[16]
+                            (internal pin)
+  Destination:            clarke_inst/v_beta_reg/BCIN[16]
   Path Group:             (none)
-  Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.259ns  (logic 0.141ns (54.389%)  route 0.118ns (45.611%))
-  Logic Levels:           1  (FDRE=1)
+  Path Type:              Min at Slow Process Corner
+  Data Path Delay:        0.002ns  (logic 0.000ns (0.000%)  route 0.002ns (100.000%))
+  Logic Levels:           0  
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X17Y27         FDRE                         0.000     0.000 r  vector_processor_inst/magnitude_reg[31]/C
-    SLICE_X17Y27         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  vector_processor_inst/magnitude_reg[31]/Q
-                         net (fo=1, routed)           0.118     0.259    time_processor_inst/shift_reg_vref/Q[31]
-    SLICE_X12Y27         SRL16E                                       r  time_processor_inst/shift_reg_vref/sig_delay_line_reg[14][31]_srl15_time_processor_inst_shift_reg_sector_sig_delay_line_reg_c_13/D
+    DSP48_X0Y5           DSP48E1                      0.000     0.000 r  clarke_inst/mult_reg_4_reg/BCOUT[16]
+                         net (fo=1, routed)           0.002     0.002    clarke_inst/mult_reg_4_reg_n_7
+    DSP48_X0Y6           DSP48E1                                      r  clarke_inst/v_beta_reg/BCIN[16]
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 vector_processor_inst/magnitude_reg[12]/C
-                            (rising edge-triggered cell FDRE)
-  Destination:            time_processor_inst/shift_reg_vref/sig_delay_line_reg[14][12]_srl15_time_processor_inst_shift_reg_sector_sig_delay_line_reg_c_13/D
+  Source:                 clarke_inst/mult_reg_4_reg/BCOUT[17]
+                            (internal pin)
+  Destination:            clarke_inst/v_beta_reg/BCIN[17]
   Path Group:             (none)
-  Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.263ns  (logic 0.164ns (62.300%)  route 0.099ns (37.700%))
-  Logic Levels:           1  (FDRE=1)
+  Path Type:              Min at Slow Process Corner
+  Data Path Delay:        0.002ns  (logic 0.000ns (0.000%)  route 0.002ns (100.000%))
+  Logic Levels:           0  
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X6Y22          FDRE                         0.000     0.000 r  vector_processor_inst/magnitude_reg[12]/C
-    SLICE_X6Y22          FDRE (Prop_fdre_C_Q)         0.164     0.164 r  vector_processor_inst/magnitude_reg[12]/Q
-                         net (fo=1, routed)           0.099     0.263    time_processor_inst/shift_reg_vref/Q[12]
-    SLICE_X4Y23          SRL16E                                       r  time_processor_inst/shift_reg_vref/sig_delay_line_reg[14][12]_srl15_time_processor_inst_shift_reg_sector_sig_delay_line_reg_c_13/D
+    DSP48_X0Y5           DSP48E1                      0.000     0.000 r  clarke_inst/mult_reg_4_reg/BCOUT[17]
+                         net (fo=1, routed)           0.002     0.002    clarke_inst/mult_reg_4_reg_n_6
+    DSP48_X0Y6           DSP48E1                                      r  clarke_inst/v_beta_reg/BCIN[17]
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 vector_processor_inst/magnitude_reg[18]/C
-                            (rising edge-triggered cell FDRE)
-  Destination:            time_processor_inst/shift_reg_vref/sig_delay_line_reg[14][18]_srl15_time_processor_inst_shift_reg_sector_sig_delay_line_reg_c_13/D
+  Source:                 clarke_inst/mult_reg_4_reg/BCOUT[1]
+                            (internal pin)
+  Destination:            clarke_inst/v_beta_reg/BCIN[1]
   Path Group:             (none)
-  Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.265ns  (logic 0.164ns (61.886%)  route 0.101ns (38.114%))
-  Logic Levels:           1  (FDRE=1)
+  Path Type:              Min at Slow Process Corner
+  Data Path Delay:        0.002ns  (logic 0.000ns (0.000%)  route 0.002ns (100.000%))
+  Logic Levels:           0  
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X6Y23          FDRE                         0.000     0.000 r  vector_processor_inst/magnitude_reg[18]/C
-    SLICE_X6Y23          FDRE (Prop_fdre_C_Q)         0.164     0.164 r  vector_processor_inst/magnitude_reg[18]/Q
-                         net (fo=1, routed)           0.101     0.265    time_processor_inst/shift_reg_vref/Q[18]
-    SLICE_X4Y23          SRL16E                                       r  time_processor_inst/shift_reg_vref/sig_delay_line_reg[14][18]_srl15_time_processor_inst_shift_reg_sector_sig_delay_line_reg_c_13/D
+    DSP48_X0Y5           DSP48E1                      0.000     0.000 r  clarke_inst/mult_reg_4_reg/BCOUT[1]
+                         net (fo=1, routed)           0.002     0.002    clarke_inst/mult_reg_4_reg_n_22
+    DSP48_X0Y6           DSP48E1                                      r  clarke_inst/v_beta_reg/BCIN[1]
   -------------------------------------------------------------------    -------------------
 
 

@@ -1,182 +1,213 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.NUMERIC_STD.ALL;
 
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.NUMERIC_STD.ALL;
-
-entity switching_time_processor is
+ENTITY switching_time_processor IS
     PORT(
-        clk    : IN STD_LOGIC;
-        reset  : IN STD_LOGIC;
-        angle  : IN STD_LOGIC_VECTOR(31 DOWNTO 0); --28 bin point
-        Vref   : IN STD_LOGIC_VECTOR(31 DOWNTO 0); --26 bin point
-        sector : IN STD_LOGIC_VECTOR (2 DOWNTO 0);
-        T0     : OUT signed(63 DOWNTO 0);
-        T1     : OUT signed(63 DOWNTO 0);
-        T2     : OUT signed(63 DOWNTO 0);
-        sector_delayed : OUT STD_LOGIC_VECTOR (2 DOWNTO 0) 
-        );
-end switching_time_processor;
+        clk    : IN  STD_LOGIC;
+        reset  : IN  STD_LOGIC;
+        angle  : IN  SIGNED(31 DOWNTO 0); -- 28 bin point
+        vref   : IN  SIGNED(31 DOWNTO 0); -- 26 bin point
+        sector : IN  STD_LOGIC_VECTOR(2 DOWNTO 0);
+        t0     : OUT SIGNED(63 DOWNTO 0);
+        t1     : OUT SIGNED(63 DOWNTO 0);
+        t2     : OUT SIGNED(63 DOWNTO 0);
+        sector_out : OUT STD_LOGIC_VECTOR(2 DOWNTO 0)
+    );
+END switching_time_processor;
 
-architecture Behavioral of switching_time_processor is
-    component cordic_sin_cos
-        Port (
+ARCHITECTURE behavioral OF switching_time_processor IS
+
+    COMPONENT cordic_sin_cos
+        GENERIC(
+            iterations : INTEGER
+        );
+        PORT(
             clk        : IN  STD_LOGIC;
             reset      : IN  STD_LOGIC;
-            theta      : IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
-            sin_value  : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-            cos_value  : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-            iterations : IN  INTEGER range 1 to 16
+            theta      : IN  SIGNED(31 DOWNTO 0);
+            sin_value  : OUT SIGNED(31 DOWNTO 0);
+            cos_value  : OUT SIGNED(31 DOWNTO 0)
         );
-    end component;
-    
-    component shift_register is
-        GENERIC ( 
-            data_len : INTEGER;
+    END COMPONENT;
+
+    COMPONENT shift_register IS
+        GENERIC(
+            data_len  : INTEGER;
             delay_len : INTEGER
         );
-        Port (
-            clk       : IN STD_LOGIC;
-            reset     : IN STD_LOGIC;
-            sig_in   : IN STD_LOGIC_VECTOR(data_len - 1 DOWNTO 0);
-            sig_delay : OUT STD_LOGIC_VECTOR(data_len - 1 DOWNTO 0)
+        PORT(
+            clk        : IN  STD_LOGIC;
+            reset      : IN  STD_LOGIC;
+            sig_in     : IN  SIGNED(data_len - 1 DOWNTO 0);
+            sig_delay  : OUT SIGNED(data_len - 1 DOWNTO 0)
         );
-   end component;
+    END COMPONENT;
     
-    TYPE FSM IS (calculate_T1, calculate_T2);
-    SIGNAL STATE : FSM;
+    COMPONENT shift_register_std IS
+        GENERIC(
+            data_len  : INTEGER;
+            delay_len : INTEGER
+        );
+        PORT(
+            clk        : IN  STD_LOGIC;
+            reset      : IN  STD_LOGIC;
+            sig_in     : IN  STD_LOGIC_VECTOR(data_len - 1 DOWNTO 0);
+            sig_delay  : OUT STD_LOGIC_VECTOR(data_len - 1 DOWNTO 0)
+        );
+    END COMPONENT;
     
-    SIGNAL theta : STD_LOGIC_VECTOR(31 DOWNTO 0);
-    SIGNAL sin_val : STD_LOGIC_VECTOR(31 DOWNTO 0);
-    SIGNAL T1_int : signed(63 DOWNTO 0);
-    SIGNAL T2_int : signed(63 DOWNTO 0);
-    SIGNAL T1_delay : signed(63 DOWNTO 0);
-    
-    SIGNAL T1_mult_reg : signed(63 DOWNTO 0);
-    SIGNAL T1_mult_reg2 : signed(63 DOWNTO 0);
-    SIGNAL T1_slice_reg : signed(31 DOWNTO 0);
-    SIGNAL T1_shift_reg : signed(63 DOWNTO 0);
-    
-    SIGNAL T2_mult_reg : signed(63 DOWNTO 0);
-    SIGNAL T2_mult_reg2 : signed(63 DOWNTO 0);
-    SIGNAL T2_slice_reg : signed(31 DOWNTO 0);
-    SIGNAL T2_shift_reg : signed(63 DOWNTO 0);
-    
-    SIGNAL Vref_delay : STD_LOGIC_VECTOR(31 DOWNTO 0);
-    
-    CONSTANT PI_3 : signed(31 DOWNTO 0)  := x"10c15238";
-    CONSTANT PI2_3 : signed(31 DOWNTO 0) := x"2182a470";
-    CONSTANT PI : signed(31 DOWNTO 0)    := x"3243f6a9";
-    CONSTANT PI4_3 : signed(31 DOWNTO 0) := x"430548e1";
-    CONSTANT PI5_3 : signed(31 DOWNTO 0) := x"53c69b19";
-    CONSTANT PI2 : signed(31 DOWNTO 0)   := x"6487ed51";
-    
-    CONSTANT M : signed(31 DOWNTO 0)   := x"0000f229";
-    CONSTANT Tz : signed(63 DOWNTO 0)   := x"00022f3d8fed7049";
-    
-    CONSTANT iterations : INTEGER RANGE 1 TO 16 := 16;
-    
-    SIGNAL not_used : STD_LOGIC_VECTOR(31 DOWNTO 0);
-    
-begin
 
-cordic_inst : cordic_sin_cos
-        port map (
+    TYPE fsm IS (calculate_t1, calculate_t2);
+    SIGNAL state : fsm;
+
+    SIGNAL theta         : SIGNED(31 DOWNTO 0);
+    SIGNAL sin_val       : SIGNED(31 DOWNTO 0);
+    SIGNAL t1_int        : SIGNED(63 DOWNTO 0);
+    SIGNAL t2_int        : SIGNED(63 DOWNTO 0);
+    SIGNAL t1_delay      : SIGNED(63 DOWNTO 0);
+
+    SIGNAL t1_mult_reg   : SIGNED(63 DOWNTO 0);
+    SIGNAL t1_mult_reg2  : SIGNED(63 DOWNTO 0);
+    SIGNAL t1_slice_reg  : SIGNED(31 DOWNTO 0);
+    SIGNAL t1_shift_reg  : SIGNED(63 DOWNTO 0);
+    SIGNAL t1_delay_reg  : SIGNED(63 DOWNTO 0);
+
+    SIGNAL t2_mult_reg   : SIGNED(63 DOWNTO 0);
+    SIGNAL t2_mult_reg2  : SIGNED(63 DOWNTO 0);
+    SIGNAL t2_slice_reg  : SIGNED(31 DOWNTO 0);
+    SIGNAL t2_shift_reg  : SIGNED(63 DOWNTO 0);
+    
+
+    SIGNAL vref_delay    : SIGNED(31 DOWNTO 0);
+
+    CONSTANT PI_3    : SIGNED(31 DOWNTO 0) := X"10C15238";
+    CONSTANT PI2_3   : SIGNED(31 DOWNTO 0) := X"2182A470";
+    CONSTANT PI      : SIGNED(31 DOWNTO 0) := X"3243F6A9";
+    CONSTANT PI4_3   : SIGNED(31 DOWNTO 0) := X"430548E1";
+    CONSTANT PI5_3   : SIGNED(31 DOWNTO 0) := X"53C69B19";
+    CONSTANT PI2     : SIGNED(31 DOWNTO 0) := X"6487ED51";
+
+    CONSTANT M       : SIGNED(31 DOWNTO 0) := X"0000dfb2";
+    CONSTANT TZ      : SIGNED(63 DOWNTO 0) := X"00022F3D8FED7049";
+
+BEGIN
+
+    cordic_inst : cordic_sin_cos
+        GENERIC MAP(
+            iterations => 16
+        )
+        PORT MAP(
             clk        => clk,
             reset      => reset,
             theta      => theta,
             sin_value  => sin_val,
-            cos_value  => not_used,
-            iterations => iterations
+            cos_value  => OPEN
         );
 
-shift_reg_vref : shift_register
-        generic map (
-            data_len => 32,
+    shift_reg_vref : shift_register
+        GENERIC MAP(
+            data_len  => 32,
             delay_len => 16
         )
-        port map (
+        PORT MAP(
             clk        => clk,
             reset      => reset,
-            sig_in     => Vref,
-            sig_delay  => Vref_delay
+            sig_in     => vref,
+            sig_delay  => vref_delay
         );
 
-shift_reg_sector : shift_register
-        generic map (
-            data_len => 3,
-            delay_len => 24
+    shift_reg_sector : shift_register_std
+        GENERIC MAP(
+            data_len  => 3,
+            delay_len => 25
         )
-        port map (
+        PORT MAP(
             clk        => clk,
             reset      => reset,
             sig_in     => sector,
-            sig_delay  => sector_delayed
+            sig_delay  => sector_out
         );
 
+    PROCESS(clk)
+    BEGIN
+        IF RISING_EDGE(clk) THEN
+            IF reset = '1' THEN
+                theta     <= (OTHERS => '0');
+                t1_int    <= (OTHERS => '0');
+                t2_int    <= (OTHERS => '0');
+                t1_delay  <= (OTHERS => '0');
+                
+                t1_mult_reg  <= (OTHERS => '0');
+                t1_mult_reg2 <= (OTHERS => '0');
+                t1_slice_reg <= (OTHERS => '0');
+                t1_shift_reg <= (OTHERS => '0');
+                t1_delay_reg <= (OTHERS => '0');  
+                              
+                t2_mult_reg  <= (OTHERS => '0');
+                t2_mult_reg2 <= (OTHERS => '0');
+                t2_slice_reg <= (OTHERS => '0');
+                t2_shift_reg <= (OTHERS => '0');
+            
+                state <= calculate_t2;              
+            ELSE
+                CASE state IS
+                    WHEN calculate_t2 =>
+                        IF sector = "001" THEN
+                            theta <= SIGNED(PI_3) - SIGNED(angle);
+                        ELSIF sector = "010" THEN
+                            theta <= SIGNED(PI2_3) - SIGNED(angle);
+                        ELSIF sector = "011" THEN
+                            theta <= SIGNED(PI) - SIGNED(angle);
+                        ELSIF sector = "100" THEN
+                            theta <= SIGNED(PI4_3) - SIGNED(angle);
+                        ELSIF sector = "101" THEN
+                            theta <= SIGNED(PI5_3) - SIGNED(angle);
+                        ELSIF sector = "110" THEN
+                            theta <= SIGNED(PI2) - SIGNED(angle);
+                        END IF;
 
-PROCESS(clk)
-variable M_Vref : signed(127 DOWNTO 0);
-BEGIN  
-    IF(rising_edge(clk)) THEN 
-     IF(reset = '1') THEN 
-        theta <= (others => '0');
-        T1_int <= (others => '0');
-        T2_int <= (others => '0');
-        T1_delay <= (others => '0');
-        STATE <= CALCULATE_T1;
-     ELSE        
-        CASE STATE IS
-            WHEN CALCULATE_T1 =>
-                    IF sector = "001" THEN 
-                        theta <= STD_LOGIC_VECTOR(signed(PI_3) - signed(angle));
-                    ELSIF sector = "010" THEN 
-                        theta <= STD_LOGIC_VECTOR(signed(PI2_3) - signed(angle));
-                    ELSIF sector = "011" THEN 
-                        theta <= STD_LOGIC_VECTOR(signed(PI) - signed(angle));
-                    ELSIF sector = "100" THEN 
-                        theta <= STD_LOGIC_VECTOR(signed(PI4_3) - signed(angle));
-                    ELSIF sector = "101" THEN 
-                        theta <= STD_LOGIC_VECTOR(signed(PI5_3) - signed(angle));
-                    ELSIF sector = "110" THEN 
-                        theta <= STD_LOGIC_VECTOR(signed(PI2) - signed(angle));
-                    END IF;             
-                    --T2_int <= resize(shift_right(signed(Vref_delay) * signed(sin_val) *  M, 22) ,64); --63 bin point
-                    
-                    T1_mult_reg <= signed(Vref_delay) * signed(sin_val);
-                    T1_slice_reg <= T1_mult_reg(63 DOWNTO 32);
-                    T1_mult_reg2 <= M * T1_slice_reg;
-                    T2_int <= shift_left(T1_mult_reg2,10);
-                    STATE <= CALCULATE_T2;
-        
-            WHEN CALCULATE_T2 =>
-                    IF sector = "001" THEN 
-                        theta <= angle;
-                    ELSIF sector = "010" THEN 
-                        theta <= STD_LOGIC_VECTOR(signed(angle) - signed(PI_3));
-                    ELSIF sector = "011" THEN 
-                        theta <= STD_LOGIC_VECTOR(signed(angle) - signed(PI2_3));
-                    ELSIF sector = "100" THEN 
-                        theta <= STD_LOGIC_VECTOR(signed(angle) - signed(PI));
-                    ELSIF sector = "101" THEN 
-                        theta <= STD_LOGIC_VECTOR(signed(angle) - signed(PI4_3));
-                    ELSIF sector = "110" THEN 
-                        theta <= STD_LOGIC_VECTOR(signed(angle) - signed(PI5_3));
-                    END IF;
-                    --T1_delay <= resize(shift_right(signed(Vref_delay) * signed(sin_val) *  M, 22) ,64); --63 bin point      
-                    T2_mult_reg <= signed(Vref_delay) * signed(sin_val);
-                    T2_slice_reg <= T2_mult_reg(63 DOWNTO 32);
-                    T2_mult_reg2 <= M * T2_slice_reg;
-                    T2_shift_reg <= shift_left(T2_mult_reg2,10);              
-                    STATE <= CALCULATE_T1;
-           END CASE;
-        T1_int <= T2_shift_reg;
-           END IF;
-    END IF;
-END PROCESS;
+                        t2_mult_reg   <= SIGNED(vref_delay) * SIGNED(sin_val);
+                        t2_slice_reg  <= t2_mult_reg(63 DOWNTO 32);
+                        t2_mult_reg2  <= M * t2_slice_reg;
+                        t2_shift_reg  <= SHIFT_LEFT(t2_mult_reg2, 10);                
+                        state         <= calculate_t1;
 
-  
-T0 <= Tz - T1_int - T2_int;
-T1 <= T1_int;
-T2 <= T2_int;
+                    WHEN calculate_t1 =>
+                        IF sector = "001" THEN
+                            theta <= angle;
+                        ELSIF sector = "010" THEN
+                            theta <= SIGNED(angle) - SIGNED(PI_3);
+                        ELSIF sector = "011" THEN
+                            theta <= SIGNED(angle) - SIGNED(PI2_3);
+                        ELSIF sector = "100" THEN
+                            theta <= SIGNED(angle) - SIGNED(PI);
+                        ELSIF sector = "101" THEN
+                            theta <= SIGNED(angle) - SIGNED(PI4_3);
+                        ELSIF sector = "110" THEN
+                            theta <= SIGNED(angle) - SIGNED(PI5_3);
+                        ELSE
+                            theta <= (OTHERS => '0');
+                        END IF;
 
-end Behavioral;
+                        t1_mult_reg   <= SIGNED(vref_delay) * SIGNED(sin_val);
+                        t1_slice_reg  <= t1_mult_reg(63 DOWNTO 32);
+                        t1_mult_reg2  <= M * t1_slice_reg;
+                        t1_shift_reg  <= SHIFT_LEFT(t1_mult_reg2, 10);                       
+                        state         <= calculate_t2;
+                        
+                END CASE;               
+                t1_delay_reg <= t1_shift_reg; 
+                t1_int  <= t1_delay_reg;
+                 
+                t2_int  <= t2_shift_reg;               
+            END IF;
+        END IF;
+    END PROCESS;
+
+    t0 <= TZ - t1_int - t2_int;
+          
+    t1 <= t1_int;
+    t2 <= t2_int;
+
+END behavioral;

@@ -10,14 +10,14 @@ entity shift_register is
     PORT (
         clk       : IN STD_LOGIC;
         reset     : IN STD_LOGIC;
-        sig_in   : IN STD_LOGIC_VECTOR(data_len - 1 DOWNTO 0);
-        sig_delay : OUT STD_LOGIC_VECTOR(data_len - 1 DOWNTO 0)
+        sig_in    : IN SIGNED(data_len - 1 DOWNTO 0);
+        sig_delay : OUT SIGNED(data_len - 1 DOWNTO 0)
     );
 end shift_register;
 
 architecture Behavioral of shift_register is
 
-    TYPE delay_array is array(0 to delay_len - 1) of STD_LOGIC_VECTOR(data_len - 1 DOWNTO 0);
+    TYPE delay_array is array(0 to delay_len - 1) of SIGNED(data_len - 1 DOWNTO 0);
     SIGNAL sig_delay_line : delay_array := (others => (others => '0'));
 
 begin

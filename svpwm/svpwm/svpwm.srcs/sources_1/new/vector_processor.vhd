@@ -121,8 +121,6 @@ BEGIN
         IF rising_edge(clk) THEN 
             IF reset = '1' THEN 
                 pipeline <= (OTHERS => ((OTHERS => '0'), (OTHERS => '0'), (OTHERS => '0'), (OTHERS => '0')));
-                mult_reg <= (OTHERS => '0');
-                shift_reg <= (OTHERS => '0');
             ELSE
                 -- Stage 0 initialization
                 pipeline(0).pip_y <= y_reg;
@@ -143,11 +141,7 @@ BEGIN
                     END IF;
                     pipeline(i+1).pip_quadrant <= pipeline(i).pip_quadrant;
                 END LOOP;
-                
-                -- Magnitude calculation
-               mult_reg <= pipeline(iterations - 1).pip_x * cordic_const;
-               shift_reg <= resize(shift_right(pipeline(iterations - 1).pip_x, 1), 66);
-           
+                           
             END IF;
         END IF;
     END PROCESS;
@@ -161,6 +155,8 @@ BEGIN
                 add_reg <= (OTHERS => '0');
                 mult_reg_pipe <= (OTHERS => '0');
                 shift_reg_pipe <= (OTHERS => '0');
+                mult_reg <= (OTHERS => '0');
+                shift_reg <= (OTHERS => '0');
             ELSE 
                 CASE pipeline(iterations - 1).pip_quadrant IS
                     WHEN "00" => 
@@ -176,6 +172,10 @@ BEGIN
                             angle_int <= pipeline(iterations - 1).pip_z + TWO_PI;
                         END IF;
                 END CASE;
+                
+                -- Magnitude calculation
+                mult_reg  <= pipeline(iterations - 1).pip_x * cordic_const;
+                shift_reg <= resize(shift_right(pipeline(iterations - 1).pip_x, 1), 66);
                 mult_reg_pipe <= mult_reg;
                 shift_reg_pipe <= shift_reg;
                 add_reg <= shift_right(mult_reg_pipe, 28) + shift_reg_pipe;
@@ -211,6 +211,7 @@ BEGIN
                     sector_int <= "110";
                 END IF;
                 IF(pipeline(iterations - 1).pip_x /= 0 AND pipeline(iterations - 1).pip_y /= 0) THEN
+                
                     angle_delay <=  angle_int & angle_delay(0);
                     angle <= angle_delay(1);
                     

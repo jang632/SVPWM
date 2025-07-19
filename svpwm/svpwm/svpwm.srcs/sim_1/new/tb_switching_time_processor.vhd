@@ -12,21 +12,21 @@ architecture behavior of tb_switching_time_processor is
         port (
             clk    : in  std_logic;
             reset  : in  std_logic;
-            angle  : in  std_logic_vector(31 downto 0);
-            Vref   : in  std_logic_vector(31 downto 0);
+            angle  : in  signed(31 downto 0);
+            Vref   : in  signed(31 downto 0);
             sector : in  std_logic_vector(2 downto 0);
             T0     : out signed(63 downto 0);
             T1     : out signed(63 downto 0);
             T2     : out signed(63 downto 0);
-            sector_delayed : out std_logic_vector(2 downto 0)
+            sector_out : out std_logic_vector(2 downto 0)
         );
     end component;
 
     -- Sygnały testowe
     signal clk     : std_logic := '0';
     signal reset   : std_logic := '1';
-    signal angle   : std_logic_vector(31 downto 0);
-    signal Vref    : std_logic_vector(31 downto 0);
+    signal angle   : signed(31 downto 0);
+    signal Vref    : signed(31 downto 0);
     signal sector  : std_logic_vector(2 downto 0);
     signal sector_delayed : std_logic_vector(2 downto 0);
     signal T0      : signed(63 downto 0);
@@ -48,7 +48,7 @@ begin
             T0      => T0,
             T1      => T1,
             T2      => T2,
-            sector_delayed => sector_delayed
+            sector_out => sector_delayed
         );
 
     -- Generowanie zegara

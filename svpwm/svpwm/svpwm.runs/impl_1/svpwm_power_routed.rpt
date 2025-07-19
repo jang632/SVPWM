@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date             : Thu Jul 17 17:05:30 2025
+| Date             : Sat Jul 19 01:26:18 2025
 | Host             : DESKTOP-1FUVVL9 running 64-bit major release  (build 9200)
 | Command          : report_power -file svpwm_power_routed.rpt -pb svpwm_power_summary_routed.pb -rpx svpwm_power_routed.rpx
 | Design           : svpwm
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+-----------------------------------+
-| Total On-Chip Power (W)  | 216.310 (Junction temp exceeded!) |
+| Total On-Chip Power (W)  | 173.616 (Junction temp exceeded!) |
 | Design Power Budget (W)  | Unspecified*                      |
 | Power Budget Margin (W)  | NA                                |
-| Dynamic (W)              | 215.271                           |
+| Dynamic (W)              | 172.576                           |
 | Device Static (W)        | 1.039                             |
 | Effective TJA (C/W)      | 11.5                              |
 | Max Ambient (C)          | 0.0                               |
@@ -52,18 +52,18 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Slice Logic             |    85.299 |    11893 |       --- |             --- |
-|   LUT as Logic          |    70.514 |     5602 |     53200 |           10.53 |
-|   CARRY4                |     9.849 |     1334 |     13300 |           10.03 |
-|   Register              |     4.520 |     4242 |    106400 |            3.99 |
-|   LUT as Shift Register |     0.412 |       54 |     17400 |            0.31 |
+| Slice Logic             |    66.958 |    10185 |       --- |             --- |
+|   LUT as Logic          |    54.750 |     4682 |     53200 |            8.80 |
+|   CARRY4                |     7.961 |     1129 |     13300 |            8.49 |
+|   Register              |     3.839 |     3753 |    106400 |            3.53 |
+|   LUT as Shift Register |     0.402 |       54 |     17400 |            0.31 |
 |   BUFG                  |     0.006 |        1 |        32 |            3.13 |
-|   Others                |     0.000 |       29 |       --- |             --- |
-| Signals                 |    85.626 |     9619 |       --- |             --- |
-| DSPs                    |    39.800 |       49 |       220 |           22.27 |
+|   Others                |     0.000 |       28 |       --- |             --- |
+| Signals                 |    65.155 |     8717 |       --- |             --- |
+| DSPs                    |    35.918 |       46 |       220 |           20.91 |
 | I/O                     |     4.546 |       56 |       200 |           28.00 |
 | Static Power            |     1.039 |          |           |                 |
-| Total                   |   216.310 |          |           |                 |
+| Total                   |   173.616 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |   211.220 |     210.922 |      0.299 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |   168.526 |     168.227 |      0.299 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.456 |       0.356 |      0.100 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -144,20 +144,20 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+-------------------------+-----------+
-| Name                    | Power (W) |
-+-------------------------+-----------+
-| svpwm                   |   215.271 |
-|   clarke_inst           |     9.851 |
-|   driver_inst           |    45.398 |
-|     HB1                 |     1.515 |
-|     HB2                 |     0.482 |
-|     HB3                 |     1.058 |
-|   time_processor_inst   |    67.130 |
-|     cordic_inst         |    38.929 |
-|     shift_reg_sector    |     0.578 |
-|     shift_reg_vref      |     1.124 |
-|   vector_processor_inst |    87.712 |
-+-------------------------+-----------+
++-----------------------+-----------+
+| Name                  | Power (W) |
++-----------------------+-----------+
+| svpwm                 |   172.576 |
+|   clarke_inst         |     8.232 |
+|   driver_inst         |    40.059 |
+|     HB1               |     1.210 |
+|     HB2               |     0.464 |
+|     HB3               |     0.912 |
+|   time_processor_inst |    62.364 |
+|     cordic_inst       |    37.965 |
+|     shift_reg_sector  |     0.310 |
+|     shift_reg_vref    |     1.158 |
+|   u_vector_proc       |    56.813 |
++-----------------------+-----------+
 
 

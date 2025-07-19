@@ -51,13 +51,13 @@ ARCHITECTURE Behavioral OF svpwm IS
         PORT(
             clk            : IN  STD_LOGIC;
             reset          : IN  STD_LOGIC;
-            angle          : IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
-            Vref           : IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
+            angle          : IN  SIGNED(31 DOWNTO 0);
+            vref           : IN  SIGNED(31 DOWNTO 0);
             sector         : IN  STD_LOGIC_VECTOR(2 DOWNTO 0);
             T0             : OUT SIGNED(63 DOWNTO 0);
             T1             : OUT SIGNED(63 DOWNTO 0);
             T2             : OUT SIGNED(63 DOWNTO 0);
-            sector_delayed : OUT STD_LOGIC_VECTOR(2 DOWNTO 0)
+            sector_out : OUT STD_LOGIC_VECTOR(2 DOWNTO 0)
         );
     END COMPONENT;
 
@@ -97,8 +97,6 @@ ARCHITECTURE Behavioral OF svpwm IS
     SIGNAL sector_delayed : STD_LOGIC_VECTOR(2 DOWNTO 0);
 
 BEGIN
-    angle_vec <= STD_LOGIC_VECTOR(angle);
-    mag_vec <= STD_LOGIC_VECTOR(magnitude);
     
     clarke_inst : clarke_transform
         PORT MAP (
@@ -130,13 +128,13 @@ BEGIN
         PORT MAP (
             clk            => clk,
             reset          => reset,
-            angle          => angle_vec,
-            Vref           => mag_vec,
+            angle          => angle,
+            vref           => magnitude,
             sector         => sector,
             T0             => T0,
             T1             => T1,
             T2             => T2,
-            sector_delayed => sector_delayed
+            sector_out => sector_delayed
         );
     
     driver_inst : transistor_driver

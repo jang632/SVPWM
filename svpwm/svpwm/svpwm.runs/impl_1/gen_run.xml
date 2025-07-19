@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020clg484-1" LaunchTime="1752764570">
+<GenRun Id="impl_1" LaunchPart="xc7z020clg484-1" LaunchTime="1752881033">
   <File Type="ROUTE-PWR" Name="svpwm_power_routed.rpt"/>
   <File Type="PA-TCL" Name="svpwm.tcl"/>
   <File Type="ROUTE-PWR-SUM" Name="svpwm_power_summary_routed.pb"/>
@@ -18,10 +18,14 @@
   <File Type="BITSTR-MMI" Name="svpwm.mmi"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="svpwm_methodology_drc_routed.rpt"/>
   <File Type="BITSTR-SYSDEF" Name="svpwm.sysdef"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="svpwm_methodology_drc_routed.pb"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
   <File Type="BITSTR-LTX" Name="svpwm.ltx"/>
+  <File Type="BOOT-PDI-FILE" Name="svpwm_boot.pdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="NPI_FILE" Name="svpwm.npi"/>
   <File Type="OPT-DRC" Name="svpwm_drc_opted.rpt"/>
+  <File Type="RBD_FILE" Name="svpwm.rbd"/>
   <File Type="OPT-HWDEF" Name="svpwm.hwdef"/>
   <File Type="PLACE-IO" Name="svpwm_io_placed.rpt"/>
   <File Type="PLACE-UTIL" Name="svpwm_utilization_placed.rpt"/>
@@ -55,17 +59,13 @@
   <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="svpwm_timing_summary_postroute_physopted.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="svpwm_bus_skew_postroute_physopted.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="svpwm_bus_skew_postroute_physopted.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="svpwm_methodology_drc_routed.pb"/>
   <File Type="ROUTE-DRC-RPX" Name="svpwm_drc_routed.rpx"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="svpwm_methodology_drc_routed.rpx"/>
   <File Type="PDI-FILE" Name="svpwm.pdi"/>
-  <File Type="BOOT-PDI-FILE" Name="svpwm_boot.pdi"/>
   <File Type="PL-PDI-FILE" Name="svpwm_pld.pdi"/>
   <File Type="RCFI_FILE" Name="svpwm.rcfi"/>
   <File Type="CFI_FILE" Name="svpwm.cfi"/>
   <File Type="RNPI_FILE" Name="svpwm.rnpi"/>
-  <File Type="NPI_FILE" Name="svpwm.npi"/>
-  <File Type="RBD_FILE" Name="svpwm.rbd"/>
   <File Type="ROUTE-RQS" Name="svpwm_routed.rqs"/>
   <File Type="POSTROUTE-PHYSOPT-RQS" Name="svpwm_postroute_physopted.rqs"/>
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
@@ -133,6 +133,14 @@
   </FileSet>
   <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
     <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/svpwm.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>

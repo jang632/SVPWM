@@ -9,57 +9,62 @@ WARNING: Default location for XILINX_HLS not found:
   **** SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
   **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
   **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-  **** Start of session at: Thu Jul 17 17:02:53 2025
+  **** Start of session at: Sat Jul 19 01:23:56 2025
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source svpwm.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 515.375 ; gain = 197.684
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 514.289 ; gain = 199.371
+Command: read_checkpoint -auto_incremental -incremental C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/utils_1/imports/synth_1/svpwm.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/utils_1/imports/synth_1/svpwm.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top svpwm -part xc7z020clg484-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 25588
+INFO: [Synth 8-7075] Helper process launched with PID 5560
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 971.703 ; gain = 453.402
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 975.496 ; gain = 447.020
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'svpwm' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/svpwm.vhd:21]
-INFO: [Synth 8-3491] module 'clarke_transform' declared at 'C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/clarke_transform.vhd:5' bound to instance 'clarke_inst' of component 'clarke_transform' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/svpwm.vhd:95]
+INFO: [Synth 8-3491] module 'clarke_transform' declared at 'C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/clarke_transform.vhd:5' bound to instance 'clarke_inst' of component 'clarke_transform' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/svpwm.vhd:103]
 INFO: [Synth 8-638] synthesizing module 'clarke_transform' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/clarke_transform.vhd:17]
-WARNING: [Synth 8-614] signal 'reset' is read in the process but is not in the sensitivity list [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/clarke_transform.vhd:22]
 INFO: [Synth 8-256] done synthesizing module 'clarke_transform' (0#1) [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/clarke_transform.vhd:17]
-INFO: [Synth 8-3491] module 'vector_processor' declared at 'C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd:5' bound to instance 'vector_processor_inst' of component 'vector_processor' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/svpwm.vhd:106]
-INFO: [Synth 8-638] synthesizing module 'vector_processor' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd:18]
-WARNING: [Synth 8-614] signal 'reset' is read in the process but is not in the sensitivity list [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd:56]
-INFO: [Synth 8-256] done synthesizing module 'vector_processor' (0#1) [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd:18]
-INFO: [Synth 8-3491] module 'switching_time_processor' declared at 'C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/switching_time_processor.vhd:6' bound to instance 'time_processor_inst' of component 'switching_time_processor' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/svpwm.vhd:118]
+	Parameter iterations bound to: 16 - type: integer 
+INFO: [Synth 8-3491] module 'vector_processor' declared at 'C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd:5' bound to instance 'u_vector_proc' of component 'vector_processor' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/svpwm.vhd:114]
+INFO: [Synth 8-638] synthesizing module 'vector_processor' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd:20]
+	Parameter iterations bound to: 16 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'vector_processor' (0#1) [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd:20]
+INFO: [Synth 8-3491] module 'switching_time_processor' declared at 'C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/switching_time_processor.vhd:6' bound to instance 'time_processor_inst' of component 'switching_time_processor' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/svpwm.vhd:129]
 INFO: [Synth 8-638] synthesizing module 'switching_time_processor' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/switching_time_processor.vhd:20]
-INFO: [Synth 8-3491] module 'cordic_sin_cos' declared at 'C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/cordic_sin_cos.vhd:5' bound to instance 'cordic_inst' of component 'cordic_sin_cos' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/switching_time_processor.vhd:72]
-INFO: [Synth 8-638] synthesizing module 'cordic_sin_cos' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/cordic_sin_cos.vhd:16]
-WARNING: [Synth 8-614] signal 'reset' is read in the process but is not in the sensitivity list [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/cordic_sin_cos.vhd:56]
-WARNING: [Synth 8-614] signal 'iterations' is read in the process but is not in the sensitivity list [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/cordic_sin_cos.vhd:97]
-INFO: [Synth 8-256] done synthesizing module 'cordic_sin_cos' (0#1) [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/cordic_sin_cos.vhd:16]
+	Parameter iterations bound to: 16 - type: integer 
+INFO: [Synth 8-3491] module 'cordic_sin_cos' declared at 'C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/cordic_sin_cos.vhd:5' bound to instance 'cordic_inst' of component 'cordic_sin_cos' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/switching_time_processor.vhd:80]
+INFO: [Synth 8-638] synthesizing module 'cordic_sin_cos' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/cordic_sin_cos.vhd:18]
+	Parameter iterations bound to: 16 - type: integer 
+WARNING: [Synth 8-614] signal 'reset' is read in the process but is not in the sensitivity list [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/cordic_sin_cos.vhd:58]
+INFO: [Synth 8-256] done synthesizing module 'cordic_sin_cos' (0#1) [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/cordic_sin_cos.vhd:18]
 	Parameter data_len bound to: 32 - type: integer 
 	Parameter delay_len bound to: 16 - type: integer 
-INFO: [Synth 8-3491] module 'shift_register' declared at 'C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/shift_register.vhd:5' bound to instance 'shift_reg_vref' of component 'shift_register' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/switching_time_processor.vhd:82]
+INFO: [Synth 8-3491] module 'shift_register' declared at 'C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/shift_register.vhd:5' bound to instance 'shift_reg_vref' of component 'shift_register' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/switching_time_processor.vhd:92]
 INFO: [Synth 8-638] synthesizing module 'shift_register' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/shift_register.vhd:18]
 	Parameter data_len bound to: 32 - type: integer 
 	Parameter delay_len bound to: 16 - type: integer 
 WARNING: [Synth 8-614] signal 'reset' is read in the process but is not in the sensitivity list [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/shift_register.vhd:25]
 INFO: [Synth 8-256] done synthesizing module 'shift_register' (0#1) [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/shift_register.vhd:18]
 	Parameter data_len bound to: 3 - type: integer 
-	Parameter delay_len bound to: 18 - type: integer 
-INFO: [Synth 8-3491] module 'shift_register' declared at 'C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/shift_register.vhd:5' bound to instance 'shift_reg_sector' of component 'shift_register' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/switching_time_processor.vhd:94]
+	Parameter delay_len bound to: 24 - type: integer 
+INFO: [Synth 8-3491] module 'shift_register' declared at 'C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/shift_register.vhd:5' bound to instance 'shift_reg_sector' of component 'shift_register' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/switching_time_processor.vhd:104]
 INFO: [Synth 8-638] synthesizing module 'shift_register__parameterized1' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/shift_register.vhd:18]
 	Parameter data_len bound to: 3 - type: integer 
-	Parameter delay_len bound to: 18 - type: integer 
+	Parameter delay_len bound to: 24 - type: integer 
 WARNING: [Synth 8-614] signal 'reset' is read in the process but is not in the sensitivity list [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/shift_register.vhd:25]
 INFO: [Synth 8-256] done synthesizing module 'shift_register__parameterized1' (0#1) [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/shift_register.vhd:18]
-WARNING: [Synth 8-614] signal 'reset' is read in the process but is not in the sensitivity list [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/switching_time_processor.vhd:107]
 INFO: [Synth 8-256] done synthesizing module 'switching_time_processor' (0#1) [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/switching_time_processor.vhd:20]
-INFO: [Synth 8-3491] module 'transistor_driver' declared at 'C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/transistor_driver.vhd:6' bound to instance 'driver_inst' of component 'transistor_driver' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/svpwm.vhd:131]
+INFO: [Synth 8-3491] module 'transistor_driver' declared at 'C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/transistor_driver.vhd:6' bound to instance 'driver_inst' of component 'transistor_driver' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/svpwm.vhd:142]
 INFO: [Synth 8-638] synthesizing module 'transistor_driver' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/transistor_driver.vhd:23]
 INFO: [Synth 8-3491] module 'center_pwm' declared at 'C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/center_pwm.vhd:6' bound to instance 'HB1' of component 'center_pwm' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/transistor_driver.vhd:43]
 INFO: [Synth 8-638] synthesizing module 'center_pwm' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/center_pwm.vhd:16]
@@ -73,27 +78,26 @@ WARNING: [Synth 8-614] signal 'T0' is read in the process but is not in the sens
 WARNING: [Synth 8-614] signal 'sector' is read in the process but is not in the sensitivity list [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/transistor_driver.vhd:70]
 INFO: [Synth 8-256] done synthesizing module 'transistor_driver' (0#1) [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/transistor_driver.vhd:23]
 INFO: [Synth 8-256] done synthesizing module 'svpwm' (0#1) [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/svpwm.vhd:21]
-WARNING: [Synth 8-6014] Unused sequential element pipeline_reg[15][pip_theta] was removed.  [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/cordic_sin_cos.vhd:59]
-WARNING: [Synth 8-7129] Port iterations[4] in module cordic_sin_cos is either unconnected or has no load
-WARNING: [Synth 8-7129] Port iterations[4] in module vector_processor is either unconnected or has no load
+WARNING: [Synth 8-6014] Unused sequential element angle_stage1_reg was removed.  [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd:193]
+WARNING: [Synth 8-6014] Unused sequential element angle_stage2_reg was removed.  [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd:194]
+WARNING: [Synth 8-6014] Unused sequential element pipeline_reg[15][pip_theta] was removed.  [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/cordic_sin_cos.vhd:61]
+WARNING: [Synth 8-6014] Unused sequential element T1_delay_reg was removed.  [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/switching_time_processor.vhd:124]
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1101.938 ; gain = 583.637
+Finished Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1103.809 ; gain = 575.332
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1101.938 ; gain = 583.637
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1103.809 ; gain = 575.332
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1101.938 ; gain = 583.637
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1103.809 ; gain = 575.332
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z020clg484-1
-WARNING: [Synth 8-3936] Found unconnected internal register 'magnitude_int_reg' and it is trimmed from '64' to '34' bits. [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd:97]
-WARNING: [Synth 8-327] inferring latch for variable 'pipeline_reg[0][pip_Z]' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd:59]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:10 . Memory (MB): peak = 1101.938 ; gain = 583.637
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1114.766 ; gain = 586.289
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
@@ -101,31 +105,34 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input   64 Bit       Adders := 5     
-	   3 Input   64 Bit       Adders := 32    
-	   2 Input   34 Bit       Adders := 1     
-	   2 Input   32 Bit       Adders := 36    
+	   2 Input   66 Bit       Adders := 1     
+	   2 Input   64 Bit       Adders := 3     
+	   3 Input   64 Bit       Adders := 2     
+	   2 Input   34 Bit       Adders := 3     
+	   3 Input   34 Bit       Adders := 30    
+	   2 Input   32 Bit       Adders := 39    
 	   3 Input   32 Bit       Adders := 30    
 	   2 Input   31 Bit       Adders := 1     
 +---Registers : 
-	               64 Bit    Registers := 35    
-	               34 Bit    Registers := 1     
-	               32 Bit    Registers := 85    
+	               66 Bit    Registers := 3     
+	               64 Bit    Registers := 5     
+	               60 Bit    Registers := 2     
+	               49 Bit    Registers := 2     
+	               34 Bit    Registers := 34    
+	               32 Bit    Registers := 89    
 	               16 Bit    Registers := 3     
-	                3 Bit    Registers := 20    
-	                2 Bit    Registers := 32    
+	                3 Bit    Registers := 28    
+	                2 Bit    Registers := 33    
 	                1 Bit    Registers := 10    
 +---Multipliers : 
 	              31x64  Multipliers := 4     
-	              26x64  Multipliers := 1     
-	              17x64  Multipliers := 1     
-	              32x32  Multipliers := 1     
+	              26x34  Multipliers := 1     
+	              17x32  Multipliers := 2     
 +---Muxes : 
-	   4 Input   64 Bit        Muxes := 3     
-	   2 Input   64 Bit        Muxes := 30    
-	   2 Input   32 Bit        Muxes := 32    
+	   4 Input   34 Bit        Muxes := 3     
+	   2 Input   34 Bit        Muxes := 30    
+	   2 Input   32 Bit        Muxes := 31    
 	   4 Input   32 Bit        Muxes := 3     
-	   6 Input   32 Bit        Muxes := 1     
 	   6 Input   31 Bit        Muxes := 1     
 	   2 Input   29 Bit        Muxes := 2     
 	   2 Input   28 Bit        Muxes := 2     
@@ -140,9 +147,11 @@ Detailed RTL Component Info :
 	   2 Input   19 Bit        Muxes := 1     
 	   2 Input   18 Bit        Muxes := 1     
 	   2 Input   17 Bit        Muxes := 1     
-	   4 Input    2 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 4     
-	   7 Input    1 Bit        Muxes := 1     
+	   6 Input    3 Bit        Muxes := 1     
+	   5 Input    2 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 5     
+	   8 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -161,267 +170,334 @@ No constraint files found.
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-DSP Report: Generating DSP ARG, operation Mode is: (A:0x14edb)*B.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: A*B.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: PCIN+A*(B:0x14edb).
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: A*(B:0x14edb).
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: PCIN+A*(B:0x14edb).
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG0, operation Mode is: A*B.
-DSP Report: operator ARG0 is absorbed into DSP ARG0.
-DSP Report: operator ARG0 is absorbed into DSP ARG0.
-DSP Report: Generating DSP ARG0, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator ARG0 is absorbed into DSP ARG0.
-DSP Report: operator ARG0 is absorbed into DSP ARG0.
-DSP Report: Generating DSP ARG0, operation Mode is: A*B.
-DSP Report: operator ARG0 is absorbed into DSP ARG0.
-DSP Report: operator ARG0 is absorbed into DSP ARG0.
-DSP Report: Generating DSP ARG0, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator ARG0 is absorbed into DSP ARG0.
-DSP Report: operator ARG0 is absorbed into DSP ARG0.
-DSP Report: Generating DSP ARG, operation Mode is: (A:0x107ff)*B.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: A*B.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: PCIN+A*(B:0x107ff).
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: A*(B:0x107ff).
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: PCIN+A*(B:0x107ff).
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: (A:0x107ff)*B.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: A*B.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: PCIN+A*(B:0x107ff).
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: A*(B:0x107ff).
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: PCIN+A*(B:0x107ff).
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: (A:0x107ff)*B.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: A*B.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: PCIN+A*(B:0x107ff).
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: A*(B:0x107ff).
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: PCIN+A*(B:0x107ff).
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: (A:0x107ff)*B.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: A*B.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: PCIN+A*(B:0x107ff).
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: A*(B:0x107ff).
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP ARG, operation Mode is: PCIN+A*(B:0x107ff).
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: operator ARG is absorbed into DSP ARG.
-DSP Report: Generating DSP clarke_inst/ARG, operation Mode is: A*(B:0x2aad).
-DSP Report: operator clarke_inst/ARG is absorbed into DSP clarke_inst/ARG.
-DSP Report: Generating DSP clarke_inst/ARG, operation Mode is: A*(B:0x1555).
-DSP Report: operator clarke_inst/ARG is absorbed into DSP clarke_inst/ARG.
-DSP Report: Generating DSP clarke_inst/ARG, operation Mode is: A*(B:0x1555).
-DSP Report: operator clarke_inst/ARG is absorbed into DSP clarke_inst/ARG.
-DSP Report: Generating DSP clarke_inst/ARG, operation Mode is: PCIN-A:B-C.
-DSP Report: operator clarke_inst/ARG is absorbed into DSP clarke_inst/ARG.
-DSP Report: Generating DSP clarke_inst/ARG, operation Mode is: A*(B:0x24f5).
-DSP Report: operator clarke_inst/ARG is absorbed into DSP clarke_inst/ARG.
-DSP Report: Generating DSP clarke_inst/ARG, operation Mode is: PCIN-A*(B:0x24f5).
-DSP Report: operator clarke_inst/ARG is absorbed into DSP clarke_inst/ARG.
-DSP Report: operator clarke_inst/ARG is absorbed into DSP clarke_inst/ARG.
-WARNING: [Synth 8-7129] Port T0[0] in module transistor_driver is either unconnected or has no load
-WARNING: [Synth 8-7129] Port iterations[4] in module cordic_sin_cos is either unconnected or has no load
-WARNING: [Synth 8-7129] Port iterations[4] in module vector_processor is either unconnected or has no load
-WARNING: [Synth 8-3332] Sequential element (pipeline_reg[0][pip_Z][31]) is unused and will be removed from module vector_processor.
+DSP Report: Generating DSP mult_reg0, operation Mode is: (A:0x14edb)*B2.
+DSP Report: register pipeline_reg[15][pip_x] is absorbed into DSP mult_reg0.
+DSP Report: operator mult_reg0 is absorbed into DSP mult_reg0.
+DSP Report: operator mult_reg0 is absorbed into DSP mult_reg0.
+DSP Report: Generating DSP mult_reg_reg, operation Mode is: (PCIN>>17)+A2*B.
+DSP Report: register pipeline_reg[15][pip_x] is absorbed into DSP mult_reg_reg.
+DSP Report: register mult_reg_reg is absorbed into DSP mult_reg_reg.
+DSP Report: operator mult_reg0 is absorbed into DSP mult_reg_reg.
+DSP Report: operator mult_reg0 is absorbed into DSP mult_reg_reg.
+DSP Report: Generating DSP mult_reg0, operation Mode is: A2*(B:0x14edb).
+DSP Report: register mult_reg0 is absorbed into DSP mult_reg0.
+DSP Report: operator mult_reg0 is absorbed into DSP mult_reg0.
+DSP Report: operator mult_reg0 is absorbed into DSP mult_reg0.
+DSP Report: Generating DSP mult_reg_reg, operation Mode is: (PCIN>>17)+A2*B.
+DSP Report: register mult_reg_reg is absorbed into DSP mult_reg_reg.
+DSP Report: register mult_reg_reg is absorbed into DSP mult_reg_reg.
+DSP Report: operator mult_reg0 is absorbed into DSP mult_reg_reg.
+DSP Report: operator mult_reg0 is absorbed into DSP mult_reg_reg.
+DSP Report: Generating DSP T1_mult_reg0, operation Mode is: A*B.
+DSP Report: operator T1_mult_reg0 is absorbed into DSP T1_mult_reg0.
+DSP Report: operator T1_mult_reg0 is absorbed into DSP T1_mult_reg0.
+DSP Report: Generating DSP T1_mult_reg0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator T1_mult_reg0 is absorbed into DSP T1_mult_reg0.
+DSP Report: operator T1_mult_reg0 is absorbed into DSP T1_mult_reg0.
+DSP Report: Generating DSP T1_mult_reg0, operation Mode is: A*B.
+DSP Report: operator T1_mult_reg0 is absorbed into DSP T1_mult_reg0.
+DSP Report: operator T1_mult_reg0 is absorbed into DSP T1_mult_reg0.
+DSP Report: Generating DSP T1_mult_reg0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator T1_mult_reg0 is absorbed into DSP T1_mult_reg0.
+DSP Report: operator T1_mult_reg0 is absorbed into DSP T1_mult_reg0.
+DSP Report: Generating DSP driver_inst/ARG, operation Mode is: (A:0x107ff)*B.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: Generating DSP driver_inst/ARG, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: Generating DSP driver_inst/ARG, operation Mode is: A*B.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: Generating DSP driver_inst/ARG, operation Mode is: PCIN+A*(B:0x107ff).
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: Generating DSP driver_inst/ARG, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: Generating DSP driver_inst/ARG, operation Mode is: A*(B:0x107ff).
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: Generating DSP driver_inst/ARG, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: Generating DSP driver_inst/ARG, operation Mode is: PCIN+A*(B:0x107ff).
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: Generating DSP driver_inst/ARG, operation Mode is: (A:0x107ff)*B.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: Generating DSP driver_inst/ARG, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: Generating DSP driver_inst/ARG, operation Mode is: A*B.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: Generating DSP driver_inst/ARG, operation Mode is: PCIN+A*(B:0x107ff).
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: Generating DSP driver_inst/ARG, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: Generating DSP driver_inst/ARG, operation Mode is: A*(B:0x107ff).
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: Generating DSP driver_inst/ARG, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: Generating DSP driver_inst/ARG, operation Mode is: PCIN+A*(B:0x107ff).
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: Generating DSP driver_inst/ARG, operation Mode is: (A:0x107ff)*B.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: Generating DSP driver_inst/ARG, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: Generating DSP driver_inst/ARG, operation Mode is: A*B.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: Generating DSP driver_inst/ARG, operation Mode is: PCIN+A*(B:0x107ff).
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: Generating DSP driver_inst/ARG, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: Generating DSP driver_inst/ARG, operation Mode is: A*(B:0x107ff).
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: Generating DSP driver_inst/ARG, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: Generating DSP driver_inst/ARG, operation Mode is: PCIN+A*(B:0x107ff).
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: Generating DSP driver_inst/ARG, operation Mode is: (A:0x107ff)*B.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: Generating DSP driver_inst/ARG, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: Generating DSP driver_inst/ARG, operation Mode is: A*B.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: Generating DSP driver_inst/ARG, operation Mode is: PCIN+A*(B:0x107ff).
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: Generating DSP driver_inst/ARG, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: Generating DSP driver_inst/ARG, operation Mode is: A*(B:0x107ff).
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: Generating DSP driver_inst/ARG, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: Generating DSP driver_inst/ARG, operation Mode is: PCIN+A*(B:0x107ff).
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
+DSP Report: Generating DSP clarke_inst/mult_reg_1_reg, operation Mode is: (A*(B:0x2aad))'.
+DSP Report: register clarke_inst/mult_reg_1_reg is absorbed into DSP clarke_inst/mult_reg_1_reg.
+DSP Report: operator clarke_inst/mult_reg_10 is absorbed into DSP clarke_inst/mult_reg_1_reg.
+DSP Report: Generating DSP clarke_inst/mult_reg_3_reg, operation Mode is: (A*(B:0x1555))'.
+DSP Report: register clarke_inst/mult_reg_3_reg is absorbed into DSP clarke_inst/mult_reg_3_reg.
+DSP Report: operator clarke_inst/mult_reg_30 is absorbed into DSP clarke_inst/mult_reg_3_reg.
+DSP Report: Generating DSP clarke_inst/mult_reg_2_reg, operation Mode is: (A*(B:0x1555))'.
+DSP Report: register clarke_inst/mult_reg_2_reg is absorbed into DSP clarke_inst/mult_reg_2_reg.
+DSP Report: operator clarke_inst/mult_reg_20 is absorbed into DSP clarke_inst/mult_reg_2_reg.
+DSP Report: Generating DSP clarke_inst/v_alpha_reg, operation Mode is: (PCIN-A:B-C)'.
+DSP Report: register clarke_inst/v_alpha_reg is absorbed into DSP clarke_inst/v_alpha_reg.
+DSP Report: operator clarke_inst/v_alpha0 is absorbed into DSP clarke_inst/v_alpha_reg.
+DSP Report: Generating DSP clarke_inst/mult_reg_4_reg, operation Mode is: (A*(B:0x24f5))'.
+DSP Report: register clarke_inst/mult_reg_4_reg is absorbed into DSP clarke_inst/mult_reg_4_reg.
+DSP Report: operator clarke_inst/mult_reg_40 is absorbed into DSP clarke_inst/mult_reg_4_reg.
+DSP Report: Generating DSP clarke_inst/v_beta_reg, operation Mode is: (PCIN-(A*(B:0x24f5))')'.
+DSP Report: register clarke_inst/v_beta_reg is absorbed into DSP clarke_inst/v_beta_reg.
+DSP Report: register clarke_inst/mult_reg_5_reg is absorbed into DSP clarke_inst/v_beta_reg.
+DSP Report: operator clarke_inst/v_beta0 is absorbed into DSP clarke_inst/v_beta_reg.
+DSP Report: operator clarke_inst/mult_reg_50 is absorbed into DSP clarke_inst/v_beta_reg.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[47]) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[46]) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[45]) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[44]) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[43]) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[42]) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[41]) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[40]) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[39]) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[38]) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[37]) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[36]) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[35]) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[34]) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[33]) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[32]) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[31]) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[30]) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[29]) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[28]) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[27]) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[26]) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[25]) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[24]) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[23]) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[22]) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[21]) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[20]) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[19]) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[18]) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[17]) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[47]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[46]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[45]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[44]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[43]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[42]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[41]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[40]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[39]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[38]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[37]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[36]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[35]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[34]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[33]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[32]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[31]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[30]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[29]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[28]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[27]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[26]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[25]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[24]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[23]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[22]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[21]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[20]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[19]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[18]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[17]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[15]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[14]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[13]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[12]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[11]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[10]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[9]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[8]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[7]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[6]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[5]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[4]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[3]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[2]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[1]__0) is unused and will be removed from module vector_processor.
+WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[0]__0) is unused and will be removed from module vector_processor.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 1351.734 ; gain = 833.434
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 1628.883 ; gain = 1100.406
 ---------------------------------------------------------------------------------
- Sort Area is  ARG_10 : 0 0 : 1995 5987 : Used 1 time 0
- Sort Area is  ARG_10 : 0 1 : 1993 5987 : Used 1 time 0
- Sort Area is  ARG_10 : 0 2 : 1999 5987 : Used 1 time 0
- Sort Area is  ARG_16 : 0 0 : 1995 5987 : Used 1 time 0
- Sort Area is  ARG_16 : 0 1 : 1993 5987 : Used 1 time 0
- Sort Area is  ARG_16 : 0 2 : 1999 5987 : Used 1 time 0
- Sort Area is  ARG_1b : 0 0 : 1995 5987 : Used 1 time 0
- Sort Area is  ARG_1b : 0 1 : 1993 5987 : Used 1 time 0
- Sort Area is  ARG_1b : 0 2 : 1999 5987 : Used 1 time 0
- Sort Area is  ARG_1e : 0 0 : 1995 5987 : Used 1 time 0
- Sort Area is  ARG_1e : 0 1 : 1993 5987 : Used 1 time 0
- Sort Area is  ARG_1e : 0 2 : 1999 5987 : Used 1 time 0
- Sort Area is  ARG_15 : 0 0 : 1993 5985 : Used 1 time 0
- Sort Area is  ARG_15 : 0 1 : 1999 5985 : Used 1 time 0
- Sort Area is  ARG_15 : 0 2 : 1993 5985 : Used 1 time 0
- Sort Area is  ARG_1a : 0 0 : 1993 5985 : Used 1 time 0
- Sort Area is  ARG_1a : 0 1 : 1999 5985 : Used 1 time 0
- Sort Area is  ARG_1a : 0 2 : 1993 5985 : Used 1 time 0
- Sort Area is  ARG_1d : 0 0 : 1993 5985 : Used 1 time 0
- Sort Area is  ARG_1d : 0 1 : 1999 5985 : Used 1 time 0
- Sort Area is  ARG_1d : 0 2 : 1993 5985 : Used 1 time 0
- Sort Area is  ARG_e : 0 0 : 1993 5985 : Used 1 time 0
- Sort Area is  ARG_e : 0 1 : 1999 5985 : Used 1 time 0
- Sort Area is  ARG_e : 0 2 : 1993 5985 : Used 1 time 0
- Sort Area is  ARG_0 : 0 0 : 1993 5628 : Used 1 time 0
- Sort Area is  ARG_0 : 0 1 : 1642 5628 : Used 1 time 0
- Sort Area is  ARG_0 : 0 2 : 1993 5628 : Used 1 time 0
- Sort Area is  ARG_4 : 0 0 : 1623 5258 : Used 1 time 0
- Sort Area is  ARG_4 : 0 1 : 1993 5258 : Used 1 time 0
- Sort Area is  ARG_4 : 0 2 : 1642 5258 : Used 1 time 0
- Sort Area is  ARG0_b : 0 0 : 2634 5119 : Used 1 time 0
- Sort Area is  ARG0_b : 0 1 : 2485 5119 : Used 1 time 0
- Sort Area is  ARG0_9 : 0 0 : 1993 4646 : Used 1 time 0
- Sort Area is  ARG0_9 : 0 1 : 2653 4646 : Used 1 time 0
- Sort Area is  ARG_17 : 0 0 : 1678 3607 : Used 1 time 0
- Sort Area is  ARG_17 : 0 1 : 1929 3607 : Used 1 time 0
- Sort Area is  ARG_6 : 0 0 : 1486 2897 : Used 1 time 0
- Sort Area is  ARG_6 : 0 1 : 1411 2897 : Used 1 time 0
- Sort Area is  ARG_12 : 0 0 : 1130 2625 : Used 1 time 0
- Sort Area is  ARG_12 : 0 1 : 1495 2625 : Used 1 time 0
- Sort Area is  ARG_1c : 0 0 : 1130 2625 : Used 1 time 0
- Sort Area is  ARG_1c : 0 1 : 1495 2625 : Used 1 time 0
- Sort Area is  ARG_1f : 0 0 : 1130 2625 : Used 1 time 0
- Sort Area is  ARG_1f : 0 1 : 1495 2625 : Used 1 time 0
- Sort Area is  clarke_inst/ARG_26 : 0 0 : 975 2192 : Used 1 time 0
- Sort Area is  clarke_inst/ARG_26 : 0 1 : 1217 2192 : Used 1 time 0
- Sort Area is  clarke_inst/ARG_23 : 0 0 : 975 1476 : Used 1 time 0
- Sort Area is  clarke_inst/ARG_23 : 0 1 : 501 1476 : Used 1 time 0
- Sort Area is  clarke_inst/ARG_20 : 0 0 : 918 918 : Used 1 time 0
- Sort Area is  clarke_inst/ARG_22 : 0 0 : 918 918 : Used 1 time 0
+ Sort Area is  driver_inst/ARG_14 : 0 0 : 2701 6022 : Used 1 time 0
+ Sort Area is  driver_inst/ARG_14 : 0 1 : 1999 6022 : Used 1 time 0
+ Sort Area is  driver_inst/ARG_14 : 0 2 : 1322 6022 : Used 1 time 0
+ Sort Area is  driver_inst/ARG_19 : 0 0 : 2701 6022 : Used 1 time 0
+ Sort Area is  driver_inst/ARG_19 : 0 1 : 1999 6022 : Used 1 time 0
+ Sort Area is  driver_inst/ARG_19 : 0 2 : 1322 6022 : Used 1 time 0
+ Sort Area is  driver_inst/ARG_1c : 0 0 : 2701 6022 : Used 1 time 0
+ Sort Area is  driver_inst/ARG_1c : 0 1 : 1999 6022 : Used 1 time 0
+ Sort Area is  driver_inst/ARG_1c : 0 2 : 1322 6022 : Used 1 time 0
+ Sort Area is  driver_inst/ARG_c : 0 0 : 2701 6022 : Used 1 time 0
+ Sort Area is  driver_inst/ARG_c : 0 1 : 1999 6022 : Used 1 time 0
+ Sort Area is  driver_inst/ARG_c : 0 2 : 1322 6022 : Used 1 time 0
+ Sort Area is  driver_inst/ARG_15 : 0 0 : 1995 5316 : Used 1 time 0
+ Sort Area is  driver_inst/ARG_15 : 0 1 : 1322 5316 : Used 1 time 0
+ Sort Area is  driver_inst/ARG_15 : 0 2 : 1999 5316 : Used 1 time 0
+ Sort Area is  driver_inst/ARG_1a : 0 0 : 1995 5316 : Used 1 time 0
+ Sort Area is  driver_inst/ARG_1a : 0 1 : 1322 5316 : Used 1 time 0
+ Sort Area is  driver_inst/ARG_1a : 0 2 : 1999 5316 : Used 1 time 0
+ Sort Area is  driver_inst/ARG_1d : 0 0 : 1995 5316 : Used 1 time 0
+ Sort Area is  driver_inst/ARG_1d : 0 1 : 1322 5316 : Used 1 time 0
+ Sort Area is  driver_inst/ARG_1d : 0 2 : 1999 5316 : Used 1 time 0
+ Sort Area is  driver_inst/ARG_f : 0 0 : 1995 5316 : Used 1 time 0
+ Sort Area is  driver_inst/ARG_f : 0 1 : 1322 5316 : Used 1 time 0
+ Sort Area is  driver_inst/ARG_f : 0 2 : 1999 5316 : Used 1 time 0
+ Sort Area is  T1_mult_reg0_6 : 0 0 : 2701 4861 : Used 1 time 0
+ Sort Area is  T1_mult_reg0_6 : 0 1 : 2160 4861 : Used 1 time 0
+ Sort Area is  T1_mult_reg0_9 : 0 0 : 2158 3958 : Used 1 time 0
+ Sort Area is  T1_mult_reg0_9 : 0 1 : 1800 3958 : Used 1 time 0
+ Sort Area is  mult_reg0_0 : 0 0 : 2011 3719 : Used 1 time 0
+ Sort Area is  mult_reg0_0 : 0 1 : 1708 3719 : Used 1 time 0
+ Sort Area is  mult_reg0_3 : 0 0 : 2015 3689 : Used 1 time 0
+ Sort Area is  mult_reg0_3 : 0 1 : 1674 3689 : Used 1 time 0
+ Sort Area is  driver_inst/ARG_16 : 0 0 : 1678 3607 : Used 1 time 0
+ Sort Area is  driver_inst/ARG_16 : 0 1 : 1929 3607 : Used 1 time 0
+ Sort Area is  driver_inst/ARG_11 : 0 0 : 1130 2625 : Used 1 time 0
+ Sort Area is  driver_inst/ARG_11 : 0 1 : 1495 2625 : Used 1 time 0
+ Sort Area is  driver_inst/ARG_1b : 0 0 : 1130 2625 : Used 1 time 0
+ Sort Area is  driver_inst/ARG_1b : 0 1 : 1495 2625 : Used 1 time 0
+ Sort Area is  driver_inst/ARG_1e : 0 0 : 1130 2625 : Used 1 time 0
+ Sort Area is  driver_inst/ARG_1e : 0 1 : 1495 2625 : Used 1 time 0
+ Sort Area is  clarke_inst/mult_reg_4_reg_25 : 0 0 : 1006 2286 : Used 1 time 0
+ Sort Area is  clarke_inst/mult_reg_4_reg_25 : 0 1 : 1280 2286 : Used 1 time 0
+ Sort Area is  clarke_inst/mult_reg_1_reg_22 : 0 0 : 1006 1539 : Used 1 time 0
+ Sort Area is  clarke_inst/mult_reg_1_reg_22 : 0 1 : 533 1539 : Used 1 time 0
+ Sort Area is  clarke_inst/mult_reg_2_reg_1f : 0 0 : 948 948 : Used 1 time 0
+ Sort Area is  clarke_inst/mult_reg_3_reg_21 : 0 0 : 948 948 : Used 1 time 0
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 
 DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
-+-------------------------+--------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name              | DSP Mapping        | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+-------------------------+--------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|vector_processor         | (A:0x14edb)*B      | 18     | 11     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|vector_processor         | (PCIN>>17)+A*B     | 11     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|vector_processor         | A*B                | 18     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|vector_processor         | PCIN+A*(B:0x14edb) | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|vector_processor         | (PCIN>>17)+A*B     | 18     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|vector_processor         | A*(B:0x14edb)      | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|vector_processor         | (PCIN>>17)+A*B     | 18     | 9      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|vector_processor         | PCIN+A*(B:0x14edb) | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|switching_time_processor | A*B                | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|switching_time_processor | (PCIN>>17)+A*B     | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|switching_time_processor | A*B                | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|switching_time_processor | (PCIN>>17)+A*B     | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | (A:0x107ff)*B      | 18     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | (PCIN>>17)+A*B     | 14     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | A*B                | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | PCIN+A*(B:0x107ff) | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | (PCIN>>17)+A*B     | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | A*(B:0x107ff)      | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | (PCIN>>17)+A*B     | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | PCIN+A*(B:0x107ff) | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | (A:0x107ff)*B      | 18     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | (PCIN>>17)+A*B     | 14     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | A*B                | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | PCIN+A*(B:0x107ff) | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | (PCIN>>17)+A*B     | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | A*(B:0x107ff)      | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | (PCIN>>17)+A*B     | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | PCIN+A*(B:0x107ff) | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | (A:0x107ff)*B      | 18     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | (PCIN>>17)+A*B     | 14     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | A*B                | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | PCIN+A*(B:0x107ff) | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | (PCIN>>17)+A*B     | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | A*(B:0x107ff)      | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | (PCIN>>17)+A*B     | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | PCIN+A*(B:0x107ff) | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | (A:0x107ff)*B      | 18     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | (PCIN>>17)+A*B     | 14     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | A*B                | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | PCIN+A*(B:0x107ff) | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | (PCIN>>17)+A*B     | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | A*(B:0x107ff)      | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | (PCIN>>17)+A*B     | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | PCIN+A*(B:0x107ff) | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|clarke_transform         | A*(B:0x2aad)       | 16     | 15     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|clarke_transform         | A*(B:0x1555)       | 16     | 14     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|clarke_transform         | A*(B:0x1555)       | 16     | 14     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | PCIN-A:B-C         | 12     | 18     | 30     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
-|clarke_transform         | A*(B:0x24f5)       | 16     | 15     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|clarke_transform         | PCIN-A*(B:0x24f5)  | 16     | 15     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-+-------------------------+--------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
++-------------------------+-------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name              | DSP Mapping             | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-------------------------+-------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|vector_processor         | (A:0x14edb)*B2          | 18     | 17     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|vector_processor         | (PCIN>>17)+A2*B         | 17     | 9      | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 1    | 
+|vector_processor         | A2*(B:0x14edb)          | 18     | 18     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|vector_processor         | (PCIN>>17)+A2*B         | 18     | 9      | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 1    | 
+|switching_time_processor | A*B                     | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|switching_time_processor | (PCIN>>17)+A*B          | 15     | 15     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|switching_time_processor | A*B                     | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|switching_time_processor | (PCIN>>17)+A*B          | 18     | 15     | -      | -      | 47     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | (A:0x107ff)*B           | 18     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | (PCIN>>17)+A*B          | 14     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | A*B                     | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | PCIN+A*(B:0x107ff)      | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | (PCIN>>17)+A*B          | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | A*(B:0x107ff)           | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | (PCIN>>17)+A*B          | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | PCIN+A*(B:0x107ff)      | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | (A:0x107ff)*B           | 18     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | (PCIN>>17)+A*B          | 14     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | A*B                     | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | PCIN+A*(B:0x107ff)      | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | (PCIN>>17)+A*B          | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | A*(B:0x107ff)           | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | (PCIN>>17)+A*B          | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | PCIN+A*(B:0x107ff)      | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | (A:0x107ff)*B           | 18     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | (PCIN>>17)+A*B          | 14     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | A*B                     | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | PCIN+A*(B:0x107ff)      | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | (PCIN>>17)+A*B          | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | A*(B:0x107ff)           | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | (PCIN>>17)+A*B          | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | PCIN+A*(B:0x107ff)      | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | (A:0x107ff)*B           | 18     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | (PCIN>>17)+A*B          | 14     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | A*B                     | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | PCIN+A*(B:0x107ff)      | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | (PCIN>>17)+A*B          | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | A*(B:0x107ff)           | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | (PCIN>>17)+A*B          | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | PCIN+A*(B:0x107ff)      | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|clarke_transform         | (A*(B:0x2aad))'         | 16     | 15     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|clarke_transform         | (A*(B:0x1555))'         | 16     | 14     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|clarke_transform         | (A*(B:0x1555))'         | 16     | 14     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|clarke_transform         | (PCIN-A:B-C)'           | 12     | 18     | 30     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
+|clarke_transform         | (A*(B:0x24f5))'         | 16     | 15     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|clarke_transform         | (PCIN-(A*(B:0x24f5))')' | 16     | 15     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 1    | 1    | 
++-------------------------+-------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
 ---------------------------------------------------------------------------------
@@ -432,13 +508,13 @@ No constraint files found.
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 1351.734 ; gain = 833.434
+Finished Timing Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1628.883 ; gain = 1100.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 1351.734 ; gain = 833.434
+Finished Technology Mapping : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1628.883 ; gain = 1100.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -456,37 +532,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 1356.152 ; gain = 837.852
+Finished IO Insertion : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1628.883 ; gain = 1100.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 1356.152 ; gain = 837.852
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:39 ; elapsed = 00:00:39 . Memory (MB): peak = 1628.883 ; gain = 1100.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 1356.152 ; gain = 837.852
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:39 ; elapsed = 00:00:40 . Memory (MB): peak = 1628.883 ; gain = 1100.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 1356.152 ; gain = 837.852
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:39 ; elapsed = 00:00:40 . Memory (MB): peak = 1628.883 ; gain = 1100.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 1356.152 ; gain = 837.852
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:39 ; elapsed = 00:00:40 . Memory (MB): peak = 1628.883 ; gain = 1100.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 1356.152 ; gain = 837.852
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:39 ; elapsed = 00:00:40 . Memory (MB): peak = 1628.883 ; gain = 1100.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -496,14 +572,14 @@ Static Shift Register Report:
 +------------+-------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
 |Module Name | RTL Name                                                          | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
 +------------+-------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|svpwm       | vector_processor_inst/pipeline_reg[13][pip_Z][14]                 | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
-|svpwm       | vector_processor_inst/pipeline_reg[14][pip_Z][13]                 | 5      | 1     | YES          | NO                 | YES               | 1      | 0       | 
-|svpwm       | vector_processor_inst/pipeline_reg[15][pip_Z][12]                 | 6      | 13    | YES          | NO                 | YES               | 13     | 0       | 
-|svpwm       | vector_processor_inst/pipeline_reg[15][pip_quadrant][1]           | 16     | 2     | YES          | NO                 | YES               | 2      | 0       | 
+|svpwm       | u_vector_proc/pipeline_reg[13][pip_z][14]                         | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|svpwm       | u_vector_proc/pipeline_reg[14][pip_z][13]                         | 5      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|svpwm       | u_vector_proc/pipeline_reg[15][pip_z][12]                         | 6      | 13    | YES          | NO                 | YES               | 13     | 0       | 
+|svpwm       | u_vector_proc/pipeline_reg[15][pip_quadrant][1]                   | 16     | 2     | YES          | NO                 | YES               | 2      | 0       | 
 |svpwm       | time_processor_inst/cordic_inst/pipeline_reg[15][pip_quadrant][1] | 16     | 1     | YES          | NO                 | YES               | 1      | 0       | 
 |svpwm       | time_processor_inst/cordic_inst/pipeline_reg[13][pip_theta][14]   | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
 |svpwm       | time_processor_inst/shift_reg_vref/sig_delay_reg[31]              | 17     | 32    | YES          | NO                 | YES               | 32     | 0       | 
-|svpwm       | time_processor_inst/shift_reg_sector/sig_delay_reg[2]             | 19     | 3     | YES          | NO                 | YES               | 0      | 3       | 
+|svpwm       | time_processor_inst/shift_reg_sector/sig_delay_reg[2]             | 25     | 3     | YES          | NO                 | YES               | 0      | 3       | 
 +------------+-------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
 
 ---------------------------------------------------------------------------------
@@ -514,59 +590,56 @@ Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
 DSP Final Report (the ' indicates corresponding REG is set)
-+-------------------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name              | DSP Mapping     | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+-------------------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|clarke_transform         | A*B             | 30     | 14     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|clarke_transform         | A*B             | 30     | 13     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|clarke_transform         | A*B             | 30     | 13     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | (PCIN-(A:B+C))' | 30     | 18     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|clarke_transform         | A*B             | 30     | 14     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|clarke_transform         | (PCIN-(A*B))'   | 30     | 0      | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|transistor_driver        | A*B             | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | PCIN>>17+A*B    | 13     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | A*B             | 17     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | PCIN+A*B        | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | PCIN>>17+A*B    | 0      | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | A*B             | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | PCIN>>17+A*B    | 0      | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | PCIN+A*B        | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | A*B             | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | PCIN>>17+A*B    | 13     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | A*B             | 17     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | PCIN+A*B        | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | PCIN>>17+A*B    | 0      | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | A*B             | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | PCIN>>17+A*B    | 0      | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | PCIN+A*B        | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | A*B             | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | PCIN>>17+A*B    | 13     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | A*B             | 17     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | PCIN+A*B        | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | PCIN>>17+A*B    | 17     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | A*B             | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | PCIN>>17+A*B    | 17     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | PCIN+A*B        | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | A*B             | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | PCIN>>17+A*B    | 13     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | A*B             | 17     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | PCIN+A*B        | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | PCIN>>17+A*B    | 0      | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | A*B             | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | PCIN>>17+A*B    | 0      | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|transistor_driver        | PCIN+A*B        | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|switching_time_processor | A*B             | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|switching_time_processor | PCIN>>17+A*B    | 30     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|switching_time_processor | A*B             | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|switching_time_processor | PCIN>>17+A*B    | 0      | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|vector_processor         | A*B             | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|vector_processor         | A*B             | 17     | 8      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|vector_processor         | PCIN+A*B        | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|vector_processor         | PCIN>>17+A*B    | 17     | 8      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|vector_processor         | A*B             | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|vector_processor         | PCIN>>17+A*B    | 17     | 8      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|vector_processor         | PCIN+A*B        | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-+-------------------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
++-------------------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name              | DSP Mapping      | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-------------------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|clarke_transform         | (A*B)'           | 30     | 14     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|clarke_transform         | (A*B)'           | 30     | 13     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|clarke_transform         | (A*B)'           | 30     | 13     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|clarke_transform         | (PCIN-(A:B+C))'  | 30     | 18     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|clarke_transform         | (A*B)'           | 30     | 14     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|clarke_transform         | (PCIN-((A*B)'))' | 30     | 0      | -      | -      | 32     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|svpwm                    | A*B              | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | PCIN>>17+A*B     | 13     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | A*B              | 17     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | PCIN+A*B         | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | PCIN>>17+A*B     | 0      | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | A*B              | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | PCIN>>17+A*B     | 17     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | PCIN+A*B         | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | A*B              | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | PCIN>>17+A*B     | 13     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | A*B              | 17     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | PCIN+A*B         | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | PCIN>>17+A*B     | 0      | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | A*B              | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | PCIN>>17+A*B     | 17     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | PCIN+A*B         | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | A*B              | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | PCIN>>17+A*B     | 13     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | A*B              | 17     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | PCIN+A*B         | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | PCIN>>17+A*B     | 17     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | A*B              | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | PCIN>>17+A*B     | 17     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | PCIN+A*B         | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | A*B              | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | PCIN>>17+A*B     | 13     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | A*B              | 17     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | PCIN+A*B         | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | PCIN>>17+A*B     | 0      | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | A*B              | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | PCIN>>17+A*B     | 17     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|svpwm                    | PCIN+A*B         | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|switching_time_processor | A*B              | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|switching_time_processor | PCIN>>17+A*B     | 30     | 18     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|switching_time_processor | A*B              | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|switching_time_processor | PCIN>>17+A*B     | 0      | 18     | -      | -      | 47     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|vector_processor         | A*B'             | 17     | 18     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|vector_processor         | (PCIN>>17+A'*B)' | 30     | 8      | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 1    | 
+|vector_processor         | A'*B             | 17     | 17     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|vector_processor         | (PCIN>>17+A'*B)' | 17     | 8      | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 1    | 
++-------------------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 
 Report BlackBoxes: 
@@ -580,61 +653,61 @@ Report Cell Usage:
 |      |Cell    |Count |
 +------+--------+------+
 |1     |BUFG    |     1|
-|2     |CARRY4  |  1334|
-|3     |DSP48E1 |    49|
-|4     |LUT1    |   658|
-|5     |LUT2    |  1837|
-|6     |LUT3    |  3046|
-|7     |LUT4    |   434|
-|8     |LUT5    |   156|
-|9     |LUT6    |   353|
+|2     |CARRY4  |  1129|
+|3     |DSP48E1 |    46|
+|4     |LUT1    |   702|
+|5     |LUT2    |  1803|
+|6     |LUT3    |  2009|
+|7     |LUT4    |   357|
+|8     |LUT5    |   246|
+|9     |LUT6    |   328|
 |10    |SRL16E  |    51|
 |11    |SRLC32E |     3|
-|12    |FDCE    |  4000|
+|12    |FDCE    |  1369|
 |13    |FDPE    |     3|
-|14    |FDRE    |   239|
+|14    |FDRE    |  2381|
 |15    |IBUF    |    50|
 |16    |OBUF    |     6|
 +------+--------+------+
 
 Report Instance Areas: 
-+------+------------------------+-------------------------------+------+
-|      |Instance                |Module                         |Cells |
-+------+------------------------+-------------------------------+------+
-|1     |top                     |                               | 12220|
-|2     |  clarke_inst           |clarke_transform               |   244|
-|3     |  driver_inst           |transistor_driver              |   928|
-|4     |    HB1                 |center_pwm                     |   153|
-|5     |    HB2                 |center_pwm_0                   |    98|
-|6     |    HB3                 |center_pwm_1                   |   133|
-|7     |  time_processor_inst   |switching_time_processor       |  4659|
-|8     |    cordic_inst         |cordic_sin_cos                 |  3344|
-|9     |    shift_reg_sector    |shift_register__parameterized1 |    46|
-|10    |    shift_reg_vref      |shift_register                 |   128|
-|11    |  vector_processor_inst |vector_processor               |  6330|
-+------+------------------------+-------------------------------+------+
++------+----------------------+-------------------------------+------+
+|      |Instance              |Module                         |Cells |
++------+----------------------+-------------------------------+------+
+|1     |top                   |                               | 10484|
+|2     |  clarke_inst         |clarke_transform               |   168|
+|3     |  driver_inst         |transistor_driver              |   923|
+|4     |    HB1               |center_pwm                     |   153|
+|5     |    HB2               |center_pwm_0                   |    98|
+|6     |    HB3               |center_pwm_1                   |   134|
+|7     |  time_processor_inst |switching_time_processor       |  4824|
+|8     |    cordic_inst       |cordic_sin_cos                 |  3344|
+|9     |    shift_reg_sector  |shift_register__parameterized1 |    52|
+|10    |    shift_reg_vref    |shift_register                 |   128|
+|11    |  u_vector_proc       |vector_processor               |  4512|
++------+----------------------+-------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1356.152 ; gain = 837.852
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:39 ; elapsed = 00:00:40 . Memory (MB): peak = 1628.883 ; gain = 1100.406
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 22 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1356.152 ; gain = 837.852
-Synthesis Optimization Complete : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1356.152 ; gain = 837.852
+Synthesis finished with 0 errors, 0 critical warnings and 91 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:39 ; elapsed = 00:00:40 . Memory (MB): peak = 1628.883 ; gain = 1100.406
+Synthesis Optimization Complete : Time (s): cpu = 00:00:39 ; elapsed = 00:00:40 . Memory (MB): peak = 1628.883 ; gain = 1100.406
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.173 . Memory (MB): peak = 1368.168 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 1383 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.137 . Memory (MB): peak = 1628.883 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1175 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1457.566 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1628.883 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 6da8ebfe
+Synth Design complete | Checksum: 972465b8
 INFO: [Common 17-83] Releasing license: Synthesis
-41 Infos, 22 Warnings, 0 Critical Warnings and 0 Errors encountered.
+45 Infos, 91 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:44 ; elapsed = 00:00:48 . Memory (MB): peak = 1457.566 ; gain = 942.191
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.044 . Memory (MB): peak = 1457.566 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 1628.883 ; gain = 1109.695
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 1628.883 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.runs/synth_1/svpwm.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file svpwm_utilization_synth.rpt -pb svpwm_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Jul 17 17:03:52 2025...
+INFO: [Common 17-206] Exiting Vivado at Sat Jul 19 01:24:51 2025...
