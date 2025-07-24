@@ -109,7 +109,7 @@ BEGIN
             v_beta   => v_beta
         );
         
-    u_vector_proc: vector_processor
+    vector_proc_inst: vector_processor
     GENERIC MAP (
         iterations => 16
     )

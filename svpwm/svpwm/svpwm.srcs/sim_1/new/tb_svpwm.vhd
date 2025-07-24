@@ -62,7 +62,7 @@ BEGIN
         WAIT FOR 1500 ns;
         reset <= '0';
 
-        FILE_OPEN(txt_file, "Sine50Hz_64kHz.txt", READ_MODE);
+        FILE_OPEN(txt_file, "ThreePhaseHarmonics_64kHz_16bit.txt", READ_MODE);
 
         WHILE NOT ENDFILE(txt_file) LOOP
             READLINE(txt_file, line_buf);

@@ -205,8 +205,7 @@ BEGIN
         END IF;
     END PROCESS;
 
-    t0 <= TZ - t1_int - t2_int;
-          
+    t0 <= TZ - t1_int - t2_int;        
     t1 <= t1_int;
     t2 <= t2_int;
 
