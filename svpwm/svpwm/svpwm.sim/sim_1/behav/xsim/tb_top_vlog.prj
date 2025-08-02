@@ -1,0 +1,11 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../svpwm.gen/sources_1/bd/design_1/ipshared/ec67/hdl" --include "../../../../svpwm.gen/sources_1/bd/design_1/ipshared/b28c/hdl" --include "C:/Xilinx/Vivado/2024.1/data/xilinx_vip/include" \
+"../../../../svpwm.gen/sources_1/ip/blk_mem_gen_2/sim/blk_mem_gen_2.v" \
+"../../../../svpwm.gen/sources_1/ip/blk_mem_gen_1/sim/blk_mem_gen_1.v" \
+"../../../../svpwm.gen/sources_1/ip/blk_mem_gen_0/sim/blk_mem_gen_0.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -35,7 +35,7 @@ begin
             IF(clk_count = to_unsigned(1, clk_count'length)) THEN 
                 up_down <= '1';
                 duty_cycle_latch <= unsigned(duty_cycle);
-            ELSIF(clk_count = to_unsigned(3332, clk_count'length)) THEN 
+            ELSIF(clk_count = to_unsigned(1666, clk_count'length)) THEN 
                 up_down <= '0';
             END IF;
             

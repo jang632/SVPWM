@@ -1,0 +1,39 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.830313",
+   "Default View_TopLeft":"-325,-212",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.7.1 2023-07-26 3bc4126617 VDI=43 GEI=38 GUI=JA:21.0
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 2 -x 790 -y -140 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 2 -x 790 -y -120 -defaultsOSRD
+preplace port port-id_HB1_top -pg 1 -lvl 2 -x 790 -y 240 -defaultsOSRD
+preplace port port-id_HB1_bot -pg 1 -lvl 2 -x 790 -y 260 -defaultsOSRD
+preplace port port-id_HB2_top -pg 1 -lvl 2 -x 790 -y 280 -defaultsOSRD
+preplace port port-id_HB2_bot -pg 1 -lvl 2 -x 790 -y 300 -defaultsOSRD
+preplace port port-id_HB3_top -pg 1 -lvl 2 -x 790 -y 320 -defaultsOSRD
+preplace port port-id_HB3_bot -pg 1 -lvl 2 -x 790 -y 340 -defaultsOSRD
+preplace port port-id_reset -pg 1 -lvl 0 -x 0 -y 300 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 1 -x 540 -y -100 -defaultsOSRD
+preplace inst proc_sys_reset_0 -pg 1 -lvl 1 -x 540 -y 100 -defaultsOSRD
+preplace inst top_0 -pg 1 -lvl 1 -x 540 -y 290 -defaultsOSRD
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 2 340 0 740
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 330 -200 750
+preplace netloc reset_0_1 1 0 1 N 300
+preplace netloc top_0_HB1_bot 1 1 1 N 260
+preplace netloc top_0_HB1_top 1 1 1 N 240
+preplace netloc top_0_HB2_bot 1 1 1 N 300
+preplace netloc top_0_HB2_top 1 1 1 N 280
+preplace netloc top_0_HB3_bot 1 1 1 N 340
+preplace netloc top_0_HB3_top 1 1 1 N 320
+preplace netloc processing_system7_0_DDR 1 1 1 NJ -140
+preplace netloc processing_system7_0_FIXED_IO 1 1 1 NJ -120
+levelinfo -pg 1 0 540 790
+pagesize -pg 1 -db -bbox -sgen -100 -310 910 400
+"
+}
+{
+   "da_board_cnt":"2",
+   "da_clkrst_cnt":"3",
+   "da_ps7_cnt":"2"
+}

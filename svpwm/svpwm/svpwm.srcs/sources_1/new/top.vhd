@@ -21,7 +21,7 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
+use IEEE.NUMERIC_STD.ALL;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 --use IEEE.NUMERIC_STD.ALL;
@@ -102,6 +102,8 @@ SIGNAL doutA : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL doutB : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL doutC : STD_LOGIC_VECTOR(15 DOWNTO 0);
 
+SIGNAL index : unsigned(15 DOWNTO 0);
+
 begin
 
 inst_memA : blk_mem_gen_0
@@ -148,5 +150,33 @@ inst_svpwm : svpwm
     HB3_top  => HB3_top,
     HB3_bot  => HB3_bot
   );
+ 
+ena <= '1'; 
+  
+PROCESS(clk)
+BEGIN 
+    IF(rising_edge(clk)) THEN 
+       IF(reset = '1') THEN 
+        index <= (others => '0');
+        addra <= (others => '0');
+       ELSE 
+          IF(index < 195) THEN 
+            index <= index + 1;
+          ELSE 
+            index <= (OTHERS => '0');
+            addra <= STD_LOGIC_VECTOR(unsigned(addra) + x"0001"); 
+          END IF; 
+          
+          IF(addra = x"95ff") THEN 
+            addra <= (OTHERS => '0');
+          ELSE 
+            NULL;
+          END IF;      
+       END IF;
+     END IF;
+END PROCESS;
 
 end Behavioral;
+
+
+            

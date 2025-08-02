@@ -32,7 +32,7 @@ component center_pwm is
         );  
 end component;
 
-CONSTANT time_scale : signed(31 DOWNTO 0) := x"2faf07ff";
+CONSTANT time_scale : SIGNED(31 DOWNTO 0) := x"17d78400";
 
 SIGNAL duty_cycle_HB1 : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL duty_cycle_HB2 : STD_LOGIC_VECTOR(15 DOWNTO 0);

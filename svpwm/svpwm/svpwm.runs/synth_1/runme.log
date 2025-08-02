@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log svpwm.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source svpwm.tcl
+    with args -log design_1_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
 
 
 WARNING: Default location for XILINX_HLS not found: 
@@ -9,705 +9,316 @@ WARNING: Default location for XILINX_HLS not found:
   **** SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
   **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
   **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-  **** Start of session at: Sat Jul 19 01:23:56 2025
+  **** Start of session at: Sat Aug  2 20:31:26 2025
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
-source svpwm.tcl -notrace
-create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 514.289 ; gain = 199.371
-Command: read_checkpoint -auto_incremental -incremental C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/utils_1/imports/synth_1/svpwm.dcp
-INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/utils_1/imports/synth_1/svpwm.dcp for incremental synthesis
-INFO: [Vivado 12-7989] Please ensure there are no constraint changes
-Command: synth_design -top svpwm -part xc7z020clg484-1
-Starting synth_design
-Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
-INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
-INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
-INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
-INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
-INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 5560
----------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 975.496 ; gain = 447.020
----------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'svpwm' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/svpwm.vhd:21]
-INFO: [Synth 8-3491] module 'clarke_transform' declared at 'C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/clarke_transform.vhd:5' bound to instance 'clarke_inst' of component 'clarke_transform' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/svpwm.vhd:103]
-INFO: [Synth 8-638] synthesizing module 'clarke_transform' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/clarke_transform.vhd:17]
-INFO: [Synth 8-256] done synthesizing module 'clarke_transform' (0#1) [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/clarke_transform.vhd:17]
-	Parameter iterations bound to: 16 - type: integer 
-INFO: [Synth 8-3491] module 'vector_processor' declared at 'C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd:5' bound to instance 'u_vector_proc' of component 'vector_processor' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/svpwm.vhd:114]
-INFO: [Synth 8-638] synthesizing module 'vector_processor' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd:20]
-	Parameter iterations bound to: 16 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'vector_processor' (0#1) [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd:20]
-INFO: [Synth 8-3491] module 'switching_time_processor' declared at 'C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/switching_time_processor.vhd:6' bound to instance 'time_processor_inst' of component 'switching_time_processor' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/svpwm.vhd:129]
-INFO: [Synth 8-638] synthesizing module 'switching_time_processor' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/switching_time_processor.vhd:20]
-	Parameter iterations bound to: 16 - type: integer 
-INFO: [Synth 8-3491] module 'cordic_sin_cos' declared at 'C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/cordic_sin_cos.vhd:5' bound to instance 'cordic_inst' of component 'cordic_sin_cos' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/switching_time_processor.vhd:80]
-INFO: [Synth 8-638] synthesizing module 'cordic_sin_cos' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/cordic_sin_cos.vhd:18]
-	Parameter iterations bound to: 16 - type: integer 
-WARNING: [Synth 8-614] signal 'reset' is read in the process but is not in the sensitivity list [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/cordic_sin_cos.vhd:58]
-INFO: [Synth 8-256] done synthesizing module 'cordic_sin_cos' (0#1) [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/cordic_sin_cos.vhd:18]
-	Parameter data_len bound to: 32 - type: integer 
-	Parameter delay_len bound to: 16 - type: integer 
-INFO: [Synth 8-3491] module 'shift_register' declared at 'C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/shift_register.vhd:5' bound to instance 'shift_reg_vref' of component 'shift_register' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/switching_time_processor.vhd:92]
-INFO: [Synth 8-638] synthesizing module 'shift_register' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/shift_register.vhd:18]
-	Parameter data_len bound to: 32 - type: integer 
-	Parameter delay_len bound to: 16 - type: integer 
-WARNING: [Synth 8-614] signal 'reset' is read in the process but is not in the sensitivity list [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/shift_register.vhd:25]
-INFO: [Synth 8-256] done synthesizing module 'shift_register' (0#1) [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/shift_register.vhd:18]
-	Parameter data_len bound to: 3 - type: integer 
-	Parameter delay_len bound to: 24 - type: integer 
-INFO: [Synth 8-3491] module 'shift_register' declared at 'C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/shift_register.vhd:5' bound to instance 'shift_reg_sector' of component 'shift_register' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/switching_time_processor.vhd:104]
-INFO: [Synth 8-638] synthesizing module 'shift_register__parameterized1' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/shift_register.vhd:18]
-	Parameter data_len bound to: 3 - type: integer 
-	Parameter delay_len bound to: 24 - type: integer 
-WARNING: [Synth 8-614] signal 'reset' is read in the process but is not in the sensitivity list [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/shift_register.vhd:25]
-INFO: [Synth 8-256] done synthesizing module 'shift_register__parameterized1' (0#1) [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/shift_register.vhd:18]
-INFO: [Synth 8-256] done synthesizing module 'switching_time_processor' (0#1) [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/switching_time_processor.vhd:20]
-INFO: [Synth 8-3491] module 'transistor_driver' declared at 'C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/transistor_driver.vhd:6' bound to instance 'driver_inst' of component 'transistor_driver' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/svpwm.vhd:142]
-INFO: [Synth 8-638] synthesizing module 'transistor_driver' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/transistor_driver.vhd:23]
-INFO: [Synth 8-3491] module 'center_pwm' declared at 'C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/center_pwm.vhd:6' bound to instance 'HB1' of component 'center_pwm' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/transistor_driver.vhd:43]
-INFO: [Synth 8-638] synthesizing module 'center_pwm' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/center_pwm.vhd:16]
-WARNING: [Synth 8-614] signal 'reset' is read in the process but is not in the sensitivity list [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/center_pwm.vhd:22]
-INFO: [Synth 8-256] done synthesizing module 'center_pwm' (0#1) [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/center_pwm.vhd:16]
-INFO: [Synth 8-3491] module 'center_pwm' declared at 'C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/center_pwm.vhd:6' bound to instance 'HB2' of component 'center_pwm' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/transistor_driver.vhd:52]
-INFO: [Synth 8-3491] module 'center_pwm' declared at 'C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/center_pwm.vhd:6' bound to instance 'HB3' of component 'center_pwm' [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/transistor_driver.vhd:61]
-WARNING: [Synth 8-614] signal 'T1' is read in the process but is not in the sensitivity list [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/transistor_driver.vhd:70]
-WARNING: [Synth 8-614] signal 'T2' is read in the process but is not in the sensitivity list [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/transistor_driver.vhd:70]
-WARNING: [Synth 8-614] signal 'T0' is read in the process but is not in the sensitivity list [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/transistor_driver.vhd:70]
-WARNING: [Synth 8-614] signal 'sector' is read in the process but is not in the sensitivity list [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/transistor_driver.vhd:70]
-INFO: [Synth 8-256] done synthesizing module 'transistor_driver' (0#1) [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/transistor_driver.vhd:23]
-INFO: [Synth 8-256] done synthesizing module 'svpwm' (0#1) [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/svpwm.vhd:21]
-WARNING: [Synth 8-6014] Unused sequential element angle_stage1_reg was removed.  [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd:193]
-WARNING: [Synth 8-6014] Unused sequential element angle_stage2_reg was removed.  [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd:194]
-WARNING: [Synth 8-6014] Unused sequential element pipeline_reg[15][pip_theta] was removed.  [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/cordic_sin_cos.vhd:61]
-WARNING: [Synth 8-6014] Unused sequential element T1_delay_reg was removed.  [C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/switching_time_processor.vhd:124]
----------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1103.809 ; gain = 575.332
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1103.809 ; gain = 575.332
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Loading Part and Timing Information
----------------------------------------------------------------------------------
-Loading part: xc7z020clg484-1
----------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1103.809 ; gain = 575.332
----------------------------------------------------------------------------------
-INFO: [Device 21-403] Loading part xc7z020clg484-1
----------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1114.766 ; gain = 586.289
----------------------------------------------------------------------------------
-No constraint files found.
----------------------------------------------------------------------------------
-Start RTL Component Statistics 
----------------------------------------------------------------------------------
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input   66 Bit       Adders := 1     
-	   2 Input   64 Bit       Adders := 3     
-	   3 Input   64 Bit       Adders := 2     
-	   2 Input   34 Bit       Adders := 3     
-	   3 Input   34 Bit       Adders := 30    
-	   2 Input   32 Bit       Adders := 39    
-	   3 Input   32 Bit       Adders := 30    
-	   2 Input   31 Bit       Adders := 1     
-+---Registers : 
-	               66 Bit    Registers := 3     
-	               64 Bit    Registers := 5     
-	               60 Bit    Registers := 2     
-	               49 Bit    Registers := 2     
-	               34 Bit    Registers := 34    
-	               32 Bit    Registers := 89    
-	               16 Bit    Registers := 3     
-	                3 Bit    Registers := 28    
-	                2 Bit    Registers := 33    
-	                1 Bit    Registers := 10    
-+---Multipliers : 
-	              31x64  Multipliers := 4     
-	              26x34  Multipliers := 1     
-	              17x32  Multipliers := 2     
-+---Muxes : 
-	   4 Input   34 Bit        Muxes := 3     
-	   2 Input   34 Bit        Muxes := 30    
-	   2 Input   32 Bit        Muxes := 31    
-	   4 Input   32 Bit        Muxes := 3     
-	   6 Input   31 Bit        Muxes := 1     
-	   2 Input   29 Bit        Muxes := 2     
-	   2 Input   28 Bit        Muxes := 2     
-	   2 Input   27 Bit        Muxes := 2     
-	   2 Input   26 Bit        Muxes := 2     
-	   2 Input   25 Bit        Muxes := 2     
-	   2 Input   24 Bit        Muxes := 2     
-	   2 Input   23 Bit        Muxes := 2     
-	   2 Input   22 Bit        Muxes := 2     
-	   2 Input   21 Bit        Muxes := 2     
-	   2 Input   20 Bit        Muxes := 3     
-	   2 Input   19 Bit        Muxes := 1     
-	   2 Input   18 Bit        Muxes := 1     
-	   2 Input   17 Bit        Muxes := 1     
-	   6 Input    3 Bit        Muxes := 1     
-	   5 Input    2 Bit        Muxes := 1     
-	   4 Input    2 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 5     
-	   8 Input    1 Bit        Muxes := 1     
----------------------------------------------------------------------------------
-Finished RTL Component Statistics 
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Part Resource Summary
----------------------------------------------------------------------------------
-INFO: [Device 21-9227] Part: xc7z020clg484-1 does not have CEAM library.
-Part Resources:
-DSPs: 220 (col length:60)
-BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
----------------------------------------------------------------------------------
-Finished Part Resource Summary
----------------------------------------------------------------------------------
-No constraint files found.
----------------------------------------------------------------------------------
-Start Cross Boundary and Area Optimization
----------------------------------------------------------------------------------
-WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-DSP Report: Generating DSP mult_reg0, operation Mode is: (A:0x14edb)*B2.
-DSP Report: register pipeline_reg[15][pip_x] is absorbed into DSP mult_reg0.
-DSP Report: operator mult_reg0 is absorbed into DSP mult_reg0.
-DSP Report: operator mult_reg0 is absorbed into DSP mult_reg0.
-DSP Report: Generating DSP mult_reg_reg, operation Mode is: (PCIN>>17)+A2*B.
-DSP Report: register pipeline_reg[15][pip_x] is absorbed into DSP mult_reg_reg.
-DSP Report: register mult_reg_reg is absorbed into DSP mult_reg_reg.
-DSP Report: operator mult_reg0 is absorbed into DSP mult_reg_reg.
-DSP Report: operator mult_reg0 is absorbed into DSP mult_reg_reg.
-DSP Report: Generating DSP mult_reg0, operation Mode is: A2*(B:0x14edb).
-DSP Report: register mult_reg0 is absorbed into DSP mult_reg0.
-DSP Report: operator mult_reg0 is absorbed into DSP mult_reg0.
-DSP Report: operator mult_reg0 is absorbed into DSP mult_reg0.
-DSP Report: Generating DSP mult_reg_reg, operation Mode is: (PCIN>>17)+A2*B.
-DSP Report: register mult_reg_reg is absorbed into DSP mult_reg_reg.
-DSP Report: register mult_reg_reg is absorbed into DSP mult_reg_reg.
-DSP Report: operator mult_reg0 is absorbed into DSP mult_reg_reg.
-DSP Report: operator mult_reg0 is absorbed into DSP mult_reg_reg.
-DSP Report: Generating DSP T1_mult_reg0, operation Mode is: A*B.
-DSP Report: operator T1_mult_reg0 is absorbed into DSP T1_mult_reg0.
-DSP Report: operator T1_mult_reg0 is absorbed into DSP T1_mult_reg0.
-DSP Report: Generating DSP T1_mult_reg0, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator T1_mult_reg0 is absorbed into DSP T1_mult_reg0.
-DSP Report: operator T1_mult_reg0 is absorbed into DSP T1_mult_reg0.
-DSP Report: Generating DSP T1_mult_reg0, operation Mode is: A*B.
-DSP Report: operator T1_mult_reg0 is absorbed into DSP T1_mult_reg0.
-DSP Report: operator T1_mult_reg0 is absorbed into DSP T1_mult_reg0.
-DSP Report: Generating DSP T1_mult_reg0, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator T1_mult_reg0 is absorbed into DSP T1_mult_reg0.
-DSP Report: operator T1_mult_reg0 is absorbed into DSP T1_mult_reg0.
-DSP Report: Generating DSP driver_inst/ARG, operation Mode is: (A:0x107ff)*B.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: Generating DSP driver_inst/ARG, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: Generating DSP driver_inst/ARG, operation Mode is: A*B.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: Generating DSP driver_inst/ARG, operation Mode is: PCIN+A*(B:0x107ff).
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: Generating DSP driver_inst/ARG, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: Generating DSP driver_inst/ARG, operation Mode is: A*(B:0x107ff).
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: Generating DSP driver_inst/ARG, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: Generating DSP driver_inst/ARG, operation Mode is: PCIN+A*(B:0x107ff).
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: Generating DSP driver_inst/ARG, operation Mode is: (A:0x107ff)*B.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: Generating DSP driver_inst/ARG, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: Generating DSP driver_inst/ARG, operation Mode is: A*B.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: Generating DSP driver_inst/ARG, operation Mode is: PCIN+A*(B:0x107ff).
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: Generating DSP driver_inst/ARG, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: Generating DSP driver_inst/ARG, operation Mode is: A*(B:0x107ff).
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: Generating DSP driver_inst/ARG, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: Generating DSP driver_inst/ARG, operation Mode is: PCIN+A*(B:0x107ff).
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: Generating DSP driver_inst/ARG, operation Mode is: (A:0x107ff)*B.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: Generating DSP driver_inst/ARG, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: Generating DSP driver_inst/ARG, operation Mode is: A*B.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: Generating DSP driver_inst/ARG, operation Mode is: PCIN+A*(B:0x107ff).
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: Generating DSP driver_inst/ARG, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: Generating DSP driver_inst/ARG, operation Mode is: A*(B:0x107ff).
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: Generating DSP driver_inst/ARG, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: Generating DSP driver_inst/ARG, operation Mode is: PCIN+A*(B:0x107ff).
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: Generating DSP driver_inst/ARG, operation Mode is: (A:0x107ff)*B.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: Generating DSP driver_inst/ARG, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: Generating DSP driver_inst/ARG, operation Mode is: A*B.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: Generating DSP driver_inst/ARG, operation Mode is: PCIN+A*(B:0x107ff).
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: Generating DSP driver_inst/ARG, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: Generating DSP driver_inst/ARG, operation Mode is: A*(B:0x107ff).
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: Generating DSP driver_inst/ARG, operation Mode is: (PCIN>>17)+A*B.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: Generating DSP driver_inst/ARG, operation Mode is: PCIN+A*(B:0x107ff).
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: operator driver_inst/ARG is absorbed into DSP driver_inst/ARG.
-DSP Report: Generating DSP clarke_inst/mult_reg_1_reg, operation Mode is: (A*(B:0x2aad))'.
-DSP Report: register clarke_inst/mult_reg_1_reg is absorbed into DSP clarke_inst/mult_reg_1_reg.
-DSP Report: operator clarke_inst/mult_reg_10 is absorbed into DSP clarke_inst/mult_reg_1_reg.
-DSP Report: Generating DSP clarke_inst/mult_reg_3_reg, operation Mode is: (A*(B:0x1555))'.
-DSP Report: register clarke_inst/mult_reg_3_reg is absorbed into DSP clarke_inst/mult_reg_3_reg.
-DSP Report: operator clarke_inst/mult_reg_30 is absorbed into DSP clarke_inst/mult_reg_3_reg.
-DSP Report: Generating DSP clarke_inst/mult_reg_2_reg, operation Mode is: (A*(B:0x1555))'.
-DSP Report: register clarke_inst/mult_reg_2_reg is absorbed into DSP clarke_inst/mult_reg_2_reg.
-DSP Report: operator clarke_inst/mult_reg_20 is absorbed into DSP clarke_inst/mult_reg_2_reg.
-DSP Report: Generating DSP clarke_inst/v_alpha_reg, operation Mode is: (PCIN-A:B-C)'.
-DSP Report: register clarke_inst/v_alpha_reg is absorbed into DSP clarke_inst/v_alpha_reg.
-DSP Report: operator clarke_inst/v_alpha0 is absorbed into DSP clarke_inst/v_alpha_reg.
-DSP Report: Generating DSP clarke_inst/mult_reg_4_reg, operation Mode is: (A*(B:0x24f5))'.
-DSP Report: register clarke_inst/mult_reg_4_reg is absorbed into DSP clarke_inst/mult_reg_4_reg.
-DSP Report: operator clarke_inst/mult_reg_40 is absorbed into DSP clarke_inst/mult_reg_4_reg.
-DSP Report: Generating DSP clarke_inst/v_beta_reg, operation Mode is: (PCIN-(A*(B:0x24f5))')'.
-DSP Report: register clarke_inst/v_beta_reg is absorbed into DSP clarke_inst/v_beta_reg.
-DSP Report: register clarke_inst/mult_reg_5_reg is absorbed into DSP clarke_inst/v_beta_reg.
-DSP Report: operator clarke_inst/v_beta0 is absorbed into DSP clarke_inst/v_beta_reg.
-DSP Report: operator clarke_inst/mult_reg_50 is absorbed into DSP clarke_inst/v_beta_reg.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[47]) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[46]) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[45]) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[44]) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[43]) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[42]) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[41]) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[40]) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[39]) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[38]) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[37]) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[36]) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[35]) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[34]) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[33]) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[32]) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[31]) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[30]) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[29]) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[28]) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[27]) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[26]) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[25]) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[24]) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[23]) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[22]) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[21]) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[20]) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[19]) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[18]) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[17]) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[47]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[46]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[45]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[44]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[43]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[42]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[41]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[40]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[39]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[38]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[37]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[36]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[35]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[34]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[33]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[32]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[31]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[30]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[29]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[28]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[27]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[26]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[25]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[24]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[23]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[22]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[21]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[20]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[19]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[18]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[17]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[15]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[14]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[13]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[12]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[11]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[10]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[9]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[8]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[7]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[6]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[5]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[4]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[3]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[2]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[1]__0) is unused and will be removed from module vector_processor.
-WARNING: [Synth 8-3332] Sequential element (mult_reg_reg[0]__0) is unused and will be removed from module vector_processor.
----------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 1628.883 ; gain = 1100.406
----------------------------------------------------------------------------------
- Sort Area is  driver_inst/ARG_14 : 0 0 : 2701 6022 : Used 1 time 0
- Sort Area is  driver_inst/ARG_14 : 0 1 : 1999 6022 : Used 1 time 0
- Sort Area is  driver_inst/ARG_14 : 0 2 : 1322 6022 : Used 1 time 0
- Sort Area is  driver_inst/ARG_19 : 0 0 : 2701 6022 : Used 1 time 0
- Sort Area is  driver_inst/ARG_19 : 0 1 : 1999 6022 : Used 1 time 0
- Sort Area is  driver_inst/ARG_19 : 0 2 : 1322 6022 : Used 1 time 0
- Sort Area is  driver_inst/ARG_1c : 0 0 : 2701 6022 : Used 1 time 0
- Sort Area is  driver_inst/ARG_1c : 0 1 : 1999 6022 : Used 1 time 0
- Sort Area is  driver_inst/ARG_1c : 0 2 : 1322 6022 : Used 1 time 0
- Sort Area is  driver_inst/ARG_c : 0 0 : 2701 6022 : Used 1 time 0
- Sort Area is  driver_inst/ARG_c : 0 1 : 1999 6022 : Used 1 time 0
- Sort Area is  driver_inst/ARG_c : 0 2 : 1322 6022 : Used 1 time 0
- Sort Area is  driver_inst/ARG_15 : 0 0 : 1995 5316 : Used 1 time 0
- Sort Area is  driver_inst/ARG_15 : 0 1 : 1322 5316 : Used 1 time 0
- Sort Area is  driver_inst/ARG_15 : 0 2 : 1999 5316 : Used 1 time 0
- Sort Area is  driver_inst/ARG_1a : 0 0 : 1995 5316 : Used 1 time 0
- Sort Area is  driver_inst/ARG_1a : 0 1 : 1322 5316 : Used 1 time 0
- Sort Area is  driver_inst/ARG_1a : 0 2 : 1999 5316 : Used 1 time 0
- Sort Area is  driver_inst/ARG_1d : 0 0 : 1995 5316 : Used 1 time 0
- Sort Area is  driver_inst/ARG_1d : 0 1 : 1322 5316 : Used 1 time 0
- Sort Area is  driver_inst/ARG_1d : 0 2 : 1999 5316 : Used 1 time 0
- Sort Area is  driver_inst/ARG_f : 0 0 : 1995 5316 : Used 1 time 0
- Sort Area is  driver_inst/ARG_f : 0 1 : 1322 5316 : Used 1 time 0
- Sort Area is  driver_inst/ARG_f : 0 2 : 1999 5316 : Used 1 time 0
- Sort Area is  T1_mult_reg0_6 : 0 0 : 2701 4861 : Used 1 time 0
- Sort Area is  T1_mult_reg0_6 : 0 1 : 2160 4861 : Used 1 time 0
- Sort Area is  T1_mult_reg0_9 : 0 0 : 2158 3958 : Used 1 time 0
- Sort Area is  T1_mult_reg0_9 : 0 1 : 1800 3958 : Used 1 time 0
- Sort Area is  mult_reg0_0 : 0 0 : 2011 3719 : Used 1 time 0
- Sort Area is  mult_reg0_0 : 0 1 : 1708 3719 : Used 1 time 0
- Sort Area is  mult_reg0_3 : 0 0 : 2015 3689 : Used 1 time 0
- Sort Area is  mult_reg0_3 : 0 1 : 1674 3689 : Used 1 time 0
- Sort Area is  driver_inst/ARG_16 : 0 0 : 1678 3607 : Used 1 time 0
- Sort Area is  driver_inst/ARG_16 : 0 1 : 1929 3607 : Used 1 time 0
- Sort Area is  driver_inst/ARG_11 : 0 0 : 1130 2625 : Used 1 time 0
- Sort Area is  driver_inst/ARG_11 : 0 1 : 1495 2625 : Used 1 time 0
- Sort Area is  driver_inst/ARG_1b : 0 0 : 1130 2625 : Used 1 time 0
- Sort Area is  driver_inst/ARG_1b : 0 1 : 1495 2625 : Used 1 time 0
- Sort Area is  driver_inst/ARG_1e : 0 0 : 1130 2625 : Used 1 time 0
- Sort Area is  driver_inst/ARG_1e : 0 1 : 1495 2625 : Used 1 time 0
- Sort Area is  clarke_inst/mult_reg_4_reg_25 : 0 0 : 1006 2286 : Used 1 time 0
- Sort Area is  clarke_inst/mult_reg_4_reg_25 : 0 1 : 1280 2286 : Used 1 time 0
- Sort Area is  clarke_inst/mult_reg_1_reg_22 : 0 0 : 1006 1539 : Used 1 time 0
- Sort Area is  clarke_inst/mult_reg_1_reg_22 : 0 1 : 533 1539 : Used 1 time 0
- Sort Area is  clarke_inst/mult_reg_2_reg_1f : 0 0 : 948 948 : Used 1 time 0
- Sort Area is  clarke_inst/mult_reg_3_reg_21 : 0 0 : 948 948 : Used 1 time 0
----------------------------------------------------------------------------------
-Start ROM, RAM, DSP, Shift Register and Retiming Reporting
----------------------------------------------------------------------------------
-
-DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
-+-------------------------+-------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name              | DSP Mapping             | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+-------------------------+-------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|vector_processor         | (A:0x14edb)*B2          | 18     | 17     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
-|vector_processor         | (PCIN>>17)+A2*B         | 17     | 9      | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 1    | 
-|vector_processor         | A2*(B:0x14edb)          | 18     | 18     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
-|vector_processor         | (PCIN>>17)+A2*B         | 18     | 9      | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 1    | 
-|switching_time_processor | A*B                     | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|switching_time_processor | (PCIN>>17)+A*B          | 15     | 15     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|switching_time_processor | A*B                     | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|switching_time_processor | (PCIN>>17)+A*B          | 18     | 15     | -      | -      | 47     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | (A:0x107ff)*B           | 18     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | (PCIN>>17)+A*B          | 14     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | A*B                     | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | PCIN+A*(B:0x107ff)      | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | (PCIN>>17)+A*B          | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | A*(B:0x107ff)           | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | (PCIN>>17)+A*B          | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | PCIN+A*(B:0x107ff)      | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | (A:0x107ff)*B           | 18     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | (PCIN>>17)+A*B          | 14     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | A*B                     | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | PCIN+A*(B:0x107ff)      | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | (PCIN>>17)+A*B          | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | A*(B:0x107ff)           | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | (PCIN>>17)+A*B          | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | PCIN+A*(B:0x107ff)      | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | (A:0x107ff)*B           | 18     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | (PCIN>>17)+A*B          | 14     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | A*B                     | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | PCIN+A*(B:0x107ff)      | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | (PCIN>>17)+A*B          | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | A*(B:0x107ff)           | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | (PCIN>>17)+A*B          | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | PCIN+A*(B:0x107ff)      | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | (A:0x107ff)*B           | 18     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | (PCIN>>17)+A*B          | 14     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | A*B                     | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | PCIN+A*(B:0x107ff)      | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | (PCIN>>17)+A*B          | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | A*(B:0x107ff)           | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | (PCIN>>17)+A*B          | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | PCIN+A*(B:0x107ff)      | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|clarke_transform         | (A*(B:0x2aad))'         | 16     | 15     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|clarke_transform         | (A*(B:0x1555))'         | 16     | 14     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|clarke_transform         | (A*(B:0x1555))'         | 16     | 14     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|clarke_transform         | (PCIN-A:B-C)'           | 12     | 18     | 30     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
-|clarke_transform         | (A*(B:0x24f5))'         | 16     | 15     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|clarke_transform         | (PCIN-(A*(B:0x24f5))')' | 16     | 15     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-+-------------------------+-------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-
-Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
----------------------------------------------------------------------------------
-Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
----------------------------------------------------------------------------------
-No constraint files found.
----------------------------------------------------------------------------------
-Start Timing Optimization
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1628.883 ; gain = 1100.406
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Technology Mapping
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1628.883 ; gain = 1100.406
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Flattening Before IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Flattening Before IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Final Netlist Cleanup
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Final Netlist Cleanup
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1628.883 ; gain = 1100.406
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Renaming Generated Instances
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:39 ; elapsed = 00:00:39 . Memory (MB): peak = 1628.883 ; gain = 1100.406
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Rebuilding User Hierarchy
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:39 ; elapsed = 00:00:40 . Memory (MB): peak = 1628.883 ; gain = 1100.406
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Renaming Generated Ports
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:39 ; elapsed = 00:00:40 . Memory (MB): peak = 1628.883 ; gain = 1100.406
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Handling Custom Attributes
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:39 ; elapsed = 00:00:40 . Memory (MB): peak = 1628.883 ; gain = 1100.406
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Renaming Generated Nets
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:39 ; elapsed = 00:00:40 . Memory (MB): peak = 1628.883 ; gain = 1100.406
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start ROM, RAM, DSP, Shift Register and Retiming Reporting
----------------------------------------------------------------------------------
-
-Static Shift Register Report:
-+------------+-------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|Module Name | RTL Name                                                          | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
-+------------+-------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|svpwm       | u_vector_proc/pipeline_reg[13][pip_z][14]                         | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
-|svpwm       | u_vector_proc/pipeline_reg[14][pip_z][13]                         | 5      | 1     | YES          | NO                 | YES               | 1      | 0       | 
-|svpwm       | u_vector_proc/pipeline_reg[15][pip_z][12]                         | 6      | 13    | YES          | NO                 | YES               | 13     | 0       | 
-|svpwm       | u_vector_proc/pipeline_reg[15][pip_quadrant][1]                   | 16     | 2     | YES          | NO                 | YES               | 2      | 0       | 
-|svpwm       | time_processor_inst/cordic_inst/pipeline_reg[15][pip_quadrant][1] | 16     | 1     | YES          | NO                 | YES               | 1      | 0       | 
-|svpwm       | time_processor_inst/cordic_inst/pipeline_reg[13][pip_theta][14]   | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
-|svpwm       | time_processor_inst/shift_reg_vref/sig_delay_reg[31]              | 17     | 32    | YES          | NO                 | YES               | 32     | 0       | 
-|svpwm       | time_processor_inst/shift_reg_sector/sig_delay_reg[2]             | 25     | 3     | YES          | NO                 | YES               | 0      | 3       | 
-+------------+-------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-
----------------------------------------------------------------------------------
-Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Writing Synthesis Report
----------------------------------------------------------------------------------
-
-DSP Final Report (the ' indicates corresponding REG is set)
-+-------------------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name              | DSP Mapping      | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+-------------------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|clarke_transform         | (A*B)'           | 30     | 14     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|clarke_transform         | (A*B)'           | 30     | 13     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|clarke_transform         | (A*B)'           | 30     | 13     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|clarke_transform         | (PCIN-(A:B+C))'  | 30     | 18     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|clarke_transform         | (A*B)'           | 30     | 14     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|clarke_transform         | (PCIN-((A*B)'))' | 30     | 0      | -      | -      | 32     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|svpwm                    | A*B              | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | PCIN>>17+A*B     | 13     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | A*B              | 17     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | PCIN+A*B         | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | PCIN>>17+A*B     | 0      | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | A*B              | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | PCIN>>17+A*B     | 17     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | PCIN+A*B         | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | A*B              | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | PCIN>>17+A*B     | 13     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | A*B              | 17     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | PCIN+A*B         | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | PCIN>>17+A*B     | 0      | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | A*B              | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | PCIN>>17+A*B     | 17     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | PCIN+A*B         | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | A*B              | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | PCIN>>17+A*B     | 13     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | A*B              | 17     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | PCIN+A*B         | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | PCIN>>17+A*B     | 17     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | A*B              | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | PCIN>>17+A*B     | 17     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | PCIN+A*B         | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | A*B              | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | PCIN>>17+A*B     | 13     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | A*B              | 17     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | PCIN+A*B         | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | PCIN>>17+A*B     | 0      | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | A*B              | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | PCIN>>17+A*B     | 17     | 13     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|svpwm                    | PCIN+A*B         | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|switching_time_processor | A*B              | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|switching_time_processor | PCIN>>17+A*B     | 30     | 18     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|switching_time_processor | A*B              | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|switching_time_processor | PCIN>>17+A*B     | 0      | 18     | -      | -      | 47     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|vector_processor         | A*B'             | 17     | 18     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
-|vector_processor         | (PCIN>>17+A'*B)' | 30     | 8      | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 1    | 
-|vector_processor         | A'*B             | 17     | 17     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
-|vector_processor         | (PCIN>>17+A'*B)' | 17     | 8      | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 1    | 
-+-------------------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-
-
-Report BlackBoxes: 
-+-+--------------+----------+
-| |BlackBox name |Instances |
-+-+--------------+----------+
-+-+--------------+----------+
+source design_1_wrapper.tcl -notrace
+CRITICAL WARNING: [Common 17-1355] You are suppressing all messages of type 'WARNING'. You may potentially disregard important DRC, CDC, and implementation messages that can negatively impact your design.  If this is not desired, please run 'reset_msg_config -suppress -severity {WARNING}' to undo this change.
+CRITICAL WARNING: [Common 17-1355] You are suppressing all messages of type 'CRITICAL WARNING'. You may potentially disregard important DRC, CDC, and implementation messages that can negatively impact your design.  If this is not desired, please run 'reset_msg_config -suppress -severity {CRITICAL WARNING}' to undo this change.
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 512.770 ; gain = 195.742
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1413.312 ; gain = 447.594
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1526.285 ; gain = 560.566
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1526.285 ; gain = 560.566
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1526.285 ; gain = 560.566
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1526.285 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1545.484 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1545.484 ; gain = 0.000
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1545.484 ; gain = 579.766
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1545.484 ; gain = 579.766
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[0]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 2).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[0]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 3).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[10]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 4).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[10]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 5).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[11]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 6).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[11]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 7).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[12]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 8).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[12]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 9).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[13]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 10).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[13]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 11).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[14]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 12).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[14]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 13).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[1]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 14).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[1]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 15).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[2]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 16).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[2]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 17).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[3]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 18).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[3]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 19).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[4]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 20).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[4]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 21).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[5]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 22).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[5]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 23).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[6]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 24).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[6]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 25).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[7]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 26).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[7]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 27).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[8]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 28).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[8]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 29).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[9]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 30).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[9]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 31).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_ba[0]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 32).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_ba[0]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 33).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_ba[1]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 34).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_ba[1]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 35).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_ba[2]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 36).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_ba[2]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 37).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_cas_n. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 38).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_cas_n. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 39).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_cke. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 40).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_cke. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 41).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_cs_n. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 42).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_cs_n. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 43).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_ck_p. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 44).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_ck_p. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 45).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_ck_n. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 46).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_ck_n. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 47).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dm[0]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 48).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dm[0]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 49).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dm[1]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 50).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dm[1]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 51).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dm[2]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 52).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dm[2]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 53).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dm[3]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 54).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dm[3]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 55).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dqs_p[0]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 56).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dqs_p[0]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 57).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dqs_p[1]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 58).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dqs_p[1]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 59).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dqs_p[2]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 60).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dqs_p[2]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 61).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dqs_p[3]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 62).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dqs_p[3]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 63).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dqs_n[0]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 64).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dqs_n[0]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 65).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dqs_n[1]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 66).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dqs_n[1]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 67).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dqs_n[2]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 68).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dqs_n[2]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 69).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dqs_n[3]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 70).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dqs_n[3]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 71).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[0]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 72).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[0]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 73).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[10]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 74).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[10]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 75).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[11]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 76).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[11]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 77).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[12]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 78).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[12]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 79).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[13]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 80).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[13]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 81).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[14]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 82).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[14]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 83).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[15]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 84).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[15]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 85).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[16]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 86).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[16]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 87).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[17]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 88).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[17]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 89).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[18]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 90).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[18]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 91).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[19]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 92).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[19]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 93).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[1]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 94).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[1]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 95).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[20]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 96).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[20]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 97).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[21]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 98).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[21]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 99).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[22]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 100).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[22]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 101).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[23]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 102).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[23]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 103).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[24]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 104).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[24]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 105).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[25]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 106).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[25]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 107).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[26]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 108).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[26]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 109).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[27]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 110).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[27]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 111).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[28]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 112).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[28]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 113).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[29]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 114).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[29]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 115).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[2]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 116).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[2]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 117).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[30]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 118).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[30]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 119).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[31]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 120).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[31]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 121).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[3]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 122).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[3]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 123).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[4]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 124).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[4]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 125).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[5]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 126).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[5]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 127).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[6]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 128).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[6]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 129).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[7]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 130).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[7]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 131).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[8]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 132).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[8]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 133).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[9]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 134).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[9]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 135).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_reset_n. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 136).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_reset_n. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 137).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_odt. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 138).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_odt. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 139).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_ras_n. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 140).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_ras_n. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 141).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_ddr_vrn. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 142).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_ddr_vrn. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 143).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_ddr_vrp. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 144).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_ddr_vrp. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 145).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_we_n. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 146).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_we_n. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 147).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[0]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 148).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[0]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 149).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[10]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 150).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[10]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 151).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[11]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 152).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[11]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 153).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[12]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 154).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[12]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 155).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[13]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 156).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[13]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 157).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[14]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 158).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[14]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 159).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[15]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 160).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[15]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 161).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[16]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 162).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[16]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 163).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[17]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 164).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[17]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 165).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[18]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 166).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[18]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 167).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[19]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 168).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[19]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 169).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[1]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 170).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[1]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 171).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[20]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 172).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[20]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 173).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[21]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 174).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[21]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 175).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[22]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 176).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[22]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 177).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[23]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 178).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[23]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 179).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[24]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 180).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[24]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 181).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[25]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 182).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[25]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 183).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[26]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 184).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[26]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 185).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[27]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 186).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[27]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 187).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[28]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 188).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[28]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 189).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[29]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 190).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[29]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 191).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[2]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 192).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[2]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 193).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[30]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 194).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[30]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 195).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[31]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 196).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[31]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 197).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[32]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 198).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[32]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 199).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[33]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 200).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[33]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 201).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[34]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 202).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[34]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 203).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[35]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 204).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[35]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 205).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[36]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 206).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[36]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 207).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[37]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 208).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[37]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 209).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[38]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 210).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[38]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 211).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[39]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 212).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[39]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 213).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[3]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 214).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[3]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 215).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[40]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 216).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[40]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 217).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[41]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 218).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[41]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 219).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[42]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 220).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[42]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 221).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[43]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 222).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[43]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 223).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[44]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 224).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[44]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 225).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[45]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 226).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[45]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 227).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[46]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 228).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[46]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 229).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[47]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 230).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[47]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 231).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[48]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 232).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[48]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 233).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[49]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 234).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[49]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 235).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[4]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 236).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[4]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 237).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[50]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 238).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[50]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 239).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[51]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 240).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[51]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 241).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[52]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 242).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[52]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 243).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[53]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 244).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[53]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 245).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[5]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 246).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[5]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 247).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[6]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 248).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[6]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 249).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[7]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 250).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[7]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 251).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[8]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 252).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[8]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 253).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[9]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 254).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[9]. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 255).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_ps_clk. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 256).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_ps_clk. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 257).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_ps_porb. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 258).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_ps_porb. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 259).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_ps_srstb. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 260).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_ps_srstb. (constraint file  c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1/design_1_processing_system7_0_1_in_context.xdc, line 261).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/processing_system7_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/proc_sys_reset_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/top_0. (constraint file  auto generated constraint).
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1545.484 ; gain = 579.766
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1545.484 ; gain = 579.766
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1545.484 ; gain = 579.766
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1545.484 ; gain = 579.766
+Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1545.484 ; gain = 579.766
+Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1545.484 ; gain = 579.766
+Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1545.484 ; gain = 579.766
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1545.484 ; gain = 579.766
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1545.484 ; gain = 579.766
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1545.484 ; gain = 579.766
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1545.484 ; gain = 579.766
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1545.484 ; gain = 579.766
 
 Report Cell Usage: 
-+------+--------+------+
-|      |Cell    |Count |
-+------+--------+------+
-|1     |BUFG    |     1|
-|2     |CARRY4  |  1129|
-|3     |DSP48E1 |    46|
-|4     |LUT1    |   702|
-|5     |LUT2    |  1803|
-|6     |LUT3    |  2009|
-|7     |LUT4    |   357|
-|8     |LUT5    |   246|
-|9     |LUT6    |   328|
-|10    |SRL16E  |    51|
-|11    |SRLC32E |     3|
-|12    |FDCE    |  1369|
-|13    |FDPE    |     3|
-|14    |FDRE    |  2381|
-|15    |IBUF    |    50|
-|16    |OBUF    |     6|
-+------+--------+------+
-
-Report Instance Areas: 
-+------+----------------------+-------------------------------+------+
-|      |Instance              |Module                         |Cells |
-+------+----------------------+-------------------------------+------+
-|1     |top                   |                               | 10484|
-|2     |  clarke_inst         |clarke_transform               |   168|
-|3     |  driver_inst         |transistor_driver              |   923|
-|4     |    HB1               |center_pwm                     |   153|
-|5     |    HB2               |center_pwm_0                   |    98|
-|6     |    HB3               |center_pwm_1                   |   134|
-|7     |  time_processor_inst |switching_time_processor       |  4824|
-|8     |    cordic_inst       |cordic_sin_cos                 |  3344|
-|9     |    shift_reg_sector  |shift_register__parameterized1 |    52|
-|10    |    shift_reg_vref    |shift_register                 |   128|
-|11    |  u_vector_proc       |vector_processor               |  4512|
-+------+----------------------+-------------------------------+------+
----------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:39 ; elapsed = 00:00:40 . Memory (MB): peak = 1628.883 ; gain = 1100.406
----------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 91 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:39 ; elapsed = 00:00:40 . Memory (MB): peak = 1628.883 ; gain = 1100.406
-Synthesis Optimization Complete : Time (s): cpu = 00:00:39 ; elapsed = 00:00:40 . Memory (MB): peak = 1628.883 ; gain = 1100.406
-INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.137 . Memory (MB): peak = 1628.883 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 1175 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1628.883 ; gain = 0.000
-INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
-
-Synth Design complete | Checksum: 972465b8
-INFO: [Common 17-83] Releasing license: Synthesis
-45 Infos, 91 Warnings, 0 Critical Warnings and 0 Errors encountered.
-synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 1628.883 ; gain = 1109.695
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 1628.883 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.runs/synth_1/svpwm.dcp' has been generated.
-INFO: [Vivado 12-24828] Executing command : report_utilization -file svpwm_utilization_synth.rpt -pb svpwm_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Jul 19 01:24:51 2025...
++------+------------------------------+------+
+|      |Cell                          |Count |
++------+------------------------------+------+
+|1     |design_1_proc_sys_reset_0     |     1|
+|2     |design_1_processing_system7_0 |     1|
+|3     |design_1_top_0                |     1|
+|4     |IBUF                          |     1|
+|5     |OBUF                          |     6|
++------+------------------------------+------+
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 1545.484 ; gain = 579.766
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1545.484 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1545.484 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:41 ; elapsed = 00:00:44 . Memory (MB): peak = 1545.484 ; gain = 1012.168
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1545.484 ; gain = 0.000

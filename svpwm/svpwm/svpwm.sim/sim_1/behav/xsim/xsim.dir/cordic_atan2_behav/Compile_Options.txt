@@ -1,1 +1,0 @@
---incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "cordic_atan2_behav" "xil_defaultlib.cordic_atan2" -log "elaborate.log" 

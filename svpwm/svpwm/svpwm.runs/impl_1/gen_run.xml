@@ -1,73 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020clg484-1" LaunchTime="1752881033">
-  <File Type="ROUTE-PWR" Name="svpwm_power_routed.rpt"/>
-  <File Type="PA-TCL" Name="svpwm.tcl"/>
-  <File Type="ROUTE-PWR-SUM" Name="svpwm_power_summary_routed.pb"/>
-  <File Type="REPORTS-TCL" Name="svpwm_reports.tcl"/>
-  <File Type="BITSTR-MSK" Name="svpwm.msk"/>
-  <File Type="ROUTE-CLK" Name="svpwm_clock_utilization_routed.rpt"/>
-  <File Type="RDI-RDI" Name="svpwm.vdi"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="svpwm_bus_skew_postroute_physopted.pb"/>
-  <File Type="BG-BIT" Name="svpwm.bit"/>
-  <File Type="BG-DRC" Name="svpwm.drc"/>
-  <File Type="BG-BGN" Name="svpwm.bgn"/>
-  <File Type="BG-BIN" Name="svpwm.bin"/>
-  <File Type="BITSTR-RBT" Name="svpwm.rbt"/>
-  <File Type="BITSTR-NKY" Name="svpwm.nky"/>
-  <File Type="BITSTR-BMM" Name="svpwm_bd.bmm"/>
-  <File Type="BITSTR-MMI" Name="svpwm.mmi"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="svpwm_methodology_drc_routed.rpt"/>
-  <File Type="BITSTR-SYSDEF" Name="svpwm.sysdef"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="svpwm_methodology_drc_routed.pb"/>
+<GenRun Id="impl_1" LaunchPart="xc7z020clg484-1" LaunchTime="1754159483">
+  <File Type="ROUTE-PWR" Name="design_1_wrapper_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="design_1_wrapper.tcl"/>
+  <File Type="ROUTE-PWR-SUM" Name="design_1_wrapper_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="design_1_wrapper_reports.tcl"/>
+  <File Type="OPT-RQA-PB" Name="design_1_wrapper_rqa_opted.pb"/>
+  <File Type="BITSTR-MMI" Name="design_1_wrapper.mmi"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="design_1_wrapper_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="design_1_wrapper_timing_summary_init.rpt"/>
+  <File Type="OPT-TIMING" Name="design_1_wrapper_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="design_1_wrapper_opt.dcp"/>
+  <File Type="OPT-DRC" Name="design_1_wrapper_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="design_1_wrapper.hwdef"/>
+  <File Type="PWROPT-DCP" Name="design_1_wrapper_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="design_1_wrapper_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="design_1_wrapper_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="design_1_wrapper_placed.dcp"/>
+  <File Type="PLACE-IO" Name="design_1_wrapper_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="design_1_wrapper_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="design_1_wrapper_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="design_1_wrapper_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="design_1_wrapper_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="design_1_wrapper_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="design_1_wrapper_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BIN" Name="design_1_wrapper.bin"/>
+  <File Type="PLACE-TIMING" Name="design_1_wrapper_timing_summary_placed.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="design_1_wrapper_power_routed.rpx"/>
+  <File Type="PLACE-RQA-PB" Name="design_1_wrapper_rqa_placed.pb"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="design_1_wrapper_postplace_pwropt.dcp"/>
+  <File Type="BITSTR-MSK" Name="design_1_wrapper.msk"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="design_1_wrapper_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="design_1_wrapper_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="design_1_wrapper_drc_physopted.rpt"/>
+  <File Type="BITSTR-RBT" Name="design_1_wrapper.rbt"/>
+  <File Type="PHYSOPT-TIMING" Name="design_1_wrapper_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="design_1_wrapper_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="design_1_wrapper_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="design_1_wrapper_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="design_1_wrapper_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="design_1_wrapper_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="design_1_wrapper_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="design_1_wrapper_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="design_1_wrapper_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="design_1_wrapper_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-RQS-PB" Name="design_1_wrapper_rqs_routed.pb"/>
+  <File Type="ROUTE-STATUS" Name="design_1_wrapper_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="design_1_wrapper_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="design_1_wrapper_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="design_1_wrapper_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="design_1_wrapper_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="design_1_wrapper_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="design_1_wrapper_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="design_1_wrapper_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="design_1_wrapper_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="design_1_wrapper_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="design_1_wrapper_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="design_1_wrapper_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="design_1_wrapper_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="design_1_wrapper_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="design_1_wrapper_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="design_1_wrapper_bus_skew_postroute_physopted.rpt"/>
+  <File Type="BG-BIT" Name="design_1_wrapper.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="design_1_wrapper_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="design_1_wrapper_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-NKY" Name="design_1_wrapper.nky"/>
+  <File Type="BITSTR-BMM" Name="design_1_wrapper_bd.bmm"/>
+  <File Type="PDI-FILE" Name="design_1_wrapper.pdi"/>
+  <File Type="BOOT-PDI-FILE" Name="design_1_wrapper_boot.pdi"/>
+  <File Type="PL-PDI-FILE" Name="design_1_wrapper_pld.pdi"/>
+  <File Type="RCFI_FILE" Name="design_1_wrapper.rcfi"/>
+  <File Type="CFI_FILE" Name="design_1_wrapper.cfi"/>
+  <File Type="RNPI_FILE" Name="design_1_wrapper.rnpi"/>
+  <File Type="NPI_FILE" Name="design_1_wrapper.npi"/>
+  <File Type="RBD_FILE" Name="design_1_wrapper.rbd"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="svpwm.ltx"/>
-  <File Type="BOOT-PDI-FILE" Name="svpwm_boot.pdi"/>
+  <File Type="BITSTR-LTX" Name="design_1_wrapper.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="design_1_wrapper.sysdef"/>
+  <File Type="BG-BGN" Name="design_1_wrapper.bgn"/>
+  <File Type="BG-DRC" Name="design_1_wrapper.drc"/>
+  <File Type="RDI-RDI" Name="design_1_wrapper.vdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="NPI_FILE" Name="svpwm.npi"/>
-  <File Type="OPT-DRC" Name="svpwm_drc_opted.rpt"/>
-  <File Type="RBD_FILE" Name="svpwm.rbd"/>
-  <File Type="OPT-HWDEF" Name="svpwm.hwdef"/>
-  <File Type="PLACE-IO" Name="svpwm_io_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="svpwm_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="svpwm_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="svpwm_control_sets_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="svpwm_incremental_reuse_pre_placed.rpt"/>
-  <File Type="ROUTE-DRC" Name="svpwm_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="svpwm_drc_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="svpwm_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="svpwm_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="svpwm_route_status.pb"/>
-  <File Type="ROUTE-DCP" Name="svpwm_routed.dcp"/>
-  <File Type="ROUTE-ERROR-DCP" Name="svpwm_routed_error.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="svpwm_routed_bb.dcp"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="svpwm_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="svpwm_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="svpwm_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="svpwm_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW" Name="svpwm_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="svpwm_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="svpwm_bus_skew_routed.rpx"/>
-  <File Type="OPT-DCP" Name="svpwm_opt.dcp"/>
-  <File Type="PLACE-DCP" Name="svpwm_placed.dcp"/>
-  <File Type="PWROPT-DCP" Name="svpwm_pwropt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="svpwm_postplace_pwropt.dcp"/>
-  <File Type="PHYSOPT-DCP" Name="svpwm_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="svpwm_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="svpwm_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="svpwm_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="svpwm_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="svpwm_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="svpwm_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="svpwm_bus_skew_postroute_physopted.rpx"/>
-  <File Type="ROUTE-DRC-RPX" Name="svpwm_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="svpwm_methodology_drc_routed.rpx"/>
-  <File Type="PDI-FILE" Name="svpwm.pdi"/>
-  <File Type="PL-PDI-FILE" Name="svpwm_pld.pdi"/>
-  <File Type="RCFI_FILE" Name="svpwm.rcfi"/>
-  <File Type="CFI_FILE" Name="svpwm.cfi"/>
-  <File Type="RNPI_FILE" Name="svpwm.rnpi"/>
-  <File Type="ROUTE-RQS" Name="svpwm_routed.rqs"/>
-  <File Type="POSTROUTE-PHYSOPT-RQS" Name="svpwm_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS" Name="design_1_wrapper_routed.rqs"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="design_1_wrapper_postroute_physopted.rqs"/>
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
@@ -90,7 +104,19 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/shift_reg_std.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/shift_register.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/svpwm.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -114,7 +140,39 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/svpwm.vhd">
+    <File Path="$PSRCDIR/sources_1/new/top.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/design_1/design_1.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PGENDIR/sources_1/bd/design_1/hdl/design_1_wrapper.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../3phase_txt/phaseA_bin_50Hz_64kHz.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../3phase_txt/phaseB_bin_50Hz_64kHz.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../3phase_txt/phaseC_bin_50Hz_64kHz.coe">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -122,11 +180,17 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="svpwm"/>
+      <Option Name="TopModule" Val="design_1_wrapper"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
     <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/constr.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
@@ -156,6 +220,11 @@
     <Step Id="route_design"/>
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
-    <Step Id="write_device_image"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="blk_mem_gen_2"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_top_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="blk_mem_gen_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="blk_mem_gen_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_processing_system7_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_proc_sys_reset_0_1"/>
 </GenRun>

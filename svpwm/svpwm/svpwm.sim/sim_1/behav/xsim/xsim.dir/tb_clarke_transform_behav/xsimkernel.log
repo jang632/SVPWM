@@ -1,7 +1,0 @@
-Running: xsim.dir/tb_clarke_transform_behav/xsimk.exe -simmode gui -wdb tb_clarke_transform_behav.wdb -simrunnum 0 -socket 51274
-Design successfully loaded
-Design Loading Memory Usage: 7612 KB (Peak: 7612 KB)
-Design Loading CPU Usage: 62 ms
-Simulation completed
-Simulation Memory Usage: 16148 KB (Peak: 16148 KB)
-Simulation CPU Usage: 3405 ms

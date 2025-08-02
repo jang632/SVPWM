@@ -1,0 +1,91 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
+| Date         : Sat Aug  2 20:33:52 2025
+| Host         : DESKTOP-1FUVVL9 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file design_1_wrapper_control_sets_placed.rpt
+| Design       : design_1_wrapper
+| Device       : xc7z020
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    13 |
+|    Minimum number of control sets                        |    13 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    13 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    13 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     0 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |     1 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    11 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              92 |           44 |
+| No           | No                    | Yes                    |            1373 |          378 |
+| No           | Yes                   | No                     |            1945 |          533 |
+| Yes          | No                    | No                     |              54 |           28 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             435 |          146 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-------------------------------------------------+--------------------------------------------------------------------+---------------------------------------------------------------------+------------------+----------------+--------------+
+|                   Clock Signal                  |                            Enable Signal                           |                           Set/Reset Signal                          | Slice Load Count | Bel Load Count | Bels / Slice |
++-------------------------------------------------+--------------------------------------------------------------------+---------------------------------------------------------------------+------------------+----------------+--------------+
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/top_0/inst/inst_svpwm/driver_inst/HB3/reset_0           |                                                                     |                4 |              6 |         1.50 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 |                                                                    | design_1_i/top_0/inst/index[7]_i_1_n_0                              |                2 |              8 |         4.00 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/top_0/inst/inst_svpwm/driver_inst/HB1/duty_cycle_latch0 |                                                                     |                8 |             16 |         2.00 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/top_0/inst/inst_svpwm/driver_inst/HB2/duty_cycle_latch0 |                                                                     |                7 |             16 |         2.29 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/top_0/inst/inst_svpwm/driver_inst/HB3/duty_cycle_latch0 |                                                                     |                9 |             16 |         1.78 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/top_0/inst/addra                                        | reset_IBUF                                                          |                4 |             16 |         4.00 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/top_0/inst/inst_svpwm/vector_proc_inst/E[0]             | reset_IBUF                                                          |                8 |             32 |         4.00 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 |                                                                    | design_1_i/top_0/inst/inst_svpwm/vector_proc_inst/angle[31]_i_1_n_0 |               32 |             64 |         2.00 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/top_0/inst/inst_svpwm/vector_proc_inst/angle1           | reset_IBUF                                                          |               30 |             67 |         2.23 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 |                                                                    |                                                                     |               44 |            146 |         3.32 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/top_0/inst/inst_svpwm/time_processor_inst/state_reg_0   | reset_IBUF                                                          |               49 |            160 |         3.27 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 | design_1_i/top_0/inst/inst_svpwm/time_processor_inst/state         | reset_IBUF                                                          |               55 |            160 |         2.91 |
+|  design_1_i/processing_system7_0/inst/FCLK_CLK0 |                                                                    | reset_IBUF                                                          |              877 |           3246 |         3.70 |
++-------------------------------------------------+--------------------------------------------------------------------+---------------------------------------------------------------------+------------------+----------------+--------------+
+
+

@@ -1,0 +1,126 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Sat Aug  2 20:28:38 2025
+# Process ID: 12684
+# Current directory: C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.runs/design_1_top_0_1_synth_1
+# Command line: vivado.exe -log design_1_top_0_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_top_0_1.tcl
+# Log file: C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.runs/design_1_top_0_1_synth_1/design_1_top_0_1.vds
+# Journal file: C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.runs/design_1_top_0_1_synth_1\vivado.jou
+# Running On        :DESKTOP-1FUVVL9
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :19045
+# Processor Detail  :Intel(R) Core(TM) i5-10400F CPU @ 2.90GHz
+# CPU Frequency     :2904 MHz
+# CPU Physical cores:6
+# CPU Logical cores :12
+# Host memory       :17037 MB
+# Swap memory       :15032 MB
+# Total Virtual     :32069 MB
+# Available Virtual :7097 MB
+#-----------------------------------------------------------
+source design_1_top_0_1.tcl -notrace
+CRITICAL WARNING: [Common 17-1355] You are suppressing all messages of type 'WARNING'. You may potentially disregard important DRC, CDC, and implementation messages that can negatively impact your design.  If this is not desired, please run 'reset_msg_config -suppress -severity {WARNING}' to undo this change.
+CRITICAL WARNING: [Common 17-1355] You are suppressing all messages of type 'CRITICAL WARNING'. You may potentially disregard important DRC, CDC, and implementation messages that can negatively impact your design.  If this is not desired, please run 'reset_msg_config -suppress -severity {CRITICAL WARNING}' to undo this change.
+create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 514.004 ; gain = 197.332
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1404.230 ; gain = 447.176
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1536.875 ; gain = 579.820
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1536.875 ; gain = 579.820
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1536.875 ; gain = 579.820
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.128 . Memory (MB): peak = 1536.875 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1633.914 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.129 . Memory (MB): peak = 1634.121 ; gain = 0.207
+Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1634.121 ; gain = 677.066
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1634.121 ; gain = 677.066
+Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.runs/design_1_top_0_1_synth_1/dont_touch.xdc, line 18).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/inst_memC. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/inst_memB. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/inst_memA. (constraint file  auto generated constraint).
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1634.121 ; gain = 677.066
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1634.121 ; gain = 677.066
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1669.305 ; gain = 712.250
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++-------------------------+-------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name              | DSP Mapping             | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-------------------------+-------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|vector_processor         | (A:0x14edb)*B2          | 18     | 17     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|vector_processor         | (PCIN>>17)+A2*B         | 17     | 9      | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 1    | 
+|vector_processor         | A2*(B:0x14edb)          | 18     | 18     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|vector_processor         | (PCIN>>17)+A2*B         | 18     | 9      | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 1    | 
+|switching_time_processor | A*B                     | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|switching_time_processor | (PCIN>>17)+A*B          | 15     | 15     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|switching_time_processor | A*B                     | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|switching_time_processor | (PCIN>>17)+A*B          | 18     | 15     | -      | -      | 47     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|transistor_driver        | (A:0x18400)*B           | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|transistor_driver        | (PCIN>>17)+A*(B:0xbeb)  | 15     | 13     | -      | -      | 28     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|transistor_driver        | A*(B:0x18400)           | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|transistor_driver        | (PCIN>>17)+A*(B:0xbeb)  | 18     | 13     | -      | -      | 45     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|transistor_driver        | (A:0x18400)*B           | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|transistor_driver        | (PCIN>>17)+A*(B:0xbeb)  | 15     | 13     | -      | -      | 28     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|transistor_driver        | A*(B:0x18400)           | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|transistor_driver        | (PCIN>>17)+A*(B:0xbeb)  | 18     | 13     | -      | -      | 45     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|transistor_driver        | (A:0x18400)*B           | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|transistor_driver        | (PCIN>>17)+A*(B:0xbeb)  | 15     | 13     | -      | -      | 28     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|transistor_driver        | A*(B:0x18400)           | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|transistor_driver        | (PCIN>>17)+A*(B:0xbeb)  | 18     | 13     | -      | -      | 45     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|transistor_driver        | (A:0x18400)*B           | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|transistor_driver        | (PCIN>>17)+A*(B:0xbeb)  | 15     | 13     | -      | -      | 28     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|transistor_driver        | A*(B:0x18400)           | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|transistor_driver        | (PCIN>>17)+A*(B:0xbeb)  | 18     | 13     | -      | -      | 45     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|clarke_transform         | (A*(B:0x2aad))'         | 16     | 15     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|clarke_transform         | (A*(B:0x1555))'         | 16     | 14     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|clarke_transform         | (A*(B:0x1555))'         | 16     | 14     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|clarke_transform         | (PCIN-A:B-C)'           | 12     | 18     | 30     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
+|clarke_transform         | (A*(B:0x24f5))'         | 16     | 15     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|clarke_transform         | (PCIN-(A*(B:0x24f5))')' | 16     | 15     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 1    | 1    | 
++-------------------------+-------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:48 ; elapsed = 00:00:49 . Memory (MB): peak = 1669.305 ; gain = 712.250
+Finished Timing Optimization : Time (s): cpu = 00:00:52 ; elapsed = 00:00:53 . Memory (MB): peak = 1669.305 ; gain = 712.250
+Finished Technology Mapping : Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 1676.309 ; gain = 719.254
+Finished IO Insertion : Time (s): cpu = 00:01:01 ; elapsed = 00:01:02 . Memory (MB): peak = 1690.145 ; gain = 733.090
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:01 ; elapsed = 00:01:02 . Memory (MB): peak = 1690.145 ; gain = 733.090
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:02 ; elapsed = 00:01:04 . Memory (MB): peak = 1690.145 ; gain = 733.090
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:02 ; elapsed = 00:01:04 . Memory (MB): peak = 1690.145 ; gain = 733.090
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:03 ; elapsed = 00:01:04 . Memory (MB): peak = 1690.145 ; gain = 733.090
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:03 ; elapsed = 00:01:04 . Memory (MB): peak = 1690.145 ; gain = 733.090
+
+Report Cell Usage: 
++------+------------+------+
+|      |Cell        |Count |
++------+------------+------+
+|1     |blk_mem_gen |     3|
+|4     |CARRY4      |  1138|
+|5     |DSP48E1     |    30|
+|12    |LUT1        |   714|
+|13    |LUT2        |  1992|
+|14    |LUT3        |  2010|
+|15    |LUT4        |   239|
+|16    |LUT5        |   242|
+|17    |LUT6        |   220|
+|18    |SRL16E      |    51|
+|19    |SRLC32E     |     3|
+|20    |FDCE        |  1370|
+|21    |FDPE        |     3|
+|22    |FDRE        |  2495|
+|23    |FDSE        |     1|
++------+------------+------+
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:03 ; elapsed = 00:01:04 . Memory (MB): peak = 1690.145 ; gain = 733.090
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.137 . Memory (MB): peak = 1699.586 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1703.449 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:11 ; elapsed = 00:01:13 . Memory (MB): peak = 1703.449 ; gain = 1174.711
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.040 . Memory (MB): peak = 1703.449 ; gain = 0.000
