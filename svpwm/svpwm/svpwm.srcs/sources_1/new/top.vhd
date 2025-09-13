@@ -160,7 +160,7 @@ BEGIN
         index <= (others => '0');
         addra <= (others => '0');
        ELSE 
-          IF(index < 195) THEN 
+          IF(index < 781) THEN 
             index <= index + 1;
           ELSE 
             index <= (OTHERS => '0');

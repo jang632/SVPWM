@@ -63,7 +63,7 @@ begin
     stim_proc: PROCESS
     BEGIN
         -- Initial reset
-        WAIT FOR 20 ns;
+        WAIT FOR 70000 ns;
         reset <= '0';
 
         -- Run simulation for a while

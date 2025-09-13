@@ -2,10 +2,10 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
--- Date        : Tue Jul 29 19:19:01 2025
--- Host        : DESKTOP-1FUVVL9 running 64-bit major release  (build 9200)
+-- Date        : Fri Sep 12 22:23:58 2025
+-- Host        : DESKTOP-CNIMS8K running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
---               c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1_stub.vhdl
+--               c:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1_stub.vhdl
 -- Design      : blk_mem_gen_1
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z020clg484-1

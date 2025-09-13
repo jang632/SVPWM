@@ -39,6 +39,7 @@ ARCHITECTURE Behavioral OF svpwm IS
         PORT (
             clk        : IN  STD_LOGIC;
             reset      : IN  STD_LOGIC;
+            angle_in   : IN  SIGNED(31 DOWNTO 0);
             x          : IN  SIGNED(31 DOWNTO 0);
             y          : IN  SIGNED(31 DOWNTO 0);
             angle      : OUT SIGNED(31 DOWNTO 0);
@@ -77,6 +78,20 @@ ARCHITECTURE Behavioral OF svpwm IS
             HB3_bot  : OUT STD_LOGIC
         );
     END COMPONENT;
+    
+    COMPONENT srf_pll
+        PORT (
+            clk    : IN  STD_LOGIC;
+            reset  : IN  STD_LOGIC;
+            v_a    : IN  STD_LOGIC_VECTOR(15 DOWNTO 0);
+            v_b    : IN  STD_LOGIC_VECTOR(15 DOWNTO 0);
+            v_c    : IN  STD_LOGIC_VECTOR(15 DOWNTO 0);
+            omega  : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+            phase  : OUT SIGNED(31 DOWNTO 0)
+            );
+    END COMPONENT;
+
+    SIGNAL clk_pulse       : STD_LOGIC;
 
     SIGNAL angle_vec       : STD_LOGIC_VECTOR(31 DOWNTO 0);
     SIGNAL mag_vec         : STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -85,6 +100,7 @@ ARCHITECTURE Behavioral OF svpwm IS
     SIGNAL x               : STD_LOGIC_VECTOR(31 DOWNTO 0);
     SIGNAL y               : STD_LOGIC_VECTOR(31 DOWNTO 0);
     SIGNAL angle           : SIGNED(31 DOWNTO 0);
+    SIGNAL angle_srf           : SIGNED(31 DOWNTO 0);    
     SIGNAL magnitude       : SIGNED(31 DOWNTO 0);
     SIGNAL sector          : STD_LOGIC_VECTOR(2 DOWNTO 0);
     CONSTANT iterations    : INTEGER RANGE 1 TO 16 := 16;
@@ -95,6 +111,22 @@ ARCHITECTURE Behavioral OF svpwm IS
     SIGNAL sector_delayed  : STD_LOGIC_VECTOR(2 DOWNTO 0);
 
 BEGIN
+
+    PROCESS(clk)
+    variable count : INTEGER RANGE 0 TO 900 := 0;
+    BEGIN 
+        IF(rising_edge(clk)) THEN 
+
+                IF(count < 781) THEN 
+                    count := count + 1;
+                    clk_pulse <= '0';
+                ELSE 
+                    count := 0;
+                    clk_pulse <= '1';
+                END IF; 
+
+        END IF; 
+    END PROCESS;
 
     clarke_inst : clarke_transform
         PORT MAP (
@@ -114,6 +146,7 @@ BEGIN
         PORT MAP (
             clk      => clk,
             reset    => reset,
+            angle_in => angle_srf,
             x        => v_alpha,
             y        => v_beta,
             angle    => angle,
@@ -148,6 +181,17 @@ BEGIN
             HB2_bot  => HB2_bot,
             HB3_top  => HB3_top,
             HB3_bot  => HB3_bot
+        );
+        
+        srf_inst : srf_pll
+        PORT MAP (
+            clk   => clk_pulse,
+            reset => reset,
+            v_a   => v_a,
+            v_b   => v_b,
+            v_c   => v_c,
+            omega => OPEN,
+            phase => angle_srf
         );
 
 END Behavioral;

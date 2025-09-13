@@ -9,6 +9,7 @@ ENTITY vector_processor IS
     PORT (
         clk        : IN  STD_LOGIC;
         reset      : IN  STD_LOGIC;
+        angle_in   : IN  SIGNED(31 DOWNTO 0);
         x          : IN  SIGNED(31 DOWNTO 0);  -- 28 binary point
         y          : IN  SIGNED(31 DOWNTO 0);  -- 28 binary point
         angle      : OUT SIGNED(31 DOWNTO 0);  -- 28 binary point
@@ -83,8 +84,34 @@ ARCHITECTURE Behavioral OF vector_processor IS
         14 => to_signed(INTEGER(0.000061035156174209 * 268435456.0), 32),
         15 => to_signed(INTEGER(0.000030517578115526 * 268435456.0), 32)
     );
+    
+    COMPONENT shift_register IS
+        GENERIC(
+            data_len   : INTEGER;
+            delay_len  : INTEGER
+        );
+        PORT(
+            clk        : IN  STD_LOGIC;
+            reset      : IN  STD_LOGIC;
+            sig_in     : IN  SIGNED(data_len - 1 DOWNTO 0);
+            sig_delay  : OUT SIGNED(data_len - 1 DOWNTO 0)
+        );
+    END COMPONENT;
 
 BEGIN
+
+--    shift_reg_vref : shift_register
+--        GENERIC MAP(
+--            data_len   => 32,
+--            delay_len  => 15
+--        )
+--        PORT MAP(
+--            clk        => clk,
+--            reset      => reset,
+--            sig_in     => angle_in,
+--            sig_delay  => angle_int
+--        );
+
     PROCESS(clk)
     BEGIN
         IF rising_edge(clk) THEN
@@ -145,31 +172,19 @@ BEGIN
     BEGIN
         IF rising_edge(clk) THEN
             IF reset = '1' THEN
-                angle_int        <= (OTHERS => '0');
+               -- angle_int        <= (OTHERS => '0');
                 add_reg          <= (OTHERS => '0');
                 mult_reg         <= (OTHERS => '0');
                 shift_reg        <= (OTHERS => '0');
                 mult_reg_pipe    <= (OTHERS => '0');
                 shift_reg_pipe   <= (OTHERS => '0');
             ELSE
-                CASE pipeline(iterations - 1).pip_quadrant IS
-                    WHEN "00" =>
-                        angle_int <= pipeline(iterations - 1).pip_z;
-                    WHEN "01" | "10" =>
-                        angle_int <= pipeline(iterations - 1).pip_z + PI;
-                    WHEN OTHERS =>
-                        IF pipeline(iterations - 1).pip_z < NEAR_ZERO AND pipeline(iterations - 1).pip_z > NEG_NEAR_ZERO THEN
-                            angle_int <= (OTHERS => '0');
-                        ELSE
-                            angle_int <= pipeline(iterations - 1).pip_z + TWO_PI;
-                        END IF;
-                END CASE;
-
                 mult_reg        <= pipeline(iterations - 1).pip_x * cordic_const;
                 shift_reg       <= resize(shift_right(pipeline(iterations - 1).pip_x, 1), 66);
                 mult_reg_pipe   <= mult_reg;
                 shift_reg_pipe  <= shift_reg;
                 add_reg         <= shift_right(mult_reg_pipe, 28) + shift_reg_pipe;
+                angle_int       <= angle_in;
             END IF;
         END IF;
     END PROCESS;
