@@ -3,48 +3,40 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Sat Aug  2 20:28:38 2025
-# Process ID: 12684
-# Current directory: C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.runs/design_1_top_0_1_synth_1
+# Start of session at: Mon Oct 27 20:51:21 2025
+# Process ID: 15744
+# Current directory: C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.runs/design_1_top_0_1_synth_1
 # Command line: vivado.exe -log design_1_top_0_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_top_0_1.tcl
-# Log file: C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.runs/design_1_top_0_1_synth_1/design_1_top_0_1.vds
-# Journal file: C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.runs/design_1_top_0_1_synth_1\vivado.jou
-# Running On        :DESKTOP-1FUVVL9
+# Log file: C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.runs/design_1_top_0_1_synth_1/design_1_top_0_1.vds
+# Journal file: C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.runs/design_1_top_0_1_synth_1\vivado.jou
+# Running On        :DESKTOP-CNIMS8K
 # Platform          :Windows Server 2016 or Windows 10
 # Operating System  :19045
-# Processor Detail  :Intel(R) Core(TM) i5-10400F CPU @ 2.90GHz
-# CPU Frequency     :2904 MHz
-# CPU Physical cores:6
-# CPU Logical cores :12
-# Host memory       :17037 MB
-# Swap memory       :15032 MB
-# Total Virtual     :32069 MB
-# Available Virtual :7097 MB
+# Processor Detail  :Intel(R) Core(TM) i5-8350U CPU @ 1.70GHz
+# CPU Frequency     :1896 MHz
+# CPU Physical cores:4
+# CPU Logical cores :8
+# Host memory       :17048 MB
+# Swap memory       :9663 MB
+# Total Virtual     :26712 MB
+# Available Virtual :10672 MB
 #-----------------------------------------------------------
 source design_1_top_0_1.tcl -notrace
 CRITICAL WARNING: [Common 17-1355] You are suppressing all messages of type 'WARNING'. You may potentially disregard important DRC, CDC, and implementation messages that can negatively impact your design.  If this is not desired, please run 'reset_msg_config -suppress -severity {WARNING}' to undo this change.
 CRITICAL WARNING: [Common 17-1355] You are suppressing all messages of type 'CRITICAL WARNING'. You may potentially disregard important DRC, CDC, and implementation messages that can negatively impact your design.  If this is not desired, please run 'reset_msg_config -suppress -severity {CRITICAL WARNING}' to undo this change.
-create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 514.004 ; gain = 197.332
+create_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 493.086 ; gain = 198.449
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1404.230 ; gain = 447.176
+Starting Synthesize : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 962.750 ; gain = 449.914
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1536.875 ; gain = 579.820
+Finished Synthesize : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1094.043 ; gain = 581.207
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1536.875 ; gain = 579.820
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1536.875 ; gain = 579.820
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.128 . Memory (MB): peak = 1536.875 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1633.914 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.129 . Memory (MB): peak = 1634.121 ; gain = 0.207
-Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1634.121 ; gain = 677.066
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1634.121 ; gain = 677.066
-Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.runs/design_1_top_0_1_synth_1/dont_touch.xdc, line 18).
-Applied set_property KEEP_HIERARCHY = SOFT for inst/inst_memC. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for inst/inst_memB. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for inst/inst_memA. (constraint file  auto generated constraint).
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1634.121 ; gain = 677.066
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1634.121 ; gain = 677.066
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1669.305 ; gain = 712.250
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1094.043 ; gain = 581.207
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1094.043 ; gain = 581.207
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:18 . Memory (MB): peak = 1094.043 ; gain = 581.207
+No constraint files found.
+No constraint files found.
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 1613.199 ; gain = 1100.363
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
@@ -89,38 +81,38 @@ Note: The table above is a preliminary report that shows the DSPs inferred at th
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:48 ; elapsed = 00:00:49 . Memory (MB): peak = 1669.305 ; gain = 712.250
-Finished Timing Optimization : Time (s): cpu = 00:00:52 ; elapsed = 00:00:53 . Memory (MB): peak = 1669.305 ; gain = 712.250
-Finished Technology Mapping : Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 1676.309 ; gain = 719.254
-Finished IO Insertion : Time (s): cpu = 00:01:01 ; elapsed = 00:01:02 . Memory (MB): peak = 1690.145 ; gain = 733.090
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:01 ; elapsed = 00:01:02 . Memory (MB): peak = 1690.145 ; gain = 733.090
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:02 ; elapsed = 00:01:04 . Memory (MB): peak = 1690.145 ; gain = 733.090
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:02 ; elapsed = 00:01:04 . Memory (MB): peak = 1690.145 ; gain = 733.090
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:03 ; elapsed = 00:01:04 . Memory (MB): peak = 1690.145 ; gain = 733.090
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:03 ; elapsed = 00:01:04 . Memory (MB): peak = 1690.145 ; gain = 733.090
+No constraint files found.
+Finished Timing Optimization : Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 1613.199 ; gain = 1100.363
+Finished Technology Mapping : Time (s): cpu = 00:00:53 ; elapsed = 00:00:54 . Memory (MB): peak = 1613.199 ; gain = 1100.363
+Finished IO Insertion : Time (s): cpu = 00:01:01 ; elapsed = 00:01:02 . Memory (MB): peak = 1613.199 ; gain = 1100.363
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:01 ; elapsed = 00:01:02 . Memory (MB): peak = 1613.199 ; gain = 1100.363
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:02 ; elapsed = 00:01:03 . Memory (MB): peak = 1613.199 ; gain = 1100.363
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:02 ; elapsed = 00:01:03 . Memory (MB): peak = 1613.199 ; gain = 1100.363
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:02 ; elapsed = 00:01:03 . Memory (MB): peak = 1613.199 ; gain = 1100.363
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:02 ; elapsed = 00:01:03 . Memory (MB): peak = 1613.199 ; gain = 1100.363
 
 Report Cell Usage: 
-+------+------------+------+
-|      |Cell        |Count |
-+------+------------+------+
-|1     |blk_mem_gen |     3|
-|4     |CARRY4      |  1138|
-|5     |DSP48E1     |    30|
-|12    |LUT1        |   714|
-|13    |LUT2        |  1992|
-|14    |LUT3        |  2010|
-|15    |LUT4        |   239|
-|16    |LUT5        |   242|
-|17    |LUT6        |   220|
-|18    |SRL16E      |    51|
-|19    |SRLC32E     |     3|
-|20    |FDCE        |  1370|
-|21    |FDPE        |     3|
-|22    |FDRE        |  2495|
-|23    |FDSE        |     1|
-+------+------------+------+
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:03 ; elapsed = 00:01:04 . Memory (MB): peak = 1690.145 ; gain = 733.090
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.137 . Memory (MB): peak = 1699.586 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1703.449 ; gain = 0.000
-synth_design: Time (s): cpu = 00:01:11 ; elapsed = 00:01:13 . Memory (MB): peak = 1703.449 ; gain = 1174.711
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.040 . Memory (MB): peak = 1703.449 ; gain = 0.000
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |CARRY4  |  1147|
+|2     |DSP48E1 |    30|
+|3     |LUT1    |   718|
+|4     |LUT2    |  1984|
+|5     |LUT3    |  2027|
+|6     |LUT4    |   245|
+|7     |LUT5    |   246|
+|8     |LUT6    |   233|
+|9     |SRL16E  |    51|
+|10    |SRLC32E |     3|
+|11    |FDCE    |  1419|
+|12    |FDPE    |     4|
+|13    |FDRE    |  2575|
+|14    |FDSE    |     1|
++------+--------+------+
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:02 ; elapsed = 00:01:03 . Memory (MB): peak = 1613.199 ; gain = 1100.363
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.185 . Memory (MB): peak = 1613.199 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1613.199 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:08 ; elapsed = 00:01:09 . Memory (MB): peak = 1613.199 ; gain = 1105.344
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.053 . Memory (MB): peak = 1762.770 ; gain = 0.102
+write_checkpoint: Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1762.770 ; gain = 149.570

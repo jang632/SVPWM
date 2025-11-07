@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.runs/synth_1/design_1_wrapper.tcl"
+  variable script "C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.runs/synth_1/design_1_wrapper.tcl"
   variable category "vivado_synth"
 }
 
@@ -56,7 +56,7 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_msg_config -id {Common 17-41} -limit 10000000
+set_param chipscope.maxJobs 2
 set_msg_config  -severity {STATUS}  -suppress 
 set_msg_config  -severity {INFO}  -suppress 
 set_msg_config  -severity {WARNING}  -suppress 
@@ -68,35 +68,21 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.cache/wt [current_project]
-set_property parent.project_path C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.xpr [current_project]
-set_property XPM_LIBRARIES XPM_MEMORY [current_project]
+set_property webtalk.parent_dir C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.cache/wt [current_project]
+set_property parent.project_path C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.cache/ip [current_project]
+set_property ip_output_repo c:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-add_files C:/Users/Jan/Desktop/3phase_txt/phaseA_bin_50Hz_64kHz.coe
-add_files C:/Users/Jan/Desktop/3phase_txt/phaseB_bin_50Hz_64kHz.coe
-add_files C:/Users/Jan/Desktop/3phase_txt/phaseC_bin_50Hz_64kHz.coe
-read_verilog -library xil_defaultlib C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v
-add_files C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/bd/design_1/design_1.bd
-set_property used_in_implementation false [get_files -all c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_1/design_1_proc_sys_reset_0_1_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_1/design_1_proc_sys_reset_0_1.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_1/design_1_proc_sys_reset_0_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_top_0_1/design_1_top_0_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/design_1_ooc.xdc]
-
-read_ip -quiet C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_2/blk_mem_gen_2.xci
-set_property used_in_implementation false [get_files -all c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/ip/blk_mem_gen_2/blk_mem_gen_2_ooc.xdc]
-
-read_ip -quiet C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
-set_property used_in_implementation false [get_files -all c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0_ooc.xdc]
-
-read_ip -quiet C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci
-set_property used_in_implementation false [get_files -all c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1_ooc.xdc]
+read_verilog -library xil_defaultlib C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v
+add_files C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/bd/design_1/design_1.bd
+set_property used_in_implementation false [get_files -all c:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_1/design_1_proc_sys_reset_0_1_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_1/design_1_proc_sys_reset_0_1.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_1/design_1_proc_sys_reset_0_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/ip/design_1_processing_system7_0_2/design_1_processing_system7_0_2.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/design_1_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -107,14 +93,14 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/constrs_1/new/constr.xdc
-set_property used_in_implementation false [get_files C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/constrs_1/new/constr.xdc]
+read_xdc C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/constrs_1/new/constr.xdc
+set_property used_in_implementation false [get_files C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/constrs_1/new/constr.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/utils_1/imports/synth_1/svpwm.dcp
+read_checkpoint -auto_incremental -incremental C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/utils_1/imports/synth_1/svpwm.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

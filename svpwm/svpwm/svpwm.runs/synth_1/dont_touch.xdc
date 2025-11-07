@@ -6,22 +6,13 @@
 # Block Designs: bd/design_1/design_1.bd
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1 || ORIG_REF_NAME==design_1} -quiet] -quiet
 
-# IP: bd/design_1/ip/design_1_processing_system7_0_1/design_1_processing_system7_0_1.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_processing_system7_0_1 || ORIG_REF_NAME==design_1_processing_system7_0_1} -quiet] -quiet
-
 # IP: bd/design_1/ip/design_1_proc_sys_reset_0_1/design_1_proc_sys_reset_0_1.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_proc_sys_reset_0_1 || ORIG_REF_NAME==design_1_proc_sys_reset_0_1} -quiet] -quiet
 
 # IP: bd/design_1/ip/design_1_top_0_1/design_1_top_0_1.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_top_0_1 || ORIG_REF_NAME==design_1_top_0_1} -quiet] -quiet
 
-# IP: ip/blk_mem_gen_2/blk_mem_gen_2.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==blk_mem_gen_2 || ORIG_REF_NAME==blk_mem_gen_2} -quiet] -quiet
+# IP: bd/design_1/ip/design_1_processing_system7_0_2/design_1_processing_system7_0_2.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_processing_system7_0_2 || ORIG_REF_NAME==design_1_processing_system7_0_2} -quiet] -quiet
 
-# IP: ip/blk_mem_gen_1/blk_mem_gen_1.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==blk_mem_gen_1 || ORIG_REF_NAME==blk_mem_gen_1} -quiet] -quiet
-
-# IP: ip/blk_mem_gen_0/blk_mem_gen_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==blk_mem_gen_0 || ORIG_REF_NAME==blk_mem_gen_0} -quiet] -quiet
-
-# XDC: c:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/design_1_ooc.xdc
+# XDC: c:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.gen/sources_1/bd/design_1/design_1_ooc.xdc

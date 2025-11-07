@@ -3,55 +3,80 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Thu Aug 21 18:49:43 2025
-# Process ID: 24760
-# Current directory: C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent25084 C:\Users\Jan\Desktop\SVPWM\svpwm\svpwm\svpwm.xpr
-# Log file: C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/vivado.log
-# Journal file: C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm\vivado.jou
-# Running On        :DESKTOP-1FUVVL9
+# Start of session at: Thu Oct  9 22:25:51 2025
+# Process ID: 12292
+# Current directory: C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8164 C:\Users\user\Desktop\svpwm_2\SVPWM\svpwm\svpwm\svpwm.xpr
+# Log file: C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/vivado.log
+# Journal file: C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm\vivado.jou
+# Running On        :DESKTOP-CNIMS8K
 # Platform          :Windows Server 2016 or Windows 10
 # Operating System  :19045
-# Processor Detail  :Intel(R) Core(TM) i5-10400F CPU @ 2.90GHz
-# CPU Frequency     :2904 MHz
-# CPU Physical cores:6
-# CPU Logical cores :12
-# Host memory       :17037 MB
-# Swap memory       :15569 MB
-# Total Virtual     :32606 MB
-# Available Virtual :21005 MB
+# Processor Detail  :Intel(R) Core(TM) i5-8350U CPU @ 1.70GHz
+# CPU Frequency     :1896 MHz
+# CPU Physical cores:4
+# CPU Logical cores :8
+# Host memory       :17048 MB
+# Swap memory       :9663 MB
+# Total Virtual     :26712 MB
+# Available Virtual :21498 MB
 #-----------------------------------------------------------
-start_gui
-open_project C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.xpr
+start_guioopen_project C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.xprupdate_compile_order -fileset sources_1
+generate_target Simulation [get_files C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_2/blk_mem_gen_2.xci]
+set_property CONFIG.Coe_File {C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.sim/sim_1/behav/xsim/phaseA_bin_50Hz_64kHz.coe} [get_ips blk_mem_gen_0]
+set_property CONFIG.Coe_File {C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.sim/sim_1/behav/xsim/phaseB_bin_50Hz_64kHz.coe} [get_ips blk_mem_gen_1]
+set_property CONFIG.Coe_File {C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.sim/sim_1/behav/xsim/phaseC_bin_50Hz_64kHz.coe} [get_ips blk_mem_gen_2]
+generate_target Simulation [get_files C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_2/blk_mem_gen_2.xci]
+generate_target Simulation [get_files C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci]
+generate_target Simulation [get_files C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci]
+launch_simulation
+source tb_top.tcl
+run 300000 us
+relaunch_sim
+run 300000 us
+relaunch_sim
+run 300000 us
+relaunch_sim
+relaunch_sim
+relaunch_sim
+run 300000 us
+generate_target all [get_files  C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci]
+catch { config_ip_cache -export [get_ips -all blk_mem_gen_0] }
+export_ip_user_files -of_objects [get_files C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci] -no_script -sync -force -quiet
+reset_run blk_mem_gen_0_synth_1
+launch_runs blk_mem_gen_0_synth_1 -jobs 4
+wait_on_run blk_mem_gen_0_synth_1
+export_simulation -of_objects [get_files C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci] -directory C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.ip_user_files -ipstatic_source_dir C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.cache/compile_simlib/modelsim} {questa=C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.cache/compile_simlib/questa} {riviera=C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.cache/compile_simlib/riviera} {activehdl=C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+generate_target all [get_files  C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci]
+catch { config_ip_cache -export [get_ips -all blk_mem_gen_1] }
+export_ip_user_files -of_objects [get_files C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci] -no_script -sync -force -quiet
+reset_run blk_mem_gen_1_synth_1
+launch_runs blk_mem_gen_1_synth_1 -jobs 4
+wait_on_run blk_mem_gen_1_synth_1
+export_simulation -of_objects [get_files C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci] -directory C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.ip_user_files -ipstatic_source_dir C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.cache/compile_simlib/modelsim} {questa=C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.cache/compile_simlib/questa} {riviera=C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.cache/compile_simlib/riviera} {activehdl=C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+generate_target all [get_files  C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_2/blk_mem_gen_2.xci]
+catch { config_ip_cache -export [get_ips -all blk_mem_gen_2] }
+export_ip_user_files -of_objects [get_files C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_2/blk_mem_gen_2.xci] -no_script -sync -force -quiet
+reset_run blk_mem_gen_2_synth_1
+launch_runs blk_mem_gen_2_synth_1 -jobs 4
+wait_on_run blk_mem_gen_2_synth_1
+export_simulation -of_objects [get_files C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_2/blk_mem_gen_2.xci] -directory C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.ip_user_files -ipstatic_source_dir C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.cache/compile_simlib/modelsim} {questa=C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.cache/compile_simlib/questa} {riviera=C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.cache/compile_simlib/riviera} {activehdl=C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top top [current_fileset]
+set_property top_lib xil_defaultlib [current_fileset]
+set_property top_arch Behavioral [current_fileset]
+set_property top_file C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/top.vhd [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
 update_compile_order -fileset sources_1
-generate_target Simulation [get_files C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_2/blk_mem_gen_2.xci]
-generate_target Simulation [get_files C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci]
-generate_target Simulation [get_files C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci]
+relaunch_sim
+close_sim
+launch_simulation
+launch_simulation
 launch_simulation
 source tb_top.tcl
+run 300000 us
 relaunch_sim
-run 19000 us
-relaunch_sim
-run 19000 us
-relaunch_sim
-run 19000 us
-relaunch_sim
-run 19000 us
-generate_target all [get_files  C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/bd/design_1/design_1.bd]
-export_ip_user_files -of_objects [get_files C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
-create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/bd/design_1/design_1.bd]
-export_simulation -of_objects [get_files C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/bd/design_1/design_1.bd] -directory C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.ip_user_files -ipstatic_source_dir C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.cache/compile_simlib/modelsim} {questa=C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.cache/compile_simlib/questa} {riviera=C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.cache/compile_simlib/riviera} {activehdl=C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
-make_wrapper -files [get_files C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/bd/design_1/design_1.bd] -top
-close_sim
-generate_target Simulation [get_files C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_2/blk_mem_gen_2.xci]
-generate_target Simulation [get_files C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci]
-generate_target Simulation [get_files C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci]
-launch_simulation
-source tb_top.tcl
-relaunch_sim
-run 19000 us
-relaunch_sim
-run 19000 us
-relaunch_sim
-run 19000 us
-close_sim
+run 300000 us
+run 300000 us

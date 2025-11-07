@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xA9D34EA391A51D02",
+      "boundary_crc": "0x16FCAEF40D37E3D8",
       "device": "xc7z020clg484-1",
       "gen_directory": "../../../../svpwm.gen/sources_1/bd/design_1",
       "name": "design_1",
@@ -12,9 +12,9 @@
       "validated": "true"
     },
     "design_tree": {
-      "processing_system7_0": "",
       "proc_sys_reset_0": "",
-      "top_0": ""
+      "top_0": "",
+      "processing_system7_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -218,14 +218,97 @@
             "value_src": "default"
           }
         }
+      },
+      "sclk": {
+        "direction": "O"
+      },
+      "ss_n": {
+        "direction": "O",
+        "left": "0",
+        "right": "0"
+      },
+      "miso": {
+        "direction": "I"
       }
     },
     "components": {
+      "proc_sys_reset_0": {
+        "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
+        "ip_revision": "15",
+        "xci_name": "design_1_proc_sys_reset_0_1",
+        "xci_path": "ip\\design_1_proc_sys_reset_0_1\\design_1_proc_sys_reset_0_1.xci",
+        "inst_hier_path": "proc_sys_reset_0"
+      },
+      "top_0": {
+        "vlnv": "xilinx.com:module_ref:top:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_1_top_0_1",
+        "xci_path": "ip\\design_1_top_0_1\\design_1_top_0_1.xci",
+        "inst_hier_path": "top_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "top",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "50000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_1_processing_system7_0_2_FCLK_CLK0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "miso": {
+            "direction": "I"
+          },
+          "sclk": {
+            "direction": "O"
+          },
+          "ss_n": {
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          },
+          "HB1_top": {
+            "direction": "O"
+          },
+          "HB1_bot": {
+            "direction": "O"
+          },
+          "HB2_top": {
+            "direction": "O"
+          },
+          "HB2_bot": {
+            "direction": "O"
+          },
+          "HB3_top": {
+            "direction": "O"
+          },
+          "HB3_bot": {
+            "direction": "O"
+          }
+        }
+      },
       "processing_system7_0": {
         "vlnv": "xilinx.com:ip:processing_system7:5.5",
         "ip_revision": "6",
-        "xci_name": "design_1_processing_system7_0_1",
-        "xci_path": "ip\\design_1_processing_system7_0_1\\design_1_processing_system7_0_1.xci",
+        "xci_name": "design_1_processing_system7_0_2",
+        "xci_path": "ip\\design_1_processing_system7_0_2\\design_1_processing_system7_0_2.xci",
         "inst_hier_path": "processing_system7_0",
         "parameters": {
           "PCW_ACT_APU_PERIPHERAL_FREQMHZ": {
@@ -345,24 +428,6 @@
           "PCW_FPGA_FCLK0_ENABLE": {
             "value": "1"
           },
-          "PCW_MIO_14_IOTYPE": {
-            "value": "<Select>"
-          },
-          "PCW_MIO_14_PULLUP": {
-            "value": "<Select>"
-          },
-          "PCW_MIO_14_SLEW": {
-            "value": "<Select>"
-          },
-          "PCW_MIO_15_IOTYPE": {
-            "value": "<Select>"
-          },
-          "PCW_MIO_15_PULLUP": {
-            "value": "<Select>"
-          },
-          "PCW_MIO_15_SLEW": {
-            "value": "<Select>"
-          },
           "PCW_MIO_40_IOTYPE": {
             "value": "LVCMOS 1.8V"
           },
@@ -464,9 +529,6 @@
           },
           "PCW_UART0_PERIPHERAL_ENABLE": {
             "value": "0"
-          },
-          "PCW_UART_PERIPHERAL_FREQMHZ": {
-            "value": "100"
           },
           "PCW_UART_PERIPHERAL_VALID": {
             "value": "0"
@@ -618,68 +680,7 @@
           }
         },
         "pfm_attributes": {
-          "CLOCK": "FCLK_CLK0 {id \"1\" is_default \"true\" proc_sys_reset \"/proc_sys_reset_0\" status \"fixed\" freq_hz \"50000000\"}"
-        }
-      },
-      "proc_sys_reset_0": {
-        "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
-        "ip_revision": "15",
-        "xci_name": "design_1_proc_sys_reset_0_1",
-        "xci_path": "ip\\design_1_proc_sys_reset_0_1\\design_1_proc_sys_reset_0_1.xci",
-        "inst_hier_path": "proc_sys_reset_0"
-      },
-      "top_0": {
-        "vlnv": "xilinx.com:module_ref:top:1.0",
-        "ip_revision": "1",
-        "xci_name": "design_1_top_0_1",
-        "xci_path": "ip\\design_1_top_0_1\\design_1_top_0_1.xci",
-        "inst_hier_path": "top_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "top",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "reset",
-                "value_src": "constant"
-              },
-              "FREQ_HZ": {
-                "value": "50000000",
-                "value_src": "user_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "design_1_processing_system7_0_1_FCLK_CLK0",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "reset": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "HB1_top": {
-            "direction": "O"
-          },
-          "HB1_bot": {
-            "direction": "O"
-          },
-          "HB2_top": {
-            "direction": "O"
-          },
-          "HB2_bot": {
-            "direction": "O"
-          },
-          "HB3_top": {
-            "direction": "O"
-          },
-          "HB3_bot": {
-            "direction": "O"
-          }
+          "CLOCK": "FCLK_CLK0 {id \"2\" is_default \"true\" proc_sys_reset \"/proc_sys_reset_0\" status \"fixed\" freq_hz \"50000000\"}"
         }
       }
     },
@@ -698,12 +699,18 @@
       }
     },
     "nets": {
+      "miso_0_1": {
+        "ports": [
+          "miso",
+          "top_0/miso"
+        ]
+      },
       "processing_system7_0_FCLK_CLK0": {
         "ports": [
           "processing_system7_0/FCLK_CLK0",
           "proc_sys_reset_0/slowest_sync_clk",
-          "processing_system7_0/M_AXI_GP0_ACLK",
-          "top_0/clk"
+          "top_0/clk",
+          "processing_system7_0/M_AXI_GP0_ACLK"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -752,6 +759,18 @@
         "ports": [
           "top_0/HB3_top",
           "HB3_top"
+        ]
+      },
+      "top_0_sclk": {
+        "ports": [
+          "top_0/sclk",
+          "sclk"
+        ]
+      },
+      "top_0_ss_n": {
+        "ports": [
+          "top_0/ss_n",
+          "ss_n"
         ]
       }
     }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020clg484-1" LaunchTime="1754159483">
+<GenRun Id="impl_1" LaunchPart="xc7z020clg484-1" LaunchTime="1761595523">
   <File Type="ROUTE-PWR" Name="design_1_wrapper_power_routed.rpt"/>
   <File Type="PA-TCL" Name="design_1_wrapper.tcl"/>
   <File Type="ROUTE-PWR-SUM" Name="design_1_wrapper_power_summary_routed.pb"/>
@@ -18,10 +18,14 @@
   <File Type="BITSTR-MMI" Name="design_1_wrapper.mmi"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="design_1_wrapper_methodology_drc_routed.rpt"/>
   <File Type="BITSTR-SYSDEF" Name="design_1_wrapper.sysdef"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="design_1_wrapper_methodology_drc_routed.pb"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
   <File Type="BITSTR-LTX" Name="design_1_wrapper.ltx"/>
+  <File Type="BOOT-PDI-FILE" Name="design_1_wrapper_boot.pdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="NPI_FILE" Name="design_1_wrapper.npi"/>
   <File Type="OPT-DRC" Name="design_1_wrapper_drc_opted.rpt"/>
+  <File Type="RBD_FILE" Name="design_1_wrapper.rbd"/>
   <File Type="OPT-HWDEF" Name="design_1_wrapper.hwdef"/>
   <File Type="PLACE-IO" Name="design_1_wrapper_io_placed.rpt"/>
   <File Type="PLACE-UTIL" Name="design_1_wrapper_utilization_placed.rpt"/>
@@ -55,17 +59,13 @@
   <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="design_1_wrapper_timing_summary_postroute_physopted.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="design_1_wrapper_bus_skew_postroute_physopted.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="design_1_wrapper_bus_skew_postroute_physopted.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="design_1_wrapper_methodology_drc_routed.pb"/>
   <File Type="ROUTE-DRC-RPX" Name="design_1_wrapper_drc_routed.rpx"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="design_1_wrapper_methodology_drc_routed.rpx"/>
   <File Type="PDI-FILE" Name="design_1_wrapper.pdi"/>
-  <File Type="BOOT-PDI-FILE" Name="design_1_wrapper_boot.pdi"/>
   <File Type="PL-PDI-FILE" Name="design_1_wrapper_pld.pdi"/>
   <File Type="RCFI_FILE" Name="design_1_wrapper.rcfi"/>
   <File Type="CFI_FILE" Name="design_1_wrapper.cfi"/>
   <File Type="RNPI_FILE" Name="design_1_wrapper.rnpi"/>
-  <File Type="NPI_FILE" Name="design_1_wrapper.npi"/>
-  <File Type="RBD_FILE" Name="design_1_wrapper.rbd"/>
   <File Type="ROUTE-RQS" Name="design_1_wrapper_routed.rqs"/>
   <File Type="POSTROUTE-PHYSOPT-RQS" Name="design_1_wrapper_postroute_physopted.rqs"/>
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
@@ -97,6 +97,12 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/shift_register.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/spi.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -146,24 +152,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../../../3phase_txt/phaseA_bin_50Hz_64kHz.coe">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../../../3phase_txt/phaseB_bin_50Hz_64kHz.coe">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../../../3phase_txt/phaseC_bin_50Hz_64kHz.coe">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="design_1_wrapper"/>
@@ -208,10 +196,6 @@
     <Step Id="write_bitstream"/>
     <Step Id="write_device_image"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="blk_mem_gen_2"/>
-  <BlockFileSet Type="BlockSrcs" Name="blk_mem_gen_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_top_0_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="blk_mem_gen_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_proc_sys_reset_0_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_processing_system7_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_processing_system7_0_2"/>
 </GenRun>

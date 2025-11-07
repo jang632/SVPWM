@@ -12,6 +12,9 @@ architecture Behavioral of tb_top is
         PORT( 
             clk      : IN  STD_LOGIC;
             reset    : IN  STD_LOGIC;
+            miso     : IN     STD_LOGIC;
+            sclk     : BUFFER STD_LOGIC;
+            ss_n     : BUFFER STD_LOGIC_VECTOR(0 DOWNTO 0);
             HB1_top  : OUT STD_LOGIC;
             HB1_bot  : OUT STD_LOGIC;
             HB2_top  : OUT STD_LOGIC;
@@ -24,6 +27,9 @@ architecture Behavioral of tb_top is
     -- Signals to connect to DUT
     SIGNAL clk      : STD_LOGIC := '0';
     SIGNAL reset    : STD_LOGIC := '1';
+    SIGNAL miso     : STD_LOGIC;
+    SIGNAL sclk     : STD_LOGIC;
+    SIGNAL ss_n     : STD_LOGIC_VECTOR(0 DOWNTO 0);
     SIGNAL HB1_top  : STD_LOGIC;
     SIGNAL HB1_bot  : STD_LOGIC;
     SIGNAL HB2_top  : STD_LOGIC;
@@ -40,6 +46,9 @@ begin
         PORT MAP (
             clk      => clk,
             reset    => reset,
+            miso     => miso,
+            sclk     => sclk,
+            ss_n     => ss_n,
             HB1_top  => HB1_top,
             HB1_bot  => HB1_bot,
             HB2_top  => HB2_top,
@@ -63,11 +72,13 @@ begin
     stim_proc: PROCESS
     BEGIN
         -- Initial reset
-        WAIT FOR 20 ns;
+        WAIT FOR 4000 ns;
+        miso <= '0';
         reset <= '0';
-
+        WAIT FOR 4000 ns;
+        miso <= '1';
         -- Run simulation for a while
-        WAIT FOR 2 ms;
+      --  WAIT FOR 2 ms;
 
         -- Finish simulation
         WAIT;

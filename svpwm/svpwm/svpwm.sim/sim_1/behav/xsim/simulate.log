@@ -1,13 +1,2 @@
 Time resolution is 1 ps
- Block Memory Generator module loading initial data...
- Block Memory Generator data initialization complete.
-Block Memory Generator module tb_top.uut.inst_memA.inst.native_mem_module.blk_mem_gen_v8_4_8_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
- Block Memory Generator module loading initial data...
- Block Memory Generator data initialization complete.
-Block Memory Generator module tb_top.uut.inst_memB.inst.native_mem_module.blk_mem_gen_v8_4_8_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
- Block Memory Generator module loading initial data...
- Block Memory Generator data initialization complete.
-Block Memory Generator module tb_top.uut.inst_memC.inst.native_mem_module.blk_mem_gen_v8_4_8_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
-Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
-Time: 90 ns  Iteration: 1  Process: /tb_top/uut/inst_svpwm/vector_proc_inst/line__88  File: C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd
-INFO: xsimkernel Simulation Memory Usage: 19704 KB (Peak: 19704 KB), Simulation CPU Usage: 127889 ms
+INFO: xsimkernel Simulation Memory Usage: 16460 KB (Peak: 16460 KB), Simulation CPU Usage: 80249 ms

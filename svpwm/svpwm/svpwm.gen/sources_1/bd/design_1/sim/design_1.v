@@ -2,8 +2,8 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-//Date        : Sat Aug  2 20:28:14 2025
-//Host        : DESKTOP-1FUVVL9 running 64-bit major release  (build 9200)
+//Date        : Mon Oct 27 20:59:31 2025
+//Host        : DESKTOP-CNIMS8K running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
 //Purpose     : IP block netlist
@@ -39,7 +39,10 @@ module design_1
     HB2_top,
     HB3_bot,
     HB3_top,
-    reset);
+    miso,
+    reset,
+    sclk,
+    ss_n);
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR ADDR" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME DDR, AXI_ARBITRATION_SCHEME TDM, BURST_LENGTH 8, CAN_DEBUG false, CAS_LATENCY 11, CAS_WRITE_LATENCY 11, CS_ENABLED true, DATA_MASK_ENABLED true, DATA_WIDTH 8, MEMORY_TYPE COMPONENTS, MEM_ADDR_MAP ROW_COLUMN_BANK, SLOT Single, TIMEPERIOD_PS 1250" *) inout [14:0]DDR_addr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR BA" *) inout [2:0]DDR_ba;
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR CAS_N" *) inout DDR_cas_n;
@@ -67,8 +70,12 @@ module design_1
   output HB2_top;
   output HB3_bot;
   output HB3_top;
+  input miso;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.RESET RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.RESET, INSERT_VIP 0, POLARITY ACTIVE_LOW" *) input reset;
+  output sclk;
+  output [0:0]ss_n;
 
+  wire miso_0_1;
   wire [14:0]processing_system7_0_DDR_ADDR;
   wire [2:0]processing_system7_0_DDR_BA;
   wire processing_system7_0_DDR_CAS_N;
@@ -99,6 +106,8 @@ module design_1
   wire top_0_HB2_top;
   wire top_0_HB3_bot;
   wire top_0_HB3_top;
+  wire top_0_sclk;
+  wire [0:0]top_0_ss_n;
 
   assign HB1_bot = top_0_HB1_bot;
   assign HB1_top = top_0_HB1_top;
@@ -106,14 +115,17 @@ module design_1
   assign HB2_top = top_0_HB2_top;
   assign HB3_bot = top_0_HB3_bot;
   assign HB3_top = top_0_HB3_top;
+  assign miso_0_1 = miso;
   assign reset_0_1 = reset;
+  assign sclk = top_0_sclk;
+  assign ss_n[0] = top_0_ss_n;
   design_1_proc_sys_reset_0_1 proc_sys_reset_0
        (.aux_reset_in(1'b1),
         .dcm_locked(1'b1),
         .ext_reset_in(processing_system7_0_FCLK_RESET0_N),
         .mb_debug_sys_rst(1'b0),
         .slowest_sync_clk(processing_system7_0_FCLK_CLK0));
-  design_1_processing_system7_0_1 processing_system7_0
+  design_1_processing_system7_0_2 processing_system7_0
        (.DDR_Addr(DDR_addr[14:0]),
         .DDR_BankAddr(DDR_ba[2:0]),
         .DDR_CAS_n(DDR_cas_n),
@@ -157,5 +169,8 @@ module design_1
         .HB3_bot(top_0_HB3_bot),
         .HB3_top(top_0_HB3_top),
         .clk(processing_system7_0_FCLK_CLK0),
-        .reset(reset_0_1));
+        .miso(miso_0_1),
+        .reset(reset_0_1),
+        .sclk(top_0_sclk),
+        .ss_n(top_0_ss_n));
 endmodule

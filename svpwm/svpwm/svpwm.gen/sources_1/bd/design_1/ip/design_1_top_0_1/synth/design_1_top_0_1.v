@@ -58,6 +58,9 @@
 module design_1_top_0_1 (
   clk,
   reset,
+  miso,
+  sclk,
+  ss_n,
   HB1_top,
   HB1_bot,
   HB2_top,
@@ -72,6 +75,9 @@ input wire clk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset RST" *)
 input wire reset;
+input wire miso;
+output wire sclk;
+output wire [0 : 0] ss_n;
 output wire HB1_top;
 output wire HB1_bot;
 output wire HB2_top;
@@ -82,6 +88,9 @@ output wire HB3_bot;
   top inst (
     .clk(clk),
     .reset(reset),
+    .miso(miso),
+    .sclk(sclk),
+    .ss_n(ss_n),
     .HB1_top(HB1_top),
     .HB1_bot(HB1_bot),
     .HB2_top(HB2_top),

@@ -3,30 +3,33 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Thu Aug 21 18:49:43 2025
-# Process ID: 24760
-# Current directory: C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent25084 C:\Users\Jan\Desktop\SVPWM\svpwm\svpwm\svpwm.xpr
-# Log file: C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/vivado.log
-# Journal file: C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm\vivado.jou
-# Running On        :DESKTOP-1FUVVL9
+# Start of session at: Thu Oct  9 22:25:51 2025
+# Process ID: 12292
+# Current directory: C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8164 C:\Users\user\Desktop\svpwm_2\SVPWM\svpwm\svpwm\svpwm.xpr
+# Log file: C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/vivado.log
+# Journal file: C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm\vivado.jou
+# Running On        :DESKTOP-CNIMS8K
 # Platform          :Windows Server 2016 or Windows 10
 # Operating System  :19045
-# Processor Detail  :Intel(R) Core(TM) i5-10400F CPU @ 2.90GHz
-# CPU Frequency     :2904 MHz
-# CPU Physical cores:6
-# CPU Logical cores :12
-# Host memory       :17037 MB
-# Swap memory       :15569 MB
-# Total Virtual     :32606 MB
-# Available Virtual :21005 MB
+# Processor Detail  :Intel(R) Core(TM) i5-8350U CPU @ 1.70GHz
+# CPU Frequency     :1896 MHz
+# CPU Physical cores:4
+# CPU Logical cores :8
+# Host memory       :17048 MB
+# Swap memory       :9663 MB
+# Total Virtual     :26712 MB
+# Available Virtual :21498 MB
 #-----------------------------------------------------------
-start_gui
-open_project C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.xpr
+start_guioopen_project C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.xprWWARNING: [Board 49-26] cannot add Board Part xilinx.com:ac701:part0:1.4 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/ac701/1.4/board.xml as part xc7a200tfbg676-2 specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:kc705:part0:1.6 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kc705/1.6/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.6 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.6/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.7 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.7/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.4 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu116/1.4/board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.5 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu116/1.5/board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu1500:part0:1.2 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu1500/1.2/board.xml as part xcku115-flvb2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:sp701:part0:1.0 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/sp701/1.0/board.xml as part xc7s100fgga676-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:sp701:part0:1.1 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/sp701/1.1/board.xml as part xc7s100fgga676-2 specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc707:part0:1.4 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vc707/1.4/board.xml as part xc7vx485tffg1761-2 specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc709:part0:1.8 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vc709/1.8/board.xml as part xc7vx690tffg1761-2 specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:2.2 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/2.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
@@ -43,6 +46,7 @@ WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu110:part0:1.4 availab
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.0 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.0/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.3 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.3/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.4 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.4/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128:part0:1.0 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu128/production/1.0/board.xml as part xcvu37p-fsvh2892-2l-e specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu129/production/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu1525:part0:1.3 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu1525/1.3/board.xml as part xcvu9p-fsgd2104-2l-e specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280:part0:1.0 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/production/1.0/board.xml as part xcve2802-vsvh1760-2mp-e-s specified in board_part file is either invalid or not available
@@ -68,7 +72,7 @@ WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.0 availab
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.1 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.1/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.2 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.0 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.1 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.1/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.1 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.1/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not availableINFO: [Project 1-313] Project file moved from 'C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm' since last save.
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180:part0:1.2 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/production/1.2/board.xml as part xcvp1802-lsvc4072-2mp-e-s specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc706:part0:1.4 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zc706/1.4/board.xml as part xc7z045ffg900-2 specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.3 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.3/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
@@ -83,16 +87,30 @@ WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 avail
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216:part0:2.0 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216/production/2.0/board.xml as part xczu49dr-ffvf1760-2-e specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
-WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at C:/Xilinx/Vivado/2024.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/bINFO: [Project 1-313] Project file moved from 'C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm' since last save.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'C:/Users/user/Desktop/svpwm_2/3phase_txt/phaseA_bin_50Hz_64kHz.coe', nor could it be found using path 'C:/Users/Jan/Desktop/3phase_txt/phaseA_bin_50Hz_64kHz.coe'.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'C:/Users/user/Desktop/svpwm_2/3phase_txt/phaseB_bin_50Hz_64kHz.coe', nor could it be found using path 'C:/Users/Jan/Desktop/3phase_txt/phaseB_bin_50Hz_64kHz.coe'.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'C:/Users/user/Desktop/svpwm_2/3phase_txt/phaseC_bin_50Hz_64kHz.coe', nor could it be found using path 'C:/Users/Jan/Desktop/3phase_txt/phaseC_bin_50Hz_64kHz.coe'.
 Scanning sources...
-Finished scanning sources
-open_project: Time (s): cpu = 00:00:27 ; elapsed = 00:00:14 . Memory (MB): peak = 1571.059 ; gain = 457.789
-update_compile_order -fileset sources_1
-generate_target Simulation [get_files C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_2/blk_mem_gen_2.xci]
-generate_target Simulation [get_files C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci]
-generate_target Simulation [get_files C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci]
+Finished scanning sourcesoopen_project: Time (s): cpu = 00:01:08 ; elapsed = 00:00:37 . Memory (MB): peak = 1530.836 ; gain = 425.301update_compile_order -fileset sources_1
+generate_target Simulation [get_files C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_2/blk_mem_gen_2.xci]
+ERROR: [Ipptcl 7-519] NULL COE Data pointer: Unable to open the file 
+ERROR: [Common 17-39] 'ipgui::get_coe_val' failed due to earlier errors.
+ERROR: [IP_Flow 19-167] Failed to deliver one or more file(s).
+ERROR: [IP_Flow 19-3505] IP Generation error: Failed to generate IP 'blk_mem_gen_2'. Failed to generate 'Vivado Verilog Simulation' outputs: 
+ERROR: [IP_Flow 19-98] Generation of the IP CORE failed.
+Failed to generate IP 'blk_mem_gen_2'. Failed to generate 'Vivado Verilog Simulation' outputs: 
+set_property CONFIG.Coe_File {C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.sim/sim_1/behav/xsim/phaseA_bin_50Hz_64kHz.coe} [get_ips blk_mem_gen_0]
+ERROR: [Common 17-180] Spawn failed: No error
+set_property CONFIG.Coe_File {C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.sim/sim_1/behav/xsim/phaseB_bin_50Hz_64kHz.coe} [get_ips blk_mem_gen_1]
+ERROR: [Common 17-180] Spawn failed: No error
+set_property CONFIG.Coe_File {C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.sim/sim_1/behav/xsim/phaseC_bin_50Hz_64kHz.coe} [get_ips blk_mem_gen_2]
+generate_target Simulation [get_files C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_2/blk_mem_gen_2.xci]
+generate_target Simulation [get_files C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci]
+generate_target Simulation [get_files C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci]
 launch_simulation
-run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 1599.109 ; gain = 0.000
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 1612.211 ; gain = 0.000
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:19 . Memory (MB): peak = 1612.516 ; gain = 0.305
 Time resolution is 1 ps
 source tb_top.tcl
 # set curr_wave [current_wave_config]
@@ -115,11 +133,13 @@ Block Memory Generator module tb_top.uut.inst_memB.inst.native_mem_module.blk_me
  Block Memory Generator data initialization complete.
 Block Memory Generator module tb_top.uut.inst_memC.inst.native_mem_module.blk_mem_gen_v8_4_8_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
 Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
-Time: 90 ns  Iteration: 1  Process: /tb_top/uut/inst_svpwm/vector_proc_inst/line__88  File: C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd
-launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:19 . Memory (MB): peak = 1641.828 ; gain = 42.719
+Time: 90 ns  Iteration: 1  Process: /tb_top/uut/inst_svpwm/vector_proc_inst/line__88  File: C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd
+launch_simulation: Time (s): cpu = 00:00:10 ; elapsed = 00:00:34 . Memory (MB): peak = 1660.566 ; gain = 48.355
+run 300000 us
+run: Time (s): cpu = 00:00:20 ; elapsed = 00:00:31 . Memory (MB): peak = 1660.566 ; gain = 0.000
 relaunch_sim
-run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 1642.121 ; gain = 0.000
-launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 1642.121 ; gain = 0.000
+INFO: xsimkernel Simulation Memory Usage: 19728 KB (Peak: 19728 KB), Simulation CPU Usage: 30359 ms
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 2651.867 ; gain = 0.000
 Time resolution is 1 ps
  Block Memory Generator module loading initial data...
  Block Memory Generator data initialization complete.
@@ -131,14 +151,17 @@ Block Memory Generator module tb_top.uut.inst_memB.inst.native_mem_module.blk_me
  Block Memory Generator data initialization complete.
 Block Memory Generator module tb_top.uut.inst_memC.inst.native_mem_module.blk_mem_gen_v8_4_8_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
 Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
-Time: 90 ns  Iteration: 1  Process: /tb_top/uut/inst_svpwm/vector_proc_inst/line__88  File: C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd
-relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:17 . Memory (MB): peak = 1644.348 ; gain = 2.227
-run 19000 us
-run: Time (s): cpu = 00:00:11 ; elapsed = 00:00:35 . Memory (MB): peak = 1646.203 ; gain = 0.363
+Time: 90 ns  Iteration: 1  Process: /tb_top/uut/inst_svpwm/vector_proc_inst/line__88  File: C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd
+relaunch_sim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:12 . Memory (MB): peak = 2651.867 ; gain = 0.000
+ERROR: [Common 17-180] Spawn failed: No error
+ERROR: [Common 17-180] Spawn failed: No error
+run 300000 us
+ERROR: [Common 17-180] Spawn failed: No error
+run: Time (s): cpu = 00:00:20 ; elapsed = 00:02:19 . Memory (MB): peak = 2651.867 ; gain = 0.000
+ERROR: [Common 17-39] 'run' failed due to earlier errors.
 relaunch_sim
-INFO: xsimkernel Simulation Memory Usage: 19684 KB (Peak: 19684 KB), Simulation CPU Usage: 35077 ms
-run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 1646.203 ; gain = 0.000
-launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 1646.203 ; gain = 0.000
+INFO: xsimkernel Simulation Memory Usage: 19736 KB (Peak: 19736 KB), Simulation CPU Usage: 136905 ms
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 2651.867 ; gain = 0.000
 Time resolution is 1 ps
  Block Memory Generator module loading initial data...
  Block Memory Generator data initialization complete.
@@ -150,12 +173,20 @@ Block Memory Generator module tb_top.uut.inst_memB.inst.native_mem_module.blk_me
  Block Memory Generator data initialization complete.
 Block Memory Generator module tb_top.uut.inst_memC.inst.native_mem_module.blk_mem_gen_v8_4_8_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
 Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
-Time: 90 ns  Iteration: 1  Process: /tb_top/uut/inst_svpwm/vector_proc_inst/line__88  File: C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd
-relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:17 . Memory (MB): peak = 1649.211 ; gain = 3.008
-run 19000 us
-run: Time (s): cpu = 00:00:20 ; elapsed = 00:02:06 . Memory (MB): peak = 1649.766 ; gain = 0.555
+Time: 90 ns  Iteration: 1  Process: /tb_top/uut/inst_svpwm/vector_proc_inst/line__88  File: C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 2651.867 ; gain = 0.000
+run 300000 us
+ERROR: [Common 17-180] Spawn failed: No error
+ERROR: [Common 17-180] Spawn failed: No error
+ERROR: [Common 17-180] Spawn failed: No error
+ERROR: [Common 17-180] Spawn failed: No error
+ERROR: [Common 17-180] Spawn failed: No error
+ERROR: [Common 17-180] Spawn failed: No error
+run: Time (s): cpu = 00:01:24 ; elapsed = 00:11:40 . Memory (MB): peak = 2651.867 ; gain = 0.000
 relaunch_sim
-INFO: xsimkernel Simulation Memory Usage: 19704 KB (Peak: 19704 KB), Simulation CPU Usage: 125264 ms
+INFO: xsimkernel Simulation Memory Usage: 19720 KB (Peak: 19720 KB), Simulation CPU Usage: 675202 ms
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 2651.867 ; gain = 0.000
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 2651.867 ; gain = 0.000
 Time resolution is 1 ps
  Block Memory Generator module loading initial data...
  Block Memory Generator data initialization complete.
@@ -167,12 +198,10 @@ Block Memory Generator module tb_top.uut.inst_memB.inst.native_mem_module.blk_me
  Block Memory Generator data initialization complete.
 Block Memory Generator module tb_top.uut.inst_memC.inst.native_mem_module.blk_mem_gen_v8_4_8_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
 Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
-Time: 90 ns  Iteration: 1  Process: /tb_top/uut/inst_svpwm/vector_proc_inst/line__88  File: C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd
-relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 1657.820 ; gain = 0.000
-run 19000 us
-run: Time (s): cpu = 00:01:14 ; elapsed = 00:02:06 . Memory (MB): peak = 2705.324 ; gain = 1047.504
+Time: 90 ns  Iteration: 1  Process: /tb_top/uut/inst_svpwm/vector_proc_inst/line__88  File: C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 2651.867 ; gain = 0.000
 relaunch_sim
-INFO: xsimkernel Simulation Memory Usage: 19688 KB (Peak: 19688 KB), Simulation CPU Usage: 125390 ms
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 2651.867 ; gain = 0.000
 Time resolution is 1 ps
  Block Memory Generator module loading initial data...
  Block Memory Generator data initialization complete.
@@ -184,23 +213,78 @@ Block Memory Generator module tb_top.uut.inst_memB.inst.native_mem_module.blk_me
  Block Memory Generator data initialization complete.
 Block Memory Generator module tb_top.uut.inst_memC.inst.native_mem_module.blk_mem_gen_v8_4_8_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
 Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
-Time: 90 ns  Iteration: 1  Process: /tb_top/uut/inst_svpwm/vector_proc_inst/line__88  File: C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd
-relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 2705.324 ; gain = 0.000
-run 19000 us
-run: Time (s): cpu = 00:00:51 ; elapsed = 00:01:57 . Memory (MB): peak = 2773.430 ; gain = 68.105
-generate_target all [get_files  C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/bd/design_1/design_1.bd]
-export_ip_user_files -of_objects [get_files C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
-create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/bd/design_1/design_1.bd]
-export_simulation -of_objects [get_files C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/bd/design_1/design_1.bd] -directory C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.ip_user_files -ipstatic_source_dir C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.cache/compile_simlib/modelsim} {questa=C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.cache/compile_simlib/questa} {riviera=C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.cache/compile_simlib/riviera} {activehdl=C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
-make_wrapper -files [get_files C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/bd/design_1/design_1.bd] -top
+Time: 90 ns  Iteration: 1  Process: /tb_top/uut/inst_svpwm/vector_proc_inst/line__88  File: C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 2651.867 ; gain = 0.000
+relaunch_sim
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 2651.867 ; gain = 0.000
+Time resolution is 1 ps
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_top.uut.inst_memA.inst.native_mem_module.blk_mem_gen_v8_4_8_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_top.uut.inst_memB.inst.native_mem_module.blk_mem_gen_v8_4_8_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_top.uut.inst_memC.inst.native_mem_module.blk_mem_gen_v8_4_8_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+Time: 90 ns  Iteration: 1  Process: /tb_top/uut/inst_svpwm/vector_proc_inst/line__88  File: C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 2651.867 ; gain = 0.000
+run 300000 us
+run: Time (s): cpu = 00:00:27 ; elapsed = 00:01:04 . Memory (MB): peak = 2651.867 ; gain = 0.000
+generate_target all [get_files  C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci]
+catch { config_ip_cache -export [get_ips -all blk_mem_gen_0] }
+export_ip_user_files -of_objects [get_files C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci] -no_script -sync -force -quiet
+reset_run blk_mem_gen_0_synth_1
+launch_runs blk_mem_gen_0_synth_1 -jobs 4
+export_simulation -of_objects [get_files C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci] -directory C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.ip_user_files -ipstatic_source_dir C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.cache/compile_simlib/modelsim} {questa=C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.cache/compile_simlib/questa} {riviera=C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.cache/compile_simlib/riviera} {activehdl=C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+generate_target all [get_files  C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci]
+catch { config_ip_cache -export [get_ips -all blk_mem_gen_1] }
+export_ip_user_files -of_objects [get_files C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci] -no_script -sync -force -quiet
+reset_run blk_mem_gen_1_synth_1
+launch_runs blk_mem_gen_1_synth_1 -jobs 4
+export_simulation -of_objects [get_files C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci] -directory C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.ip_user_files -ipstatic_source_dir C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.cache/compile_simlib/modelsim} {questa=C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.cache/compile_simlib/questa} {riviera=C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.cache/compile_simlib/riviera} {activehdl=C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+generate_target all [get_files  C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_2/blk_mem_gen_2.xci]
+catch { config_ip_cache -export [get_ips -all blk_mem_gen_2] }
+export_ip_user_files -of_objects [get_files C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_2/blk_mem_gen_2.xci] -no_script -sync -force -quiet
+reset_run blk_mem_gen_2_synth_1
+launch_runs blk_mem_gen_2_synth_1 -jobs 4
+export_simulation -of_objects [get_files C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_2/blk_mem_gen_2.xci] -directory C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.ip_user_files -ipstatic_source_dir C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.cache/compile_simlib/modelsim} {questa=C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.cache/compile_simlib/questa} {riviera=C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.cache/compile_simlib/riviera} {activehdl=C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+set_property top top [current_fileset]
+set_property top_lib xil_defaultlib [current_fileset]
+set_property top_arch Behavioral [current_fileset]
+set_property top_file C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/top.vhd [current_fileset]
+ERROR: [Common 17-180] Spawn failed: No error
+ERROR: [Common 17-180] Spawn failed: No error
+update_compile_order -fileset sources_1
+ERROR: [Common 17-180] Spawn failed: No error
+ERROR: [Common 17-180] Spawn failed: No error
+ERROR: [Common 17-180] Spawn failed: No error
+relaunch_sim
+INFO: xsimkernel Simulation Memory Usage: 19688 KB (Peak: 19688 KB), Simulation CPU Usage: 60874 ms
+boost::filesystem::remove: Proces nie mo¿e uzyskaæ dostêpu do pliku, poniewa¿ jest on u¿ywany przez inny proces: "C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.sim/sim_1/behav/xsim/simulate.log"
+ERROR: [Common 17-69] Command failed: boost::filesystem::remove: Proces nie mo¿e uzyskaæ dostêpu do pliku, poniewa¿ jest on u¿ywany przez inny proces: "C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.sim/sim_1/behav/xsim/simulate.log"
 close_sim
-INFO: xsimkernel Simulation Memory Usage: 19684 KB (Peak: 19684 KB), Simulation CPU Usage: 116843 ms
-generate_target Simulation [get_files C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_2/blk_mem_gen_2.xci]
-generate_target Simulation [get_files C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci]
-generate_target Simulation [get_files C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci]
+launch_simulation
+boost::filesystem::remove: Proces nie mo¿e uzyskaæ dostêpu do pliku, poniewa¿ jest on u¿ywany przez inny proces: "C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.sim/sim_1/behav/xsim/simulate.log"
+launch_simulation
+boost::filesystem::remove: Proces nie mo¿e uzyskaæ dostêpu do pliku, poniewa¿ jest on u¿ywany przez inny proces: "C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.sim/sim_1/behav/xsim/simulate.log"
+ERROR: [Common 17-180] Spawn failed: No error
+ERROR: [Common 17-180] Spawn failed: No error
+ERROR: [Common 17-180] Spawn failed: No error
+ERROR: [Common 17-180] Spawn failed: No error
+ERROR: [Common 17-180] Spawn failed: No error
+ERROR: [Common 17-180] Spawn failed: No error
+ERROR: [Common 17-180] Spawn failed: No error
+ERROR: [Common 17-180] Spawn failed: No error
+ERROR: [Common 17-180] Spawn failed: No error
+ERROR: [Common 17-180] Spawn failed: No error
+ERROR: [Common 17-180] Spawn failed: No error
+ERROR: [Common 17-180] Spawn failed: No error
 ERROR: [Common 17-180] Spawn failed: No error
 launch_simulation
-run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 2941.754 ; gain = 0.000
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 2651.867 ; gain = 0.000
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:16 . Memory (MB): peak = 2651.867 ; gain = 0.000
 Time resolution is 1 ps
 source tb_top.tcl
 # set curr_wave [current_wave_config]
@@ -223,11 +307,17 @@ Block Memory Generator module tb_top.uut.inst_memB.inst.native_mem_module.blk_me
  Block Memory Generator data initialization complete.
 Block Memory Generator module tb_top.uut.inst_memC.inst.native_mem_module.blk_mem_gen_v8_4_8_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
 Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
-Time: 90 ns  Iteration: 1  Process: /tb_top/uut/inst_svpwm/vector_proc_inst/line__88  File: C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd
-launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:18 . Memory (MB): peak = 2941.754 ; gain = 0.000
+Time: 90 ns  Iteration: 1  Process: /tb_top/uut/inst_svpwm/vector_proc_inst/line__88  File: C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:27 . Memory (MB): peak = 2651.867 ; gain = 0.000
+ERROR: [Common 17-180] Spawn failed: No error
+ERROR: [Common 17-180] Spawn failed: No error
+ERROR: [Common 17-180] Spawn failed: No error
+run 300000 us
+run: Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2651.867 ; gain = 0.000
 relaunch_sim
-run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 2941.754 ; gain = 0.000
-launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 2941.754 ; gain = 0.000
+INFO: xsimkernel Simulation Memory Usage: 17736 KB (Peak: 17736 KB), Simulation CPU Usage: 11437 ms
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:15 . Memory (MB): peak = 2651.867 ; gain = 0.000
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:15 . Memory (MB): peak = 2651.867 ; gain = 0.000
 Time resolution is 1 ps
  Block Memory Generator module loading initial data...
  Block Memory Generator data initialization complete.
@@ -239,45 +329,9 @@ Block Memory Generator module tb_top.uut.inst_memB.inst.native_mem_module.blk_me
  Block Memory Generator data initialization complete.
 Block Memory Generator module tb_top.uut.inst_memC.inst.native_mem_module.blk_mem_gen_v8_4_8_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
 Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
-Time: 90 ns  Iteration: 1  Process: /tb_top/uut/inst_svpwm/vector_proc_inst/line__88  File: C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd
-relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:17 . Memory (MB): peak = 2941.754 ; gain = 0.000
-run 19000 us
-run: Time (s): cpu = 00:00:15 ; elapsed = 00:00:37 . Memory (MB): peak = 2941.754 ; gain = 0.000
-relaunch_sim
-INFO: xsimkernel Simulation Memory Usage: 19664 KB (Peak: 19664 KB), Simulation CPU Usage: 36921 ms
-run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 2941.754 ; gain = 0.000
-launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 2941.754 ; gain = 0.000
-Time resolution is 1 ps
- Block Memory Generator module loading initial data...
- Block Memory Generator data initialization complete.
-Block Memory Generator module tb_top.uut.inst_memA.inst.native_mem_module.blk_mem_gen_v8_4_8_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
- Block Memory Generator module loading initial data...
- Block Memory Generator data initialization complete.
-Block Memory Generator module tb_top.uut.inst_memB.inst.native_mem_module.blk_mem_gen_v8_4_8_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
- Block Memory Generator module loading initial data...
- Block Memory Generator data initialization complete.
-Block Memory Generator module tb_top.uut.inst_memC.inst.native_mem_module.blk_mem_gen_v8_4_8_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
-Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
-Time: 90 ns  Iteration: 1  Process: /tb_top/uut/inst_svpwm/vector_proc_inst/line__88  File: C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd
-relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:17 . Memory (MB): peak = 2941.754 ; gain = 0.000
-run 19000 us
-run: Time (s): cpu = 00:00:32 ; elapsed = 00:02:08 . Memory (MB): peak = 2941.754 ; gain = 0.000
-relaunch_sim
-INFO: xsimkernel Simulation Memory Usage: 19700 KB (Peak: 19700 KB), Simulation CPU Usage: 128265 ms
-Time resolution is 1 ps
- Block Memory Generator module loading initial data...
- Block Memory Generator data initialization complete.
-Block Memory Generator module tb_top.uut.inst_memA.inst.native_mem_module.blk_mem_gen_v8_4_8_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
- Block Memory Generator module loading initial data...
- Block Memory Generator data initialization complete.
-Block Memory Generator module tb_top.uut.inst_memB.inst.native_mem_module.blk_mem_gen_v8_4_8_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
- Block Memory Generator module loading initial data...
- Block Memory Generator data initialization complete.
-Block Memory Generator module tb_top.uut.inst_memC.inst.native_mem_module.blk_mem_gen_v8_4_8_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
-Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
-Time: 90 ns  Iteration: 1  Process: /tb_top/uut/inst_svpwm/vector_proc_inst/line__88  File: C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd
-relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 2941.754 ; gain = 0.000
-run 19000 us
-run: Time (s): cpu = 00:00:23 ; elapsed = 00:02:08 . Memory (MB): peak = 2941.754 ; gain = 0.000
-close_sim
-INFO: xsimkernel Simulation Memory Usage: 19704 KB (Peak: 19704 KB), Simulation CPU Usage: 127889 ms
+Time: 90 ns  Iteration: 1  Process: /tb_top/uut/inst_svpwm/vector_proc_inst/line__88  File: C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd
+relaunch_sim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:22 . Memory (MB): peak = 2651.867 ; gain = 0.000
+run 300000 us
+run: Time (s): cpu = 00:07:52 ; elapsed = 11:07:56 . Memory (MB): peak = 3352.355 ; gain = 700.488
+run 300000 us
+run: Time (s): cpu = 00:00:57 ; elapsed = 00:11:26 . Memory (MB): peak = 3352.355 ; gain = 0.000

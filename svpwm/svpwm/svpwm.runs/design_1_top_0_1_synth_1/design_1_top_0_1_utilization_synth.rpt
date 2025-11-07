@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date         : Sat Aug  2 20:30:04 2025
-| Host         : DESKTOP-1FUVVL9 running 64-bit major release  (build 9200)
+| Date         : Mon Oct 27 20:53:04 2025
+| Host         : DESKTOP-CNIMS8K running 64-bit major release  (build 9200)
 | Command      : report_utilization -file design_1_top_0_1_utilization_synth.rpt -pb design_1_top_0_1_utilization_synth.pb
 | Design       : design_1_top_0_1
 | Device       : xc7z020clg484-1
@@ -31,13 +31,13 @@ Table of Contents
 +----------------------------+------+-------+------------+-----------+-------+
 |          Site Type         | Used | Fixed | Prohibited | Available | Util% |
 +----------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*                | 4883 |     0 |          0 |     53200 |  9.18 |
-|   LUT as Logic             | 4829 |     0 |          0 |     53200 |  9.08 |
+| Slice LUTs*                | 4917 |     0 |          0 |     53200 |  9.24 |
+|   LUT as Logic             | 4863 |     0 |          0 |     53200 |  9.14 |
 |   LUT as Memory            |   54 |     0 |          0 |     17400 |  0.31 |
 |     LUT as Distributed RAM |    0 |     0 |            |           |       |
 |     LUT as Shift Register  |   54 |     0 |            |           |       |
-| Slice Registers            | 3869 |     0 |          0 |    106400 |  3.64 |
-|   Register as Flip Flop    | 3869 |     0 |          0 |    106400 |  3.64 |
+| Slice Registers            | 3999 |     0 |          0 |    106400 |  3.76 |
+|   Register as Flip Flop    | 3999 |     0 |          0 |    106400 |  3.76 |
 |   Register as Latch        |    0 |     0 |          0 |    106400 |  0.00 |
 | F7 Muxes                   |    0 |     0 |          0 |     26600 |  0.00 |
 | F8 Muxes                   |    0 |     0 |          0 |     13300 |  0.00 |
@@ -59,10 +59,10 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 3     |          Yes |           - |          Set |
-| 1370  |          Yes |           - |        Reset |
+| 4     |          Yes |           - |          Set |
+| 1419  |          Yes |           - |        Reset |
 | 1     |          Yes |         Set |            - |
-| 2495  |          Yes |       Reset |            - |
+| 2575  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -152,19 +152,19 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     | 2495 |        Flop & Latch |
-| LUT3     | 2010 |                 LUT |
-| LUT2     | 1992 |                 LUT |
-| FDCE     | 1370 |        Flop & Latch |
-| CARRY4   | 1138 |          CarryLogic |
-| LUT1     |  714 |                 LUT |
-| LUT5     |  242 |                 LUT |
-| LUT4     |  239 |                 LUT |
-| LUT6     |  220 |                 LUT |
+| FDRE     | 2575 |        Flop & Latch |
+| LUT3     | 2027 |                 LUT |
+| LUT2     | 1984 |                 LUT |
+| FDCE     | 1419 |        Flop & Latch |
+| CARRY4   | 1147 |          CarryLogic |
+| LUT1     |  718 |                 LUT |
+| LUT5     |  246 |                 LUT |
+| LUT4     |  245 |                 LUT |
+| LUT6     |  233 |                 LUT |
 | SRL16E   |   51 |  Distributed Memory |
 | DSP48E1  |   30 |    Block Arithmetic |
+| FDPE     |    4 |        Flop & Latch |
 | SRLC32E  |    3 |  Distributed Memory |
-| FDPE     |    3 |        Flop & Latch |
 | FDSE     |    1 |        Flop & Latch |
 +----------+------+---------------------+
 
@@ -172,13 +172,9 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 8. Black Boxes
 --------------
 
-+--------------------------------+------+
-|            Ref Name            | Used |
-+--------------------------------+------+
-| design_1_top_0_1_blk_mem_gen_2 |    1 |
-| design_1_top_0_1_blk_mem_gen_1 |    1 |
-| design_1_top_0_1_blk_mem_gen_0 |    1 |
-+--------------------------------+------+
++----------+------+
+| Ref Name | Used |
++----------+------+
 
 
 9. Instantiated Netlists

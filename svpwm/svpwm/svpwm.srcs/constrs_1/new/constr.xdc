@@ -18,3 +18,12 @@ set_property IOSTANDARD LVCMOS33 [get_ports HB3_top]
 
 set_property PACKAGE_PIN W17 [get_ports HB3_bot]
 set_property IOSTANDARD LVCMOS33 [get_ports HB3_bot]
+
+set_property PACKAGE_PIN Y18 [get_ports sclk]
+set_property IOSTANDARD LVCMOS33 [get_ports sclk]
+
+set_property PACKAGE_PIN AB14 [get_ports ss_n]
+set_property IOSTANDARD LVCMOS33 [get_ports ss_n]
+
+set_property PACKAGE_PIN AA16 [get_ports miso]
+set_property IOSTANDARD LVCMOS33 [get_ports miso]

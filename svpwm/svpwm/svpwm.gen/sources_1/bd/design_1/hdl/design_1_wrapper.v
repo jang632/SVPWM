@@ -2,8 +2,8 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-//Date        : Sat Aug  2 20:28:14 2025
-//Host        : DESKTOP-1FUVVL9 running 64-bit major release  (build 9200)
+//Date        : Mon Oct 27 20:59:31 2025
+//Host        : DESKTOP-CNIMS8K running 64-bit major release  (build 9200)
 //Command     : generate_target design_1_wrapper.bd
 //Design      : design_1_wrapper
 //Purpose     : IP block netlist
@@ -38,7 +38,10 @@ module design_1_wrapper
     HB2_top,
     HB3_bot,
     HB3_top,
-    reset);
+    miso,
+    reset,
+    sclk,
+    ss_n);
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
   inout DDR_cas_n;
@@ -66,7 +69,10 @@ module design_1_wrapper
   output HB2_top;
   output HB3_bot;
   output HB3_top;
+  input miso;
   input reset;
+  output sclk;
+  output [0:0]ss_n;
 
   wire [14:0]DDR_addr;
   wire [2:0]DDR_ba;
@@ -95,7 +101,10 @@ module design_1_wrapper
   wire HB2_top;
   wire HB3_bot;
   wire HB3_top;
+  wire miso;
   wire reset;
+  wire sclk;
+  wire [0:0]ss_n;
 
   design_1 design_1_i
        (.DDR_addr(DDR_addr),
@@ -125,5 +134,8 @@ module design_1_wrapper
         .HB2_top(HB2_top),
         .HB3_bot(HB3_bot),
         .HB3_top(HB3_top),
-        .reset(reset));
+        .miso(miso),
+        .reset(reset),
+        .sclk(sclk),
+        .ss_n(ss_n));
 endmodule

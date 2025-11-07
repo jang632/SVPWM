@@ -1,9 +1,29 @@
 Vivado Simulator v2024.1
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_8 -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L secureip -L xpm --snapshot tb_top_behav xil_defaultlib.tb_top -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
-Pass Through NonSizing Optimizer
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.spi [\spi(d_width=48)\]
+Compiling architecture behavioral of entity xil_defaultlib.clarke_transform [clarke_transform_default]
+Compiling architecture behavioral of entity xil_defaultlib.vector_processor [vector_processor_default]
+Compiling architecture behavioral of entity xil_defaultlib.cordic_sin_cos [\cordic_sin_cos(iterations=16)\]
+Compiling architecture behavioral of entity xil_defaultlib.shift_register [\shift_register(data_len=32,dela...]
+Compiling architecture behavioral of entity xil_defaultlib.shift_register_std [\shift_register_std(data_len=3,d...]
+Compiling architecture behavioral of entity xil_defaultlib.switching_time_processor [switching_time_processor_default]
+Compiling architecture behavioral of entity xil_defaultlib.center_pwm [center_pwm_default]
+Compiling architecture behavioral of entity xil_defaultlib.transistor_driver [transistor_driver_default]
+Compiling architecture behavioral of entity xil_defaultlib.svpwm [svpwm_default]
+Compiling architecture behavioral of entity xil_defaultlib.top [top_default]
+Compiling architecture behavioral of entity xil_defaultlib.tb_top
+Built simulation snapshot tb_top_behav

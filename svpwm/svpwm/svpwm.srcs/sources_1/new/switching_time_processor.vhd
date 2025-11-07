@@ -65,6 +65,11 @@ ARCHITECTURE Behavioral OF switching_time_processor IS
     SIGNAL t1_int        : SIGNED(63 DOWNTO 0);
     SIGNAL t2_int        : SIGNED(63 DOWNTO 0);
     SIGNAL t1_delay      : SIGNED(63 DOWNTO 0);
+    
+    SIGNAL t2_delay      : SIGNED(63 DOWNTO 0);
+    SIGNAL t2_delay_2      : SIGNED(63 DOWNTO 0);
+    SIGNAL t2_delay_3      : SIGNED(63 DOWNTO 0);
+    SIGNAL t2_delay_4      : SIGNED(63 DOWNTO 0);
 
     SIGNAL t1_mult_reg   : SIGNED(63 DOWNTO 0);
     SIGNAL t1_mult_reg2  : SIGNED(63 DOWNTO 0);
@@ -76,6 +81,7 @@ ARCHITECTURE Behavioral OF switching_time_processor IS
     SIGNAL t2_mult_reg2  : SIGNED(63 DOWNTO 0);
     SIGNAL t2_slice_reg  : SIGNED(31 DOWNTO 0);
     SIGNAL t2_shift_reg  : SIGNED(63 DOWNTO 0);
+    SIGNAL t2_delay_reg  : SIGNED(63 DOWNTO 0);
 
     SIGNAL vref_delay    : SIGNED(31 DOWNTO 0);
 
@@ -182,9 +188,10 @@ BEGIN
                         state         <= calculate_t2;
                 END CASE;
 
-                t1_delay_reg <= t1_shift_reg;
-                t1_int       <= t1_delay_reg;
-                t2_int       <= t2_shift_reg;
+                t1_int       <= t1_shift_reg;
+                
+                t2_delay_reg <= t2_shift_reg;
+                t2_int       <= t2_delay_reg;
             END IF;
         END IF;
     END PROCESS;

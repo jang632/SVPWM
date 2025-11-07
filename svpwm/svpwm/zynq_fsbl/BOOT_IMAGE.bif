@@ -1,0 +1,6 @@
+//arch = zynq; split = false; format = BIN
+the_ROM_image:
+{
+	[bootloader]C:\Users\user\Desktop\svpwm_2\SVPWM\svpwm\svpwm\zynq_fsbl\build\zynq_fsbl.elf
+	C:\Users\user\Desktop\svpwm_2\SVPWM\svpwm\svpwm\svpwm_spi\hw\sdt\spi_svpwm.bit
+}

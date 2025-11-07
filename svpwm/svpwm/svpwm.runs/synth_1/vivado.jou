@@ -3,22 +3,22 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Sat Aug  2 20:31:26 2025
-# Process ID: 19160
-# Current directory: C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.runs/synth_1
+# Start of session at: Mon Oct 27 21:05:27 2025
+# Process ID: 16136
+# Current directory: C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.runs/synth_1
 # Command line: vivado.exe -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
-# Log file: C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.runs/synth_1/design_1_wrapper.vds
-# Journal file: C:/Users/Jan/Desktop/SVPWM/svpwm/svpwm/svpwm.runs/synth_1\vivado.jou
-# Running On        :DESKTOP-1FUVVL9
+# Log file: C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.runs/synth_1/design_1_wrapper.vds
+# Journal file: C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.runs/synth_1\vivado.jou
+# Running On        :DESKTOP-CNIMS8K
 # Platform          :Windows Server 2016 or Windows 10
 # Operating System  :19045
-# Processor Detail  :Intel(R) Core(TM) i5-10400F CPU @ 2.90GHz
-# CPU Frequency     :2904 MHz
-# CPU Physical cores:6
-# CPU Logical cores :12
-# Host memory       :17037 MB
-# Swap memory       :15032 MB
-# Total Virtual     :32069 MB
-# Available Virtual :6655 MB
+# Processor Detail  :Intel(R) Core(TM) i5-8350U CPU @ 1.70GHz
+# CPU Frequency     :1896 MHz
+# CPU Physical cores:4
+# CPU Logical cores :8
+# Host memory       :17048 MB
+# Swap memory       :9663 MB
+# Total Virtual     :26712 MB
+# Available Virtual :10457 MB
 #-----------------------------------------------------------
 source design_1_wrapper.tcl -notrace

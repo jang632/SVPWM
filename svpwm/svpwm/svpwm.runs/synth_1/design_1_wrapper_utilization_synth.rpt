@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date         : Sat Aug  2 20:32:24 2025
-| Host         : DESKTOP-1FUVVL9 running 64-bit major release  (build 9200)
+| Date         : Mon Oct 27 21:06:34 2025
+| Host         : DESKTOP-CNIMS8K running 64-bit major release  (build 9200)
 | Command      : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
 | Design       : design_1_wrapper
 | Device       : xc7z020clg484-1
@@ -93,7 +93,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +-----------------------------+------+-------+------------+-----------+-------+
 |          Site Type          | Used | Fixed | Prohibited | Available | Util% |
 +-----------------------------+------+-------+------------+-----------+-------+
-| Bonded IOB                  |    7 |     0 |          0 |       200 |  3.50 |
+| Bonded IOB                  |   10 |     0 |          0 |       200 |  5.00 |
 | Bonded IPADs                |    0 |     0 |          0 |         2 |  0.00 |
 | Bonded IOPADs               |    0 |     0 |          0 |       130 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |          0 |         4 |  0.00 |
@@ -149,8 +149,8 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| OBUF     |    6 |                  IO |
-| IBUF     |    1 |                  IO |
+| OBUF     |    8 |                  IO |
+| IBUF     |    2 |                  IO |
 +----------+------+---------------------+
 
 
@@ -161,7 +161,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 |             Ref Name            | Used |
 +---------------------------------+------+
 | design_1_top_0_1                |    1 |
-| design_1_processing_system7_0_1 |    1 |
+| design_1_processing_system7_0_2 |    1 |
 | design_1_proc_sys_reset_0_1     |    1 |
 +---------------------------------+------+
 
