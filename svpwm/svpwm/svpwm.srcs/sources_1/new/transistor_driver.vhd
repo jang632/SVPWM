@@ -32,20 +32,23 @@ component center_pwm is
         );  
 end component;
 
-CONSTANT time_scale : SIGNED(31 DOWNTO 0) := x"17d78400";
+CONSTANT time_scale   : SIGNED(31 DOWNTO 0) := x"0bebc200";  -- It is required to scale time values in s to duty cycle, int this case we want to scale to 1118: x = 1118/(1/15000). This allows us to not multiply but bith shift instead
 
 SIGNAL duty_cycle_HB1 : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL duty_cycle_HB2 : STD_LOGIC_VECTOR(15 DOWNTO 0);
 SIGNAL duty_cycle_HB3 : STD_LOGIC_VECTOR(15 DOWNTO 0);
 
-SIGNAL HB1_mult_reg : SIGNED(63 DOWNTO 0);
-SIGNAL HB1_shift_reg : SIGNED(63 DOWNTO 0);
+SIGNAL HB1_mult_reg   : SIGNED(63 DOWNTO 0);
+SIGNAL HB1_shift_reg  : SIGNED(63 DOWNTO 0);
+SIGNAL HB1_resize_reg : SIGNED(63 DOWNTO 0);
 
-SIGNAL HB2_mult_reg : SIGNED(63 DOWNTO 0);
-SIGNAL HB2_shift_reg : SIGNED(63 DOWNTO 0);
+SIGNAL HB2_mult_reg   : SIGNED(63 DOWNTO 0);
+SIGNAL HB2_shift_reg  : SIGNED(63 DOWNTO 0);
+SIGNAL HB2_resize_reg : SIGNED(63 DOWNTO 0);
 
-SIGNAL HB3_mult_reg : SIGNED(63 DOWNTO 0);
-SIGNAL HB3_shift_reg : SIGNED(63 DOWNTO 0);
+SIGNAL HB3_mult_reg   : SIGNED(63 DOWNTO 0);
+SIGNAL HB3_shift_reg  : SIGNED(63 DOWNTO 0);
+SIGNAL HB3_resize_reg : SIGNED(63 DOWNTO 0);
 
 begin
 
@@ -84,91 +87,126 @@ PROCESS(clk)
     variable switch_calc_slice : signed(63 downto 0);
     variable switch_calc_slice2 : signed(63 downto 0);
 BEGIN
-    switch_calc_slice := shift_right(T0,1);
-    switch_calc_1 := T1(63 DOWNTO 32) + T2(63 DOWNTO 32) + switch_calc_slice(63 DOWNTO 32);
-    switch_calc_2 := T2(63 DOWNTO 32) + shift_right(T0(63 DOWNTO 32),1);
-    switch_calc_3 := switch_calc_slice(63 DOWNTO 32);
-    switch_calc_4 := T1(63 DOWNTO 32) + shift_right(T0(63 DOWNTO 32),1);   
- CASE sector IS
-        WHEN "001" =>
-            HB1_mult_reg <= switch_calc_1 * time_scale;
-            HB1_shift_reg <= shift_right(HB1_mult_reg,35);          
-            duty_cycle_HB1 <= STD_LOGIC_VECTOR(resize(HB1_shift_reg,16)); 
-            
-            HB2_mult_reg <= switch_calc_2 * time_scale;
-            HB2_shift_reg <= shift_right(HB2_mult_reg,35);
-            duty_cycle_HB2 <= STD_LOGIC_VECTOR(resize(HB2_shift_reg,16)); 
-            
-            HB3_mult_reg <= switch_calc_3 * time_scale;
-            HB3_shift_reg <= shift_right(HB3_mult_reg,35);
-            duty_cycle_HB3 <= STD_LOGIC_VECTOR(resize(HB3_shift_reg,16)); 
-
-        WHEN "010" =>
-            HB1_mult_reg <= switch_calc_4 * time_scale;
-            HB1_shift_reg <= shift_right(HB1_mult_reg,35);          
-            duty_cycle_HB1 <= STD_LOGIC_VECTOR(resize(HB1_shift_reg,16)); 
-            
-            HB2_mult_reg <= switch_calc_1 * time_scale;
-            HB2_shift_reg <= shift_right(HB2_mult_reg,35);
-            duty_cycle_HB2 <= STD_LOGIC_VECTOR(resize(HB2_shift_reg,16)); 
-            
-            HB3_mult_reg <= switch_calc_3 * time_scale;
-            HB3_shift_reg <= shift_right(HB3_mult_reg,35);
-            duty_cycle_HB3 <= STD_LOGIC_VECTOR(resize(HB3_shift_reg,16));
-
-        WHEN "011" =>
-            HB1_mult_reg <= switch_calc_3 * time_scale;
-            HB1_shift_reg <= shift_right(HB1_mult_reg,35);          
-            duty_cycle_HB1 <= STD_LOGIC_VECTOR(resize(HB1_shift_reg,16)); 
-            
-            HB2_mult_reg <= switch_calc_1 * time_scale;
-            HB2_shift_reg <= shift_right(HB2_mult_reg,35);
-            duty_cycle_HB2 <= STD_LOGIC_VECTOR(resize(HB2_shift_reg,16)); 
-            
-            HB3_mult_reg <= switch_calc_2 * time_scale;
-            HB3_shift_reg <= shift_right(HB3_mult_reg,35);
-            duty_cycle_HB3 <= STD_LOGIC_VECTOR(resize(HB3_shift_reg,16));
-        
-        WHEN "100" =>
-            HB1_mult_reg <= switch_calc_3 * time_scale;
-            HB1_shift_reg <= shift_right(HB1_mult_reg,35);          
-            duty_cycle_HB1 <= STD_LOGIC_VECTOR(resize(HB1_shift_reg,16)); 
-            
-            HB2_mult_reg <= switch_calc_4 * time_scale;
-            HB2_shift_reg <= shift_right(HB2_mult_reg,35);
-            duty_cycle_HB2 <= STD_LOGIC_VECTOR(resize(HB2_shift_reg,16)); 
-            
-            HB3_mult_reg <= switch_calc_1 * time_scale;
-            HB3_shift_reg <= shift_right(HB3_mult_reg,35);
-            duty_cycle_HB3 <= STD_LOGIC_VECTOR(resize(HB3_shift_reg,16));
-
-        WHEN "101" =>
-            HB1_mult_reg <= switch_calc_2 * time_scale;
-            HB1_shift_reg <= shift_right(HB1_mult_reg,35);          
-            duty_cycle_HB1 <= STD_LOGIC_VECTOR(resize(HB1_shift_reg,16)); 
-            
-            HB2_mult_reg <= switch_calc_3 * time_scale;
-            HB2_shift_reg <= shift_right(HB2_mult_reg,35);
-            duty_cycle_HB2 <= STD_LOGIC_VECTOR(resize(HB2_shift_reg,16)); 
-            
-            HB3_mult_reg <= switch_calc_1 * time_scale;
-            HB3_shift_reg <= shift_right(HB3_mult_reg,35);
-            duty_cycle_HB3 <= STD_LOGIC_VECTOR(resize(HB3_shift_reg,16));
-
-        WHEN OTHERS =>
-            HB1_mult_reg <= switch_calc_1 * time_scale;
-            HB1_shift_reg <= shift_right(HB1_mult_reg,35);          
-            duty_cycle_HB1 <= STD_LOGIC_VECTOR(resize(HB1_shift_reg,16)); 
-            
-            HB2_mult_reg <= switch_calc_3 * time_scale;
-            HB2_shift_reg <= shift_right(HB2_mult_reg,35);
-            duty_cycle_HB2 <= STD_LOGIC_VECTOR(resize(HB2_shift_reg,16)); 
-            
-            HB3_mult_reg <= switch_calc_4 * time_scale;
-            HB3_shift_reg <= shift_right(HB3_mult_reg,35);
-            duty_cycle_HB3 <= STD_LOGIC_VECTOR(resize(HB3_shift_reg,16));
-
-    END CASE;
+    IF rising_edge(clk) THEN
+        IF reset = '1' THEN 
+            HB1_mult_reg   <= (OTHERS => '0');
+            HB1_shift_reg  <= (OTHERS => '0');
+            HB2_mult_reg   <= (OTHERS => '0');
+            HB2_shift_reg  <= (OTHERS => '0');
+            HB3_mult_reg   <= (OTHERS => '0');
+            HB3_shift_reg  <= (OTHERS => '0');
+            duty_cycle_HB1 <= (OTHERS => '0');
+            duty_cycle_HB2 <= (OTHERS => '0');
+            duty_cycle_HB3 <= (OTHERS => '0');
+        ELSE
+    
+                switch_calc_slice := shift_right(T0,1);
+                switch_calc_1     := T1(63 DOWNTO 32) + T2(63 DOWNTO 32) + switch_calc_slice(63 DOWNTO 32);
+                switch_calc_2     := T2(63 DOWNTO 32) + shift_right(T0(63 DOWNTO 32),1);
+                switch_calc_3     := switch_calc_slice(63 DOWNTO 32);
+                switch_calc_4     := T1(63 DOWNTO 32) + shift_right(T0(63 DOWNTO 32),1);   
+    case sector is
+    
+        ----------------------------------------------------------------------
+        -- 001
+        ----------------------------------------------------------------------
+        when "001" =>
+            HB1_resize_reg <= x"00000000" & switch_calc_1;
+            HB1_shift_reg  <= shift_left(HB1_resize_reg,24);
+            duty_cycle_HB1 <= STD_LOGIC_VECTOR(HB1_shift_reg(46 DOWNTO 31));
+    
+            HB2_resize_reg <= x"00000000" & switch_calc_2;
+            HB2_shift_reg  <= shift_left(HB2_resize_reg,24);
+            duty_cycle_HB2 <= STD_LOGIC_VECTOR(HB2_shift_reg(46 DOWNTO 31));
+    
+            HB3_resize_reg <= x"00000000" & switch_calc_3;
+            HB3_shift_reg  <= shift_left(HB3_resize_reg,24);
+            duty_cycle_HB3 <= STD_LOGIC_VECTOR(HB3_shift_reg(46 DOWNTO 31));
+    
+        ----------------------------------------------------------------------
+        -- 010
+        ----------------------------------------------------------------------
+        when "010" =>
+            HB1_resize_reg <= x"00000000" & switch_calc_4;
+            HB1_shift_reg  <= shift_left(HB1_resize_reg,24);
+            duty_cycle_HB1 <= STD_LOGIC_VECTOR(HB1_shift_reg(46 DOWNTO 31));
+    
+            HB2_resize_reg <= x"00000000" & switch_calc_1;
+            HB2_shift_reg  <= shift_left(HB2_resize_reg,24);
+            duty_cycle_HB2 <= STD_LOGIC_VECTOR(HB2_shift_reg(46 DOWNTO 31));
+    
+            HB3_resize_reg <= x"00000000" & switch_calc_3;
+            HB3_shift_reg  <= shift_left(HB3_resize_reg,24);
+            duty_cycle_HB3 <= STD_LOGIC_VECTOR(HB3_shift_reg(46 DOWNTO 31));
+    
+        ----------------------------------------------------------------------
+        -- 011
+        ----------------------------------------------------------------------
+        when "011" =>
+            HB1_resize_reg <= x"00000000" & switch_calc_3;
+            HB1_shift_reg  <= shift_left(HB1_resize_reg,24);
+            duty_cycle_HB1 <= STD_LOGIC_VECTOR(HB1_shift_reg(46 DOWNTO 31));
+    
+            HB2_resize_reg <= x"00000000" & switch_calc_1;
+            HB2_shift_reg  <= shift_left(HB2_resize_reg,24);
+            duty_cycle_HB2 <= STD_LOGIC_VECTOR(HB2_shift_reg(46 DOWNTO 31));
+    
+            HB3_resize_reg <= x"00000000" & switch_calc_2;
+            HB3_shift_reg  <= shift_left(HB3_resize_reg,24);
+            duty_cycle_HB3 <= STD_LOGIC_VECTOR(HB3_shift_reg(46 DOWNTO 31));
+    
+        ----------------------------------------------------------------------
+        -- 100
+        ----------------------------------------------------------------------
+        when "100" =>
+            HB1_resize_reg <= x"00000000" & switch_calc_3;
+            HB1_shift_reg  <= shift_left(HB1_resize_reg,24);
+            duty_cycle_HB1 <= STD_LOGIC_VECTOR(HB1_shift_reg(46 DOWNTO 31));
+    
+            HB2_resize_reg <= x"00000000" & switch_calc_4;
+            HB2_shift_reg  <= shift_left(HB2_resize_reg,24);
+            duty_cycle_HB2 <= STD_LOGIC_VECTOR(HB2_shift_reg(46 DOWNTO 31));
+    
+            HB3_resize_reg <= x"00000000" & switch_calc_1;
+            HB3_shift_reg  <= shift_left(HB3_resize_reg,24);
+            duty_cycle_HB3 <= STD_LOGIC_VECTOR(HB3_shift_reg(46 DOWNTO 31));
+    
+        ----------------------------------------------------------------------
+        -- 101
+        ----------------------------------------------------------------------
+        when "101" =>
+            HB1_resize_reg <= x"00000000" & switch_calc_2;
+            HB1_shift_reg  <= shift_left(HB1_resize_reg,24);
+            duty_cycle_HB1 <= STD_LOGIC_VECTOR(HB1_shift_reg(46 DOWNTO 31));
+    
+            HB2_resize_reg <= x"00000000" & switch_calc_3;
+            HB2_shift_reg  <= shift_left(HB2_resize_reg,24);
+            duty_cycle_HB2 <= STD_LOGIC_VECTOR(HB2_shift_reg(46 DOWNTO 31));
+    
+            HB3_resize_reg <= x"00000000" & switch_calc_1;
+            HB3_shift_reg  <= shift_left(HB3_resize_reg,24);
+            duty_cycle_HB3 <= STD_LOGIC_VECTOR(HB3_shift_reg(46 DOWNTO 31));
+    
+        ----------------------------------------------------------------------
+        -- OTHERS
+        ----------------------------------------------------------------------
+        when others =>
+            HB1_resize_reg <= x"00000000" & switch_calc_1;
+            HB1_shift_reg  <= shift_left(HB1_resize_reg,24);
+            duty_cycle_HB1 <= STD_LOGIC_VECTOR(HB1_shift_reg(46 DOWNTO 31));
+    
+            HB2_resize_reg <= x"00000000" & switch_calc_3;
+            HB2_shift_reg  <= shift_left(HB2_resize_reg,24);
+            duty_cycle_HB2 <= STD_LOGIC_VECTOR(HB2_shift_reg(46 DOWNTO 31));
+    
+            HB3_resize_reg <= x"00000000" & switch_calc_4;
+            HB3_shift_reg  <= shift_left(HB3_resize_reg,24);
+            duty_cycle_HB3 <= STD_LOGIC_VECTOR(HB3_shift_reg(46 DOWNTO 31));
+    
+    end case;
+    
+        END IF;
+     END IF;
 END PROCESS;   
                    
 end Behavioral;

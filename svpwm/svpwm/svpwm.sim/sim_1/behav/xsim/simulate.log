@@ -1,2 +1,7 @@
 Time resolution is 1 ps
-INFO: xsimkernel Simulation Memory Usage: 16460 KB (Peak: 16460 KB), Simulation CPU Usage: 80249 ms
+Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+Time: 4030 ns  Iteration: 3  Process: /tb_top/uut/inst_svpwm/vector_proc_inst/line__91  File: C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd
+Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+Time: 5070 ns  Iteration: 5  Process: /tb_top/uut/inst_svpwm/vector_proc_inst/line__91  File: C:/Users/user/Desktop/svpwm_2/SVPWM/svpwm/svpwm/svpwm.srcs/sources_1/new/vector_processor.vhd
+Warning : input CLKIN1 period and attribute CLKIN1_PERIOD on PLLE2_ADV instance tb_top.uut.pll_inst.inst.plle2_adv_inst are not same.
+INFO: xsimkernel Simulation Memory Usage: 11980 KB (Peak: 11980 KB), Simulation CPU Usage: 14484 ms

@@ -1,0 +1,96 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
+| Date         : Wed Dec 10 20:39:25 2025
+| Host         : DESKTOP-CNIMS8K running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
+| Design       : top
+| Device       : xc7a35ti
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    18 |
+|    Minimum number of control sets                        |    18 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    49 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    18 |
+| >= 0 to < 4        |     3 |
+| >= 4 to < 6        |     1 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    12 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              71 |           23 |
+| No           | No                    | Yes                    |            2634 |          705 |
+| No           | Yes                   | No                     |            2218 |          585 |
+| Yes          | No                    | No                     |             131 |           53 |
+| Yes          | No                    | Yes                    |              48 |           15 |
+| Yes          | Yes                   | No                     |             201 |           63 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-------------------------+------------------------------------------------+------------------------------------------------------------+------------------+----------------+--------------+
+|       Clock Signal      |                  Enable Signal                 |                      Set/Reset Signal                      | Slice Load Count | Bel Load Count | Bels / Slice |
++-------------------------+------------------------------------------------+------------------------------------------------------------+------------------+----------------+--------------+
+|  pll_inst/inst/clk_out1 | inst_svpwm/driver_inst/HB2/E[0]                | inst_svpwm/driver_inst/HB1/pwm_n0                          |                1 |              1 |         1.00 |
+|  pll_inst/inst/clk_out1 | inst_svpwm/driver_inst/HB2/E[0]                | inst_svpwm/driver_inst/HB2/pwm_n0                          |                1 |              1 |         1.00 |
+|  pll_inst/inst/clk_out1 | inst_svpwm/driver_inst/HB2/E[0]                | inst_svpwm/driver_inst/HB3/pwm_n0                          |                1 |              1 |         1.00 |
+|  pll_inst/inst/clk_out1 | inst_svpwm/vector_proc_inst/sel                | reset_IBUF                                                 |                1 |              4 |         4.00 |
+|  pll_inst/inst/clk_out1 | spi_master/clk_toggles0                        | spi_master/clk_toggles[6]_i_1_n_0                          |                2 |              7 |         3.50 |
+|  pll_inst/inst/clk_out1 | inst_svpwm/driver_inst/HB2/E[0]                | index[9]_i_1_n_0                                           |                4 |             10 |         2.50 |
+|  pll_inst/inst/clk_out1 | inst_svpwm/driver_inst/HB1/duty_cycle_latch0   | inst_svpwm/driver_inst/HB1/duty_cycle_latch[15]_i_1_n_0    |                4 |             16 |         4.00 |
+|  pll_inst/inst/clk_out1 | inst_svpwm/driver_inst/HB2/duty_cycle_latch0   | inst_svpwm/driver_inst/HB2/duty_cycle_latch[15]_i_1__0_n_0 |                4 |             16 |         4.00 |
+|  pll_inst/inst/clk_out1 | inst_svpwm/driver_inst/HB3/duty_cycle_latch0   | inst_svpwm/driver_inst/HB3/duty_cycle_latch[15]_i_1__1_n_0 |                6 |             16 |         2.67 |
+|  pll_inst/inst/clk_out1 | spi_master/count0_0                            | spi_master/count[31]_i_1_n_0                               |                8 |             30 |         3.75 |
+|  pll_inst/inst/clk_out1 | inst_svpwm/vector_proc_inst/sector_reg[0]_0[0] | reset_IBUF                                                 |                8 |             32 |         4.00 |
+|  pll_inst/inst/clk_out1 | spi_master/rx_data[47]_i_1_n_0                 | reset_IBUF                                                 |               15 |             48 |         3.20 |
+|  pll_inst/inst/clk_out1 | spi_master/rx_buffer0                          |                                                            |               12 |             48 |         4.00 |
+|  pll_inst/inst/clk_out1 |                                                | inst_svpwm/vector_proc_inst/angle[31]_i_1_n_0              |               26 |             64 |         2.46 |
+|  pll_inst/inst/clk_out1 | inst_svpwm/vector_proc_inst/data_valid         | reset_IBUF                                                 |               23 |             67 |         2.91 |
+|  pll_inst/inst/clk_out1 | inst_svpwm/driver_inst/HB2/E[0]                |                                                            |               41 |             83 |         2.02 |
+|  pll_inst/inst/clk_out1 |                                                |                                                            |               23 |            127 |         5.52 |
+|  pll_inst/inst/clk_out1 |                                                | reset_IBUF                                                 |             1264 |           4788 |         3.79 |
++-------------------------+------------------------------------------------+------------------------------------------------------------+------------------+----------------+--------------+
+
+

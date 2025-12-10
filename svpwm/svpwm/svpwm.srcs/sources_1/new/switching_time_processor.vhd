@@ -60,18 +60,15 @@ ARCHITECTURE Behavioral OF switching_time_processor IS
     TYPE fsm IS (calculate_t1, calculate_t2);
     SIGNAL state : fsm;
 
-    SIGNAL theta         : SIGNED(31 DOWNTO 0);
-    SIGNAL sin_val       : SIGNED(31 DOWNTO 0);
+    SIGNAL theta_T1      : SIGNED(31 DOWNTO 0);
+    SIGNAL theta_T2      : SIGNED(31 DOWNTO 0);
+    SIGNAL sin_val_T1    : SIGNED(31 DOWNTO 0);
+    SIGNAL sin_val_T2    : SIGNED(31 DOWNTO 0);
     SIGNAL t1_int        : SIGNED(63 DOWNTO 0);
     SIGNAL t2_int        : SIGNED(63 DOWNTO 0);
     SIGNAL t1_delay      : SIGNED(63 DOWNTO 0);
-    
-    SIGNAL t2_delay      : SIGNED(63 DOWNTO 0);
-    SIGNAL t2_delay_2      : SIGNED(63 DOWNTO 0);
-    SIGNAL t2_delay_3      : SIGNED(63 DOWNTO 0);
-    SIGNAL t2_delay_4      : SIGNED(63 DOWNTO 0);
 
-    SIGNAL t1_mult_reg   : SIGNED(63 DOWNTO 0);
+    SIGNAL t1_mult_reg   : SIGNED(63 DOWNTO 0); -- 56
     SIGNAL t1_mult_reg2  : SIGNED(63 DOWNTO 0);
     SIGNAL t1_slice_reg  : SIGNED(31 DOWNTO 0);
     SIGNAL t1_shift_reg  : SIGNED(63 DOWNTO 0);
@@ -92,20 +89,32 @@ ARCHITECTURE Behavioral OF switching_time_processor IS
     CONSTANT PI5_3   : SIGNED(31 DOWNTO 0) := X"53C69B19";
     CONSTANT PI2     : SIGNED(31 DOWNTO 0) := X"6487ED51";
 
-    CONSTANT M       : SIGNED(31 DOWNTO 0) := X"0000DFB2";
-    CONSTANT TZ      : SIGNED(63 DOWNTO 0) := X"00022F3D8FED7049";
+    CONSTANT M       : SIGNED(31 DOWNTO 0) := X"000114c1"; --31 bin point = [Tz*sqrt(3)]/Vdc
+    CONSTANT TZ      : SIGNED(63 DOWNTO 0) := X"00022F3D8FED7049"; -- 63 bin point = 1/fs
 
 BEGIN
 
-    cordic_inst : cordic_sin_cos
+    cordic_inst_T1 : cordic_sin_cos
         GENERIC MAP(
             iterations => 16
         )
         PORT MAP(
             clk        => clk,
             reset      => reset,
-            theta      => theta,
-            sin_value  => sin_val,
+            theta      => theta_T1,
+            sin_value  => sin_val_T1,
+            cos_value  => OPEN
+        );
+        
+    cordic_inst_T2 : cordic_sin_cos
+        GENERIC MAP(
+            iterations => 16
+        )
+        PORT MAP(
+            clk        => clk,
+            reset      => reset,
+            theta      => theta_T2,
+            sin_value  => sin_val_T2,
             cos_value  => OPEN
         );
 
@@ -124,7 +133,7 @@ BEGIN
     shift_reg_sector : shift_register_std
         GENERIC MAP(
             data_len   => 3,
-            delay_len  => 25
+            delay_len  => 21
         )
         PORT MAP(
             clk        => clk,
@@ -137,66 +146,71 @@ BEGIN
     BEGIN
         IF RISING_EDGE(clk) THEN
             IF reset = '1' THEN
-                theta         <= (OTHERS => '0');
-                t1_int        <= (OTHERS => '0');
-                t2_int        <= (OTHERS => '0');
-                t1_delay      <= (OTHERS => '0');
-
-                t1_mult_reg   <= (OTHERS => '0');
-                t1_mult_reg2  <= (OTHERS => '0');
-                t1_slice_reg  <= (OTHERS => '0');
-                t1_shift_reg  <= (OTHERS => '0');
-                t1_delay_reg  <= (OTHERS => '0');
-
+                theta_T2      <= (OTHERS => '0');
                 t2_mult_reg   <= (OTHERS => '0');
                 t2_mult_reg2  <= (OTHERS => '0');
                 t2_slice_reg  <= (OTHERS => '0');
                 t2_shift_reg  <= (OTHERS => '0');
 
-                state         <= calculate_t2;
             ELSE
-                CASE state IS
-                    WHEN calculate_t2 =>
-                        IF    sector = "001" THEN theta <= PI_3    - angle;
-                        ELSIF sector = "010" THEN theta <= PI2_3   - angle;
-                        ELSIF sector = "011" THEN theta <= PI      - angle;
-                        ELSIF sector = "100" THEN theta <= PI4_3   - angle;
-                        ELSIF sector = "101" THEN theta <= PI5_3   - angle;
-                        ELSIF sector = "110" THEN theta <= PI2     - angle;
-                        END IF;
+                    IF    sector = "001" THEN theta_T2 <= PI_3    - angle;
+                    ELSIF sector = "010" THEN theta_T2 <= PI2_3   - angle;
+                    ELSIF sector = "011" THEN theta_T2 <= PI      - angle;
+                    ELSIF sector = "100" THEN theta_T2 <= PI4_3   - angle;
+                    ELSIF sector = "101" THEN theta_T2 <= PI5_3   - angle;
+                    ELSIF sector = "110" THEN theta_T2 <= PI2     - angle;
+                    END IF;
 
-                        t2_mult_reg   <= vref_delay * sin_val;
-                        t2_slice_reg  <= t2_mult_reg(63 DOWNTO 32);
-                        t2_mult_reg2  <= M * t2_slice_reg;
-                        t2_shift_reg  <= SHIFT_LEFT(t2_mult_reg2, 10);
-                        state         <= calculate_t1;
-
-                    WHEN calculate_t1 =>
-                        IF    sector = "001" THEN theta <= angle;
-                        ELSIF sector = "010" THEN theta <= angle - PI_3;
-                        ELSIF sector = "011" THEN theta <= angle - PI2_3;
-                        ELSIF sector = "100" THEN theta <= angle - PI;
-                        ELSIF sector = "101" THEN theta <= angle - PI4_3;
-                        ELSIF sector = "110" THEN theta <= angle - PI5_3;
-                        ELSE                      theta <= (OTHERS => '0');
-                        END IF;
-
-                        t1_mult_reg   <= vref_delay * sin_val;
-                        t1_slice_reg  <= t1_mult_reg(63 DOWNTO 32);
-                        t1_mult_reg2  <= M * t1_slice_reg;
-                        t1_shift_reg  <= SHIFT_LEFT(t1_mult_reg2, 10);
-                        state         <= calculate_t2;
-                END CASE;
-
-                t1_int       <= t1_shift_reg;
+                    t2_mult_reg   <= vref_delay * sin_val_T2;
+                    t2_slice_reg  <= t2_mult_reg(63 DOWNTO 32);
+                    t2_mult_reg2  <= M * t2_slice_reg;
+                    t2_shift_reg  <= SHIFT_LEFT(t2_mult_reg2, 10);
+            END IF;
+        END IF;
+ END PROCESS;
                 
-                t2_delay_reg <= t2_shift_reg;
-                t2_int       <= t2_delay_reg;
+ PROCESS(clk)
+    BEGIN
+        IF RISING_EDGE(clk) THEN
+            IF reset = '1' THEN
+                t1_delay      <= (OTHERS => '0');
+                t1_mult_reg   <= (OTHERS => '0');
+                t1_mult_reg2  <= (OTHERS => '0');
+                t1_slice_reg  <= (OTHERS => '0');
+                t1_shift_reg  <= (OTHERS => '0');
+            ELSE
+                    IF    sector = "001" THEN theta_T1 <= angle;
+                    ELSIF sector = "010" THEN theta_T1 <= angle - PI_3;
+                    ELSIF sector = "011" THEN theta_T1 <= angle - PI2_3;
+                    ELSIF sector = "100" THEN theta_T1 <= angle - PI;
+                    ELSIF sector = "101" THEN theta_T1 <= angle - PI4_3;
+                    ELSIF sector = "110" THEN theta_T1 <= angle - PI5_3;
+                    ELSE                      theta_T1 <= (OTHERS => '0');
+                    END IF;
+
+                    t1_mult_reg   <= vref_delay * sin_val_T1; -- 54
+                    t1_slice_reg  <= t1_mult_reg(63 DOWNTO 32); -- 22
+                    t1_mult_reg2  <= M * t1_slice_reg; --53
+                    t1_shift_reg  <= SHIFT_LEFT(t1_mult_reg2, 10); --63            
             END IF;
         END IF;
     END PROCESS;
+    
+    PROCESS(clk)
+    BEGIN
+        IF rising_edge(clk) then
+            IF reset = '1' THEN 
+                t1_int       <= (OTHERS => '0');
+                t2_int       <= (OTHERS => '0');
+            ELSE
+                t2_int       <= t1_shift_reg;
+                t1_int       <= t2_shift_reg; 
+            END IF;
+        END IF;
+    END PROCESS;
+    
 
-    t0 <= TZ - t1_int - t2_int;
+    t0 <= TZ - t1_int - t2_int; --63
     t1 <= t1_int;
     t2 <= t2_int;
 

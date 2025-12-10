@@ -14,9 +14,9 @@ entity center_pwm is
 end center_pwm;
 
 architecture Behavioral of center_pwm is
-    SIGNAL clk_count : unsigned(15 DOWNTO 0);
-    SIGNAL duty_cycle_latch : unsigned(15 DOWNTO 0);
-    SIGNAL up_down : STD_LOGIC;
+    SIGNAL clk_count        : UNSIGNED(15 DOWNTO 0);
+    SIGNAL duty_cycle_latch : UNSIGNED(15 DOWNTO 0);
+    SIGNAL up_down          : STD_LOGIC;
 begin
 
     PROCESS(clk)
@@ -34,8 +34,13 @@ begin
             
             IF(clk_count = to_unsigned(1, clk_count'length)) THEN 
                 up_down <= '1';
-                duty_cycle_latch <= unsigned(duty_cycle);
-            ELSIF(clk_count = to_unsigned(1666, clk_count'length)) THEN 
+                IF duty_cycle > x"07D0" THEN 
+                    duty_cycle_latch <= x"0000";
+                ELSE
+                    duty_cycle_latch <= unsigned(duty_cycle);
+                END IF;
+                
+            ELSIF(clk_count = to_unsigned(1118, clk_count'length)) THEN 
                 up_down <= '0';
             END IF;
             

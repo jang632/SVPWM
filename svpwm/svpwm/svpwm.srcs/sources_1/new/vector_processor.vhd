@@ -28,6 +28,9 @@ ARCHITECTURE Behavioral OF vector_processor IS
 
     TYPE pipe_stages IS ARRAY (0 TO 15) OF pipelined_io;
     SIGNAL pipeline : pipe_stages;
+    
+    SIGNAL data_valid         : STD_LOGIC;
+    SIGNAL data_valid_counter : UNSIGNED (4 DOWNTO 0);
 
     SIGNAL magnitude_int     : SIGNED(63 DOWNTO 0);
     SIGNAL angle_int         : SIGNED(31 DOWNTO 0);
@@ -181,6 +184,7 @@ BEGIN
                 angle        <= (OTHERS => '0');
                 magnitude    <= (OTHERS => '0');
                 sector       <= "000";
+                sector_int   <= "000";
                 angle_stage1 <= (OTHERS => '0');
                 angle_stage2 <= (OTHERS => '0');
                 angle_delay  <= (OTHERS => (OTHERS => '0'));
@@ -199,7 +203,7 @@ BEGIN
                     sector_int <= "110";
                 END IF;
 
-                IF pipeline(iterations - 1).pip_x /= 0 AND pipeline(iterations - 1).pip_y /= 0 THEN
+                IF data_valid = '1' THEN
                     angle_delay  <= angle_int & angle_delay(0);
                     angle        <= angle_delay(1);
                     sector_delay <= sector_int;
@@ -212,5 +216,22 @@ BEGIN
             END IF;
         END IF;
     END PROCESS;
+    
+    PROCESS(clk)
+    BEGIN
+        IF rising_edge(clk) THEN 
+            IF reset = '1' THEN 
+                data_valid <= '0';
+                data_valid_counter <= (OTHERS => '0');
+            ELSE
+                IF(data_valid_counter < iterations + 1) THEN 
+                    data_valid_counter <= data_valid_counter + 1;
+                ELSE
+                    data_valid <= '1';
+                END IF;
+            END IF;
+        END IF;
+    END PROCESS;
+        
 
 END Behavioral;

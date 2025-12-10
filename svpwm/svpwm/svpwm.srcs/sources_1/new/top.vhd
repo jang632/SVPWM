@@ -37,14 +37,12 @@ COMPONENT svpwm IS
     );
 END COMPONENT;
 
-COMPONENT blk_mem_gen_0 IS
+COMPONENT clk_wiz_0 IS
   PORT (
-    clka : IN STD_LOGIC;
-    ena : IN STD_LOGIC;
-    wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-    addra : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-    dina : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-    douta : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+      clk_out1 : OUT STD_LOGIC;
+      reset    : IN  STD_LOGIC;
+      locked   : OUT STD_LOGIC;
+      clk_in1  : IN  STD_LOGIC
   );
 END COMPONENT;
 
@@ -82,14 +80,24 @@ SIGNAL spi_cont    : STD_LOGIC;
 SIGNAL spi_busy    : STD_LOGIC; 
 SIGNAL spi_rx_data : STD_LOGIC_VECTOR(47 DOWNTO 0);
 
+SIGNAL clk_pll : STD_LOGIC;
+
 begin
+
+  pll_inst : clk_wiz_0
+  PORT MAP(
+    clk_out1 => clk_pll,
+    reset    => reset,
+    locked   => OPEN,
+    clk_in1  => clk
+  );
 
 spi_master: spi
     GENERIC MAP(
       slaves => 1, 
       d_width => 48)
     PORT MAP(
-      clock => clk, 
+      clock => clk_pll, 
       reset_n => reset, 
       enable => spi_ena, 
       cpol => '1', 
@@ -106,7 +114,7 @@ spi_master: spi
 
 inst_svpwm : svpwm
   port map (
-    clk      => clk,
+    clk      => clk_pll,
     reset    => reset,
     v_a      => spi_rx_data(47 DOWNTO 32),
     v_b      => spi_rx_data(31 DOWNTO 16),
@@ -121,9 +129,9 @@ inst_svpwm : svpwm
  
 ena <= '1'; 
   
-PROCESS(clk)
+PROCESS(clk_pll)
 BEGIN 
-    IF(rising_edge(clk)) THEN 
+    IF(rising_edge(clk_pll)) THEN 
        IF(reset = '1') THEN 
         spi_ena <= '0';
         spi_cont <= '0';
